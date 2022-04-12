@@ -3,10 +3,7 @@ import com.techelevator.dao.MealDao;
 import com.techelevator.model.Meal;
 import com.techelevator.model.Recipe;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -17,8 +14,9 @@ public class MealController {
         private MealDao mealDao;
         public MealController(MealDao mealDao){this.mealDao = mealDao;}
 
+        @PreAuthorize("permitAll")
         @RequestMapping(path = "/meals/{mealId}", method = RequestMethod.GET)
-        public Meal findMealDetailsById(Long mealId){ return mealDao.findMealDetailsById(mealId);}
+        public Meal findMealDetailsById(@PathVariable Long mealId){ return mealDao.findMealDetailsById(mealId);}
 
         @RequestMapping(path = "/meals/add/{recipeId}" , method = RequestMethod.POST)
         public Meal addRecipesToSingleMeal(@RequestBody Meal meal, Recipe recipeId){ return mealDao.addRecipesToSingleMeal(meal, recipeId);}

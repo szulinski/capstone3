@@ -33,6 +33,7 @@ export default new Vuex.Store({
     is_high_protein: false,
     is_low_carb: false,
     is_low_sodium: false,
+    saved: false,
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

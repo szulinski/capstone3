@@ -17,7 +17,43 @@
 
 <script>
 export default {
-
+  name: "new-recipe-form",
+  data() {
+    return {
+      recipe: {
+          id: 0,
+          URL: 0,
+          name: '',
+          ingredients: [],
+          directions: '',
+          calories: 0,
+          is_low_fat: false,
+          is_high_protein: false,
+          is_low_carb: false,
+          is_low_sodium: false,
+          saved: false,
+      }
+    }
+  },
+  methods: {
+    saveRecipe() {
+      this.$store.commit('SAVE_RECIPE', this.recipe);
+      this.recipe = {
+      id: 0,
+      URL: 0,
+      name: '',
+      ingredients: [],
+      directions: '',
+      calories: 0,
+      is_low_fat: false,
+      is_high_protein: false,
+      is_low_carb: false,
+      is_low_sodium: false,
+      saved: false,
+      };
+      this.$router.push({ name: 'my-recipes' });
+    }
+  }
 }
 </script>
 

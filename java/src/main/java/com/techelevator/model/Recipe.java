@@ -45,19 +45,19 @@ public class Recipe {
 
     public void setCalories(int calories) {this.calories = calories;}
 
-    public Boolean isHighProtein() {return isHighProtein;}
+    public Boolean getHighProtein() {return isHighProtein;}
 
-    public void setIsHighProtein(Boolean highProtein) {isHighProtein = highProtein;}
+    public void setHighProtein(Boolean highProtein) {isHighProtein = highProtein;}
 
-    public Boolean isLowSodium() {return isLowSodium;}
+    public Boolean getLowSodium() {return isLowSodium;}
 
     public void setLowSodium(Boolean lowSodium) {isLowSodium = lowSodium;}
 
-    public Boolean isLowFat() {return isLowFat;}
+    public Boolean getLowFat() {return isLowFat;}
 
-    public void setLowSugar(Boolean lowSugar) {isLowFat = lowSugar;}
+    public void setLowFat(Boolean lowFat) {isLowFat = lowFat;}
 
-    public Boolean isLowCarb() {return isLowCarb;}
+    public Boolean getLowCarb() {return isLowCarb;}
 
     public void setLowCarb(Boolean lowCarb) {isLowCarb = lowCarb;}
 }

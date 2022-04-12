@@ -10,5 +10,5 @@ public interface RecipeDao {
 
     Recipe findRecipeById(Long recipeId);
 
-    List<Recipe> findRecipeByFilters(String name);
+    List<Recipe> findRecipeByName(String name);
 }

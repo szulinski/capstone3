@@ -46,9 +46,9 @@ public class JdbcRecipeDao implements RecipeDao {
     @Override
     public List<Recipe> findRecipeByName(String name) {
         List<Recipe> listOfRecipes = new ArrayList<>();
-        String sql = "SELECT * FROM recipes WHERE recipe_name ILIKE '%?%'";
-
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,name);
+        String namee ="%" + name+ "%";
+        String sql = "SELECT * FROM recipes WHERE recipe_name ILIKE ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,namee);
         while(results.next()){
             Recipe recipe = mapRowToRecipe(results);
             listOfRecipes.add(recipe);
@@ -63,10 +63,11 @@ public class JdbcRecipeDao implements RecipeDao {
         recipe.setIngredients(rowSet.getString("ingredients"));
         recipe.setDirections(rowSet.getString("directions"));
         recipe.setCalories(rowSet.getInt("calories"));
-        recipe.setHighProtein(rowSet.getBoolean("is_high_protein"));
+        recipe.setLowFat(rowSet.getBoolean("is_low_fat"));
+        recipe.setHighProtein(rowSet.getBoolean("is_high_protien"));
         recipe.setLowCarb(rowSet.getBoolean("is_low_carb"));
         recipe.setLowSodium(rowSet.getBoolean("is_low_sodium"));
-        recipe.setLowFat(rowSet.getBoolean("is_low_fat"));
+        recipe.setImage(rowSet.getString("img"));
         return recipe;
     }
 }

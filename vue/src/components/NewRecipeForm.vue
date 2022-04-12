@@ -1,0 +1,26 @@
+<template>
+  <form class="new-recipe-form" v-on:submit.prevent="saveRecipe">
+      <input class="name-input" type="text" placeholder="Input Recipe Name" v-model="recipe.name" />
+      <input class="calories-input" type="number" placeholder="Input Calories Here" v-model="recipe.calories" />
+      <input class="is_low_fat" id="lowfat" type="checkbox" v-model="recipe.is_low_fat" />
+      <label for="lowfat"> Is this recipe low fat? </label>
+      <input class="is_low_carb" id="lowcarb" type="checkbox" v-model="recipe.is_low_carb" />
+      <label for="lowcarb"> Is this recipe low carb? </label>
+      <input class="is_low_sodium" id="lowsodium" type="checkbox" v-model="recipe.is_low_sodium" />
+      <label for="lowsodium"> Is this recipe low sodium? </label>
+      <input class="is_high_protein" id="highprotein" type="checkbox" v-model="recipe.is_high_protein" />
+      <label for="highprotein"> Is this recipe high protein? </label>
+      <input class="ingredients" type="text" size="100" placeholder="Ingredients Here" />
+      <input class="directions" type="text" size="150" placeholder="Please Enter Directions Here" />
+      </form>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

@@ -21,6 +21,19 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {}
   },
+  recipes: [],
+  recipe: {
+    id: 0,
+    URL: 0,
+    name: '',
+    ingredients: [],
+    directions: '',
+    calories: 0,
+    is_low_fat: false,
+    is_high_protein: false,
+    is_low_carb: false,
+    is_low_sodium: false,
+  },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -37,6 +50,13 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_SAVED_STATUS(state, payload) {
+      payload.recipe.saved = payload.value;
+    },
+    SAVE_RECIPE(state, recipe) {
+      state.recipes.push(recipe);
     }
-  }
-})
+  },
+  strict: true
+});

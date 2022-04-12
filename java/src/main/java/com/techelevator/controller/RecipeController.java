@@ -27,7 +27,7 @@ public class RecipeController {
         return recipeDao.findRecipeById(recipeId);
     }
 
-    @RequestMapping(path = "/recipes/{recipeName")
+    @RequestMapping(path = "/recipes/{recipeName}")
     public List<Recipe> getRecipesByName(String recipeName){
         return recipeDao.findRecipeByName(recipeName);
     }

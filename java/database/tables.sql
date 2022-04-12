@@ -135,8 +135,13 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 			'1, Trim and spiralize the zucchini. 2, Add olive oil, garlic, and the red pepper flakes to a large, deep skillet. Turn to medium heat. When the oil begins to bubble around the garlic, add the zucchini noodles 5 yo 7 minutes. 3, Stir in the tomatoes, basil, and parmesan cheese. Cook for one minute. Use pasta tongs to transfer the noodles, tomatoes, and basil to a serving dish. Leave the liquid in the skillet. 4,Bring the liquid left in the skillet to a simmer and combine cornstarch and cold water in a small bowl then whisk into the simmering liquid. Cook, while whisking until the liquid thickens to a sauce; about 1 minute. 5, Taste the sauce and season with salt. Pour the sauce over the zucchini, tomatoes, and basil. Finish with more parmesan cheese on top',
 			200, true, false, true, false, 'https://www.inspiredtaste.net/wp-content/uploads/2016/08/Zucchini-Pasta-Recipe-1.jpg');
 
-
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');
 			
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Sunday');
+
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Friday');
+
+
 COMMIT;
 
 

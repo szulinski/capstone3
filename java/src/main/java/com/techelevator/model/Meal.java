@@ -3,7 +3,7 @@ package com.techelevator.model;
 import java.util.Date;
 
 public class Meal {
-
+    private Long mealId;
     private String mealType;
     private Long recipeId;
     private Date mealDate;
@@ -32,4 +32,12 @@ public class Meal {
     public void setMealDate(Date mealDate) {
         this.mealDate = mealDate;
     }
+    public Long getMealId() {
+        return mealId;
+    }
+
+    public void setMealId(Long mealId) {
+        this.mealId = mealId;
+    }
+
 }

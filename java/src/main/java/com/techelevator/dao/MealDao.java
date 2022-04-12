@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Meal;
+import com.techelevator.model.Recipe;
 
 import java.util.Date;
 import java.util.List;
@@ -9,12 +10,12 @@ public interface MealDao {
 
     Meal findMealDetailsById(Long mealId);
 
-    Meal addRecipesToSingleMeal(String recipeId);
+    Meal addRecipesToSingleMeal(Meal meal, Recipe recipe);
 
     Meal findMealsByDate(Date mealDate);
 
     Meal findMealByType(String mealType);
 
-    Meal createSingleMeal();
+    Meal createSingleMeal(Meal meal, Recipe recipe);
 
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const recipeApi = new axios.create({
-    baseURL: 'http://localhost:8081'
+    baseURL: 'http://localhost:8080'
 });
 
 export default {
@@ -10,7 +10,7 @@ export default {
         return recipeApi.get('/recipes');
     },
     getRecipe(id){
-        return recipeApi.get(`/recipes/${id}`);
+        return recipeApi.get(`/recipe/${id}`);
     },
 
 

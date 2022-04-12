@@ -39,5 +39,4 @@ public class Meal {
     public void setMealId(Long mealId) {
         this.mealId = mealId;
     }
-
 }

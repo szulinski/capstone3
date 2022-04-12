@@ -17,10 +17,15 @@ public class JdbcMealDao implements MealDao{
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public Meal findMealDetailsById(Long mealId) {
+    public List<Meal> findMealDetailsById(Long mealId) {
+        List <Meal> mealsById = new ArrayList<>();
         String sql = "SELECT * FROM meals WHERE meal_id = ?;";
-        Meal mealDetailsByMealId = jdbcTemplate.queryForObject(sql, Meal.class, mealId);
-        return mealDetailsByMealId;
+        SqlRowSet mealDetailsByMealId = jdbcTemplate.queryForRowSet(sql, Meal.class, mealId);
+        while (mealDetailsByMealId.next()){
+            Meal meals = mapRowToMeal(mealDetailsByMealId);
+            mealsById.add(meals);
+        }
+        return mealsById;
     }
 
     @Override

@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JdbcPlanDao implements PlanDao {
-    private JdbcTemplate jdbcTemplate;
+
+    private final JdbcTemplate jdbcTemplate;
 
     public JdbcPlanDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -16,7 +17,7 @@ public class JdbcPlanDao implements PlanDao {
     @Override
     public Plan findPlanById (Long planId) {
         Plan plan = null;
-        String sql = "Select * From plan WHERE plan_id = ?;";
+        String sql = "SELECT * FROM plans WHERE plan_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, planId);
         if (results.next()) {
             plan = mapRowToPlan(results);
@@ -25,11 +26,11 @@ public class JdbcPlanDao implements PlanDao {
     }
 
     @Override
-    public boolean createPlan(Long planId, String planName) {
-        String sql = "INSERT INTO plan " +
+    public boolean createPlan(String planName) {
+        String sql = "INSERT INTO plans " +
                 "(plan_name) values(?)";
         try {
-            jdbcTemplate.update(sql, planId, planName);
+            jdbcTemplate.update(sql, planName);
         } catch (DataAccessException e) {
             return false;
         }
@@ -38,7 +39,7 @@ public class JdbcPlanDao implements PlanDao {
     private Plan mapRowToPlan(SqlRowSet rs) {
         Plan plan = new Plan();
         plan.setPlanId(rs.getLong("plan_id"));
-        plan.setPlanName(rs.getString("meal_name"));
+        plan.setPlanName(rs.getString("plan_name"));
         return plan;
     }
 }

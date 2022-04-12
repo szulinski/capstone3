@@ -5,8 +5,7 @@ import java.util.Date;
 public class Meal {
     private Long mealId;
     private String mealType;
-    private Long recipeId;
-    private Date mealDate;
+    private String mealDay;
 
 
     public String getMealType() {
@@ -17,20 +16,12 @@ public class Meal {
         this.mealType = mealType;
     }
 
-    public Long getRecipeId() {
-        return recipeId;
+    public String getMealDay() {
+        return mealDay;
     }
 
-    public void setRecipeId(Long recipeId) {
-        this.recipeId = recipeId;
-    }
-
-    public Date getMealDate() {
-        return mealDate;
-    }
-
-    public void setMealDate(Date mealDate) {
-        this.mealDate = mealDate;
+    public void setMealDay(String mealDay) {
+        this.mealDay = mealDay;
     }
     public Long getMealId() {
         return mealId;

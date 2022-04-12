@@ -14,18 +14,21 @@ import java.util.List;
 @Component
 public class JdbcMealDao implements MealDao{
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public JdbcMealDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
-    public List<Meal> findMealDetailsById(Long mealId) {
-        List <Meal> mealsById = new ArrayList<>();
+    public Meal findMealDetailsById(Long mealId) {
+        Meal meal = null;
         String sql = "SELECT * FROM meals WHERE meal_id = ?;";
-        SqlRowSet mealDetailsByMealId = jdbcTemplate.queryForRowSet(sql, Meal.class, mealId);
-        while (mealDetailsByMealId.next()){
-            Meal meals = mapRowToMeal(mealDetailsByMealId);
-            mealsById.add(meals);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, mealId);
+        if (results.next()) {
+            meal = mapRowToMeal(results);
         }
-        return mealsById;
+        return meal;
     }
 
     @Override
@@ -62,23 +65,22 @@ public class JdbcMealDao implements MealDao{
         return meals;
     }
 
-    @Override
-    public Meal createSingleMeal(Meal meal, Recipe recipe) {
-        String sql= "INSERT into meals VALUES (DEFAULT, ?, ?, ?) RETURNING meal_id;";
-        try{
-            return jdbcTemplate.queryForObject(sql, Meal.class, recipe.getRecipeId(), meal.getMealType(), meal.getMealDate());
-        } catch (DataAccessException e){
-            return null;
-        }
-    }
+//    @Override
+//    public Meal createSingleMeal(Meal meal, Recipe recipe) {
+//        String sql= "INSERT into meals VALUES (DEFAULT, ?, ?, ?) RETURNING meal_id;";
+//        try{
+//            return jdbcTemplate.queryForObject(sql, Meal.class, recipe.getRecipeId(), meal.getMealType(), meal.getMealDate());
+//        } catch (DataAccessException e){
+//            return null;
+//        }
+//    }
 
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();
         meal.setMealId(mealSet.getLong("meal_id"));
-        meal.setRecipeId(mealSet.getLong("recipe_id"));
         meal.setMealType(mealSet.getString("type_of_meal"));
-        meal.setMealDate(mealSet.getDate("meal_date"));
+        meal.setMealDay(mealSet.getString("day_of_week"));
 
         return meal;
     }

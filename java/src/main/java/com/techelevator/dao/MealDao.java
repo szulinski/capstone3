@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface MealDao {
 
-    List <Meal> findMealDetailsById(Long mealId);
+    Meal findMealDetailsById(Long mealId);
 
     Meal addRecipesToSingleMeal(Meal meal, Recipe recipe);
 
@@ -16,6 +16,6 @@ public interface MealDao {
 
     List <Meal> findMealsByMealType(String mealType);
 
-    Meal createSingleMeal(Meal meal, Recipe recipe);
+//    Meal createSingleMeal(Meal meal, Recipe recipe);
 
 }

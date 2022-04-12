@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class RecipeController {
         return recipeDao.findRecipeById(recipeId);
     }
 
-    @RequestMapping(path = "/recipes/{recipeName}")
+    @RequestMapping(path = "/recipes/{recipeName}", method = RequestMethod.GET)
     public List<Recipe> getRecipesByName(String recipeName){
         return recipeDao.findRecipeByName(recipeName);
     }

@@ -1,3 +1,4 @@
+BEGIN TRANSACTION;
 DROP TABLE IF EXISTS meal_recipe;
 DROP TABLE IF EXISTS user_recipe;
 DROP TABLE IF EXISTS user_plan;
@@ -101,7 +102,7 @@ INSERT INTO recipes VALUES (1,'Chicken Vesuvio',
 			false, false, false, false);
 
 
-
+COMMIT;
 
 
 

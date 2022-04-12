@@ -22,10 +22,10 @@ public class PlanController {
         return planDao.findPlanById(id);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(@Valid @RequestBody RegisterUserDTO newUser) {
-    }
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @RequestMapping(value = "/register", method = RequestMethod.POST)
+//    public void register(@Valid @RequestBody RegisterUserDTO newUser) {
+//    }
 
 //    @ResponseStatus(HttpStatus.CREATED)
 //    @RequestMapping(path = "/createPlan", method = RequestMethod.POST)

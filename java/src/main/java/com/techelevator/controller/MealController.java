@@ -17,18 +17,18 @@ public class MealController {
         private MealDao mealDao;
         public MealController(MealDao mealDao){this.mealDao = mealDao;}
 
-        @RequestMapping(path = "meals/{mealId}", method = RequestMethod.GET)
+        @RequestMapping(path = "/meals/{mealId}", method = RequestMethod.GET)
         public Meal findMealDetailsById(Long mealId){ return mealDao.findMealDetailsById(mealId);}
 
-        @RequestMapping(path = "meals/" , method = RequestMethod.POST)
+        @RequestMapping(path = "/meals" , method = RequestMethod.POST)
         public Meal addRecipesToSingleMeal(@RequestBody Meal meal, Recipe recipeId){ return mealDao.addRecipesToSingleMeal(meal, recipeId);}
 
-        @RequestMapping(path = "meals/{mealDate}" , method = RequestMethod.GET)
+        @RequestMapping(path = "/meals/date/{mealDate}" , method = RequestMethod.GET)
         public List<Meal>findMealsByDate(Date mealDate){return mealDao.findMealsByDate(mealDate);}
 
-        @RequestMapping(path = "meals/{mealType}", method = RequestMethod.GET)
+        @RequestMapping(path = "/meals/type/{mealType}", method = RequestMethod.GET)
         public List <Meal> findMealsByMealType(String mealType){return mealDao.findMealsByMealType(mealType);}
 
-        @RequestMapping(path = "meals/add-meal", method = RequestMethod.POST)
+        @RequestMapping(path = "/meals/add/{recipe}", method = RequestMethod.POST)
         public Meal createSingleMeal(@RequestBody Meal meal, Recipe recipeId){ return mealDao.createSingleMeal(meal, recipeId);}
     }

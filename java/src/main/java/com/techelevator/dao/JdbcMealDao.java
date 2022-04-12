@@ -26,7 +26,7 @@ public class JdbcMealDao implements MealDao{
     public Meal addRecipesToSingleMeal(Meal meal, Recipe recipe) {
         String sql = "INSERT INTO meals(meal_id, recipe_id) VALUES (?, ?);";
         try {
-            return jdbcTemplate.queryForObject(sql, Meal.class, meal.getMealId(), recipe.getRecipeId();
+            return jdbcTemplate.queryForObject(sql, Meal.class, meal.getMealId(), recipe.getRecipeId());
         } catch (DataAccessException e) {
             return null;
         }

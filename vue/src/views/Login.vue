@@ -12,27 +12,35 @@
         role="alert"
         v-if="this.$route.query.registration"
       >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      <div class="usernameSection">
+        <label for="username" class="sr-only">Username </label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          placeholder="Username"
+          v-model="user.username"
+          required
+          autofocus
+        />
+      </div>
+      <div class="passwordSection">
+        <label for="password" class="sr-only">Password </label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          placeholder="Password"
+          v-model="user.password"
+          required
+        />
+      </div>
+      <div class="needAccountButton">
+        <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      </div>
+      <div class="submitButton">
+        <button type="submit">Sign in</button>
+      </div>
     </form>
   </div>
 </template>
@@ -74,3 +82,23 @@ export default {
   }
 };
 </script>
+
+<style>
+
+#login{
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial';
+  text-align: center;
+}
+
+.usernameSection {
+  
+}
+
+.passwordSection {
+  
+}
+
+
+</style>

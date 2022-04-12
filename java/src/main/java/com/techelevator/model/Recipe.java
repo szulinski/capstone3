@@ -7,6 +7,7 @@ public class Recipe {
     private String ingredients;
     private String directions;
     private int calories;
+    private String image;
     private Boolean isHighProtein;
     private Boolean isLowSodium;
     private Boolean isLowFat;
@@ -14,11 +15,12 @@ public class Recipe {
 
     public Recipe() { }
 
-    public Recipe(Long recipeId,String ingredients,String directions,int calories,Boolean isHighProtein,Boolean isLowSodium,Boolean isLowFat,Boolean isLowCarb) {
+    public Recipe(Long recipeId,String ingredients,String directions,int calories,String image,Boolean isHighProtein,Boolean isLowSodium,Boolean isLowFat,Boolean isLowCarb) {
         this.recipeId = recipeId;
         this.ingredients = ingredients;
         this.directions = directions;
         this.calories = calories;
+        this.image = image;
         this.isHighProtein = isHighProtein;
         this.isLowSodium = isLowSodium;
         this.isLowFat = isLowFat;
@@ -46,6 +48,10 @@ public class Recipe {
     public void setCalories(int calories) {this.calories = calories;}
 
     public Boolean getHighProtein() {return isHighProtein;}
+
+    public String getImage() {return image;}
+
+    public void setImage(String image) {this.image = image;}
 
     public void setHighProtein(Boolean highProtein) {isHighProtein = highProtein;}
 

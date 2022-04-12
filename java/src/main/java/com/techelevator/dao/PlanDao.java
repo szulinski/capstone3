@@ -4,7 +4,7 @@ import com.techelevator.model.Plan;
 
 public interface PlanDao {
 
-    Plan getPlan(Long planId);
+    Plan findPlanById(Long planId);
 
     boolean createPlan(Long userId, String planName);
 }

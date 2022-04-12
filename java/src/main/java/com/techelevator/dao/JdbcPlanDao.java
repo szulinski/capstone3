@@ -3,8 +3,9 @@ import com.techelevator.model.Plan;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class JdbcPlanDao implements PlanDao {
     private JdbcTemplate jdbcTemplate;
 
@@ -13,7 +14,7 @@ public class JdbcPlanDao implements PlanDao {
     }
 
     @Override
-    public Plan getPlan (Long planId) {
+    public Plan findPlanById (Long planId) {
         Plan plan = null;
         String sql = "Select * From plan WHERE plan_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, planId);

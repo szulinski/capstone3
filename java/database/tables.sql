@@ -35,13 +35,13 @@ DROP SEQUENCE IF EXISTS seq_meal_id;
 CREATE SEQUENCE seq_meal_id
   INCREMENT BY 1
   NO MAXVALUE
-  NO MINVALUE
+  NO MINVALUE;
 
 CREATE TABLE meals(
 	meal_id int DEFAULT nextval('seq_meal_id'::regclass) NOT NULL,
 	type_of_meal varchar(20),
 	day_of_week varchar(10) NOT NULL,
-	CONSTRAINT pk_meal_id PRIMARY KEY (meal_id),
+	CONSTRAINT pk_meal_id PRIMARY KEY (meal_id)
 	);
 	
 	
@@ -51,8 +51,8 @@ DROP SEQUENCE IF EXISTS seq_plan_id;
 CREATE SEQUENCE seq_plan_id
   INCREMENT BY 1
   NO MAXVALUE
-  NO MINVALUE
-  CACHE 1;
+  NO MINVALUE;
+  
   
 CREATE TABLE plans(
 	plan_id int DEFAULT nextval('seq_meal_id'::regclass) NOT NULL,

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="card" v-bind:key="recipe.id" />
+  <div class="card" v-bind:key="recipe.id">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
   <!-- <img v-if="recipe.image" v-bind:src="recipe.image"/> -->
   <router-link v-bind:to="{name: 'recipe', params: {id : recipe.id}}">
@@ -13,6 +13,7 @@
       <button class="mark-unsaved" v-on:click.prevent="setSaved(false)" v-if="recipe.saved">Forget Recipe</button>
   </div>
   <button v-on:click.prevent="addToSaved(recipe)">Add to Favorites</button>
+  </div>
   </div>
 </template>
 
@@ -44,6 +45,7 @@ export default {
     width: 250px;
     height: 550px;
     margin: 20px;
+    
 }
 .card.saved {
     background-color: crimson;
@@ -53,5 +55,17 @@ export default {
 }
 .card .book-author {
     font-size: 1rem;
+}
+.button-container{
+     align-content: center;
+     align-items: center;
+     justify-content: center;
+
+}
+img {
+   
+    max-width: 100%;
+    max-height: 50%;
+
 }
 </style>

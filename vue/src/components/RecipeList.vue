@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="my-recipe-list">
       <h2>My Recipes</h2>
-      <div class="my-recipe-list">
+      <div >
           <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id" />
       </div>
   </div>

@@ -23,7 +23,7 @@ CREATE TABLE recipes (
 	directions varchar (3000) NOT NULL,
 	calories int,
 	is_low_fat boolean, 
-	is_high_protien boolean,
+	is_high_protein boolean,
 	is_low_carb boolean,
 	is_low_sodium boolean,
 	is_breakfast boolean,

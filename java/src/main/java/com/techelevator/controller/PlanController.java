@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @PreAuthorize("isAuthenticated()")
+@CrossOrigin(origins = "http://localhost:8081")
 public class PlanController {
     private PlanDao planDao;
 

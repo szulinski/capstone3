@@ -56,6 +56,18 @@ public class JdbcRecipeDao implements RecipeDao {
         return listOfRecipes;
     }
 
+    @Override
+    public List<Recipe> findRecipesByCalorieCount(int calories) {
+        List<Recipe> listOfRecipes = new ArrayList<>();
+        String sql = "SELECT * FROM recipes WHERE calories < ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,calories);
+        while(results.next()){
+            Recipe recipe = mapRowToRecipe(results);
+            listOfRecipes.add(recipe);
+        }
+        return listOfRecipes;
+    }
+
     private Recipe mapRowToRecipe(SqlRowSet rowSet){
         Recipe recipe = new Recipe();
         recipe.setRecipeId(rowSet.getLong("recipe_id"));

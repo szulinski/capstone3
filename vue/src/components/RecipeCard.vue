@@ -2,10 +2,8 @@
 <div>
   <div class="card" v-bind:key="recipe.id">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
-  <!-- <img v-if="recipe.image" v-bind:src="recipe.image"/> -->
-  <router-link v-bind:to="{name: 'recipe', params: {id : recipe.id}}">
+  <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
         <img v-if="recipe.image" v-bind:src="recipe.image"/>
-
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="button-container">
@@ -31,8 +29,7 @@ export default {
         addToSaved(recipe) {
             let addedRecipe = Object.assign({ saved: true }, recipe);
             this.$store.commit('SAVE_RECIPE', addedRecipe)
-
-        }
+        },
     }
 
 }

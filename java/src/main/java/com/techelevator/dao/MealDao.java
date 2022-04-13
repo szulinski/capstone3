@@ -10,12 +10,8 @@ public interface MealDao {
 
     Meal findMealDetailsById(Long mealId);
 
-    Meal addRecipesToSingleMeal(Meal meal, Recipe recipe);
-
-    List <Meal> findMealsByDate(Date mealDate);
+    List <Meal> findMealsByDay(String mealDay);
 
     List <Meal> findMealsByMealType(String mealType);
-
-//    Meal createSingleMeal(Meal meal, Recipe recipe);
 
 }

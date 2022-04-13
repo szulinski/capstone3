@@ -32,20 +32,10 @@ public class JdbcMealDao implements MealDao{
     }
 
     @Override
-    public Meal addRecipesToSingleMeal(Meal meal, Recipe recipe) {
-        String sql = "INSERT INTO meals(meal_id, recipe_id) VALUES (?, ?);";
-        try {
-            return jdbcTemplate.queryForObject(sql, Meal.class, meal.getMealId(), recipe.getRecipeId());
-        } catch (DataAccessException e) {
-            return null;
-        }
-    }
-
-    @Override
-    public List<Meal> findMealsByDate(Date mealDate) {
+    public List<Meal> findMealsByDay(String mealDay) {
         List <Meal> mealList = new ArrayList<>();
-        String sql = "SELECT * FROM meals WHERE meal_date = ?;";
-        SqlRowSet mealDetails = jdbcTemplate.queryForRowSet(sql, mealDate);
+        String sql = "SELECT * FROM meals WHERE day_of_week = ?;";
+        SqlRowSet mealDetails = jdbcTemplate.queryForRowSet(sql, mealDay);
         while (mealDetails.next()){
             Meal meal = mapRowToMeal(mealDetails);
             mealList.add(meal);
@@ -64,17 +54,6 @@ public class JdbcMealDao implements MealDao{
         }
         return meals;
     }
-
-//    @Override
-//    public Meal createSingleMeal(Meal meal, Recipe recipe) {
-//        String sql= "INSERT into meals VALUES (DEFAULT, ?, ?, ?) RETURNING meal_id;";
-//        try{
-//            return jdbcTemplate.queryForObject(sql, Meal.class, recipe.getRecipeId(), meal.getMealType(), meal.getMealDate());
-//        } catch (DataAccessException e){
-//            return null;
-//        }
-//    }
-
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();

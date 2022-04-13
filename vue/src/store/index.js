@@ -35,6 +35,12 @@ export default new Vuex.Store({
     is_low_sodium: false,
     saved: false,
   },
+  meals: [],
+  meal:{
+    mealId: 0,
+    mealType: '',
+    mealDay: '',
+  },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;

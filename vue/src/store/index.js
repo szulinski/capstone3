@@ -24,7 +24,7 @@ export default new Vuex.Store({
   recipes: [],
   recipe: {
     id: 0,
-    URL: 0,
+    image: '',
     name: '',
     ingredients: '',
     directions: '',

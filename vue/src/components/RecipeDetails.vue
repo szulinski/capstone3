@@ -5,6 +5,8 @@
     <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
     <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
     <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
+    <p class="recipe-image"> {{ recipe.image }}</p>
+
     <!-- <p></p>
     <p></p>
     <p></p>

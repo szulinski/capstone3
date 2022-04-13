@@ -2,14 +2,11 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Meal;
 import com.techelevator.model.Recipe;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 @Component
 public class JdbcMealDao implements MealDao{
@@ -54,6 +51,13 @@ public class JdbcMealDao implements MealDao{
         }
         return meals;
     }
+
+
+
+//    public Meal insertRecipesInMeal(){
+//        Meal meals = null;
+//        String sql =
+//    }
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();

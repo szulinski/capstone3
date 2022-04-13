@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 import com.techelevator.dao.MealDao;
 import com.techelevator.model.Meal;
+import com.techelevator.model.Recipe;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,7 +16,7 @@ public class MealController {
         }
 
         @PreAuthorize("permitAll")
-        @RequestMapping(path = "/meals/{mealId}", method = RequestMethod.GET)
+        @RequestMapping(path = "/meals/mealId/{mealId}", method = RequestMethod.GET)
         public Meal findMealDetailsById(@PathVariable Long mealId) {
                 return mealDao.findMealDetailsById(mealId);
         }
@@ -31,4 +32,6 @@ public class MealController {
         public List<Meal> findMealsByDay(@PathVariable String mealDay) {
                 return mealDao.findMealsByDay(mealDay);
         }
+
 }
+

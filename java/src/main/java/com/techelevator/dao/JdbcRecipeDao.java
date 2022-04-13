@@ -89,6 +89,20 @@ public class JdbcRecipeDao implements RecipeDao {
         return listOfRecipes;
     }
 
+    public List <Recipe> displayRecipesInMeal(Long mealId) {
+        List <Recipe> recipesInMeal = new ArrayList<>();
+        String sql = "SELECT * FROM recipes r\n" +
+                "JOIN meal_recipe mr ON r.recipe_id = mr.recipe_id\n" +
+                "JOIN meals m ON m.meal_id = mr.meal_id \n" +
+                "WHERE m.meal_id = ?;";
+        SqlRowSet recipesResult = jdbcTemplate.queryForRowSet(sql, mealId);
+        while(recipesResult.next()) {
+            Recipe recipes = mapRowToRecipe(recipesResult);
+            recipesInMeal.add(recipes);
+        }
+        return recipesInMeal;
+    }
+
     private Recipe mapRowToRecipe(SqlRowSet rowSet){
         Recipe recipe = new Recipe();
         recipe.setRecipeId(rowSet.getLong("recipe_id"));
@@ -97,7 +111,7 @@ public class JdbcRecipeDao implements RecipeDao {
         recipe.setDirections(rowSet.getString("directions"));
         recipe.setCalories(rowSet.getInt("calories"));
         recipe.setLowFat(rowSet.getBoolean("is_low_fat"));
-        recipe.setHighProtein(rowSet.getBoolean("is_high_protien"));
+        recipe.setHighProtein(rowSet.getBoolean("is_high_protein"));
         recipe.setLowCarb(rowSet.getBoolean("is_low_carb"));
         recipe.setLowSodium(rowSet.getBoolean("is_low_sodium"));
         recipe.setBreakfast(rowSet.getBoolean("is_breakfast"));

@@ -41,4 +41,9 @@ public class RecipeController {
     public List<Recipe> getRecipesByType(@PathVariable String type){
         return recipeDao.findRecipesByType(type);
     }
+
+    @RequestMapping(path = "/recipes/recipe/{mealId}", method = RequestMethod.GET)
+    public List <Recipe> displayRecipesInMeal(@PathVariable Long mealId){
+        return recipeDao.displayRecipesInMeal(mealId);}
+
 }

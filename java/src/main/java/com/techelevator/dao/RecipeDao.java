@@ -15,4 +15,6 @@ public interface RecipeDao {
     List<Recipe> findRecipesByCalorieCount(int calories);
 
     List<Recipe> findRecipesByType(String type);
+
+    List<Recipe> displayRecipesInMeal(Long mealId);
 }

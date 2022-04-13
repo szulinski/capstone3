@@ -13,5 +13,7 @@ public interface MealDao {
     List <Meal> findMealsByDay(String mealDay);
 
     List <Meal> findMealsByMealType(String mealType);
+//
+//    Recipe displayRecipesInMeal(Long mealId);
 
 }

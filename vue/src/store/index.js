@@ -26,7 +26,7 @@ export default new Vuex.Store({
     id: 0,
     URL: 0,
     name: '',
-    ingredients: [],
+    ingredients: '',
     directions: '',
     calories: 0,
     is_low_fat: false,

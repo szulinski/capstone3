@@ -38,4 +38,9 @@ public class RecipeController {
     public List<Recipe> getRecipesByCalorieCount(@PathVariable int calories){
         return recipeDao.findRecipesByCalorieCount(calories);
     }
+
+    @RequestMapping(path = "/recipes/type/{type}", method = RequestMethod.GET)
+    public List<Recipe> getRecipesByType(@PathVariable String type){
+        return recipeDao.findRecipesByType(type);
+    }
 }

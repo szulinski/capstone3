@@ -13,4 +13,6 @@ public interface RecipeDao {
     List<Recipe> findRecipeByName(String name);
 
     List<Recipe> findRecipesByCalorieCount(int calories);
+
+    List<Recipe> findRecipesByType(String type);
 }

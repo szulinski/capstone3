@@ -68,6 +68,27 @@ public class JdbcRecipeDao implements RecipeDao {
         return listOfRecipes;
     }
 
+    @Override
+    public List<Recipe> findRecipesByType(String type) {
+        List<Recipe> listOfRecipes = new ArrayList<>();
+        SqlRowSet results;
+        String dinnersql = "SELECT * FROM recipes WHERE is_dinner";
+        String lunchsql = "SELECT * FROM recipes WHERE is_lunch";
+        String breakfastsql = "SELECT * FROM recipes WHERE is_breakfast";
+        if(type.equals("dinner")){
+            results = jdbcTemplate.queryForRowSet(dinnersql);
+        }else if(type.equals("lunch")){
+            results = jdbcTemplate.queryForRowSet(lunchsql);
+        }else{
+            results = jdbcTemplate.queryForRowSet(breakfastsql);
+        }
+        while(results.next()){
+            Recipe recipe = mapRowToRecipe(results);
+            listOfRecipes.add(recipe);
+        }
+        return listOfRecipes;
+    }
+
     private Recipe mapRowToRecipe(SqlRowSet rowSet){
         Recipe recipe = new Recipe();
         recipe.setRecipeId(rowSet.getLong("recipe_id"));
@@ -79,6 +100,9 @@ public class JdbcRecipeDao implements RecipeDao {
         recipe.setHighProtein(rowSet.getBoolean("is_high_protien"));
         recipe.setLowCarb(rowSet.getBoolean("is_low_carb"));
         recipe.setLowSodium(rowSet.getBoolean("is_low_sodium"));
+        recipe.setBreakfast(rowSet.getBoolean("is_breakfast"));
+        recipe.setLunch(rowSet.getBoolean("is_lunch"));
+        recipe.setDinner(rowSet.getBoolean("is_dinner"));
         recipe.setImage(rowSet.getString("img"));
         return recipe;
     }

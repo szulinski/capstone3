@@ -12,6 +12,9 @@ public class Recipe {
     private Boolean isLowSodium;
     private Boolean isLowFat;
     private Boolean isLowCarb;
+    private Boolean isBreakfast;
+    private Boolean isLunch;
+    private Boolean isDinner;
 
     public Recipe() { }
 
@@ -66,4 +69,16 @@ public class Recipe {
     public Boolean getLowCarb() {return isLowCarb;}
 
     public void setLowCarb(Boolean lowCarb) {isLowCarb = lowCarb;}
+
+    public Boolean getBreakfast() {return isBreakfast;}
+
+    public void setBreakfast(Boolean breakfast) {isBreakfast = breakfast;}
+
+    public Boolean getLunch() {return isLunch;}
+
+    public void setLunch(Boolean lunch) {isLunch = lunch;}
+
+    public Boolean getDinner() {return isDinner;}
+
+    public void setDinner(Boolean dinner) {isDinner = dinner;}
 }

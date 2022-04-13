@@ -11,16 +11,19 @@
       placeholder="enter name"
       v-model="searchValue"
     />
+    <recipe-list/>
   </div>
 </template>
 
 <script>
+import RecipeList from '../components/RecipeList.vue';
 export default {
+  components: { RecipeList },
   name: "home",
   data() {
     return {
       searchValue: ''
     }
-  }
+  },
 };
 </script>

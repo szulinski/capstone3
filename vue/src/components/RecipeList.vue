@@ -9,19 +9,29 @@
 
 <script>
 import RecipeCard from './RecipeCard.vue'
+import recipeService from '@/services/RecipeService'
 
 export default {
     name: "my-recipe-list",
   components: { 
-      RecipeCard 
+      RecipeCard,
   },
-  computed: {
-      recipes() {
-          return this.$store.state.recipes.filter((recipe) => {
-              return recipe.saved === true;
-          });
+  data() {
+      return {
+          recipes:[]
       }
   },
+  computed: {
+      recipesFilter() {
+          return this.$store.state.recipes;
+      }
+  },
+  created() {
+      recipeService.getRecipes().then(response => {
+          this.$store.commit('ADD_RECIPES',response.data);
+          this.recipes = response.data;  
+      })
+  }
 }
 </script>
 

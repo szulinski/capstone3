@@ -63,6 +63,9 @@ export default new Vuex.Store({
     },
     SAVE_RECIPE(state, recipe) {
       state.recipes.push(recipe);
+    },
+    ADD_RECIPES(state, recipes) {
+      state.recipes = recipes;
     }
   },
   strict: true

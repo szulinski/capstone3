@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @PreAuthorize("isAuthenticated()")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin
 public class PlanController {
     private PlanDao planDao;
 
@@ -32,7 +32,7 @@ public class PlanController {
         Long planId = plan.getPlanId();
         String planName = plan.getPlanName();
         if (!planDao.createPlan(planName)) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Transfer failed.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to create plan");
         }
 
     }

@@ -10,6 +10,12 @@
       <label for="lowsodium"> Is this recipe low sodium? </label>
       <input class="is_high_protein" id="highprotein" type="checkbox" v-model="recipe.is_high_protein" />
       <label for="highprotein"> Is this recipe high protein? </label>
+      <input class="is_breakfast" id="isbreakfast" type="checkbox" v-model="recipe.is_breakfast" />
+      <label for="isbreakfast"> Breakfast </label>
+      <input class="is_lunch" id="islunch" type="checkbox" v-model="recipe.is_lunch" />
+      <label for="islunch"> Lunch </label>
+      <input class="is_dinner" id="isdinner" type="checkbox" v-model="recipe.is_dinner" />
+      <label for="isdinner"> Dinner </label>
       <input class="ingredients" type="text" size="100" placeholder="Ingredients Here" />
       <input class="directions" type="text" size="150" placeholder="Please Enter Directions Here" />
       </form>
@@ -31,6 +37,9 @@ export default {
           is_high_protein: false,
           is_low_carb: false,
           is_low_sodium: false,
+          is_breakfast: false,
+          is_lunch: false,
+          is_dinner: false,
           saved: false,
       }
     }
@@ -49,6 +58,9 @@ export default {
       is_high_protein: false,
       is_low_carb: false,
       is_low_sodium: false,
+      is_breakfast: false,
+      is_lunch: false,
+      is_dinner: false,
       saved: false,
       };
       this.$router.push({ name: 'my-recipes' });

@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Meal;
 import com.techelevator.model.Recipe;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -52,12 +53,36 @@ public class JdbcMealDao implements MealDao{
         return meals;
     }
 
+    public void addRecipeToAMeal(Long mealId, Long recipeId) {
+        String sql = "INSERT INTO meal_recipe VALUES(? ,?);";
+        try {
+            jdbcTemplate.update(sql, mealId, recipeId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+    }
+        System.out.println("Meal updated with a recipe");
 
+    }
 
-//    public Meal insertRecipesInMeal(){
-//        Meal meals = null;
-//        String sql =
-//    }
+    public void addRecipeToAMealWithName(String name, Long mealId){
+        String recipeName ="%" + name+ "%";
+        String sql = "SELECT recipe_id FROM recipes WHERE recipe_name ILIKE ?";
+        Long newRecipeId = null;
+        try{
+           newRecipeId = jdbcTemplate.queryForObject(sql, Long.class, name);
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        sql = "INSERT INTO meal_recipe VALUES(? ,?);";
+        try {
+            jdbcTemplate.update(sql, mealId, newRecipeId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Meal updated with a recipe");
+    }
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();

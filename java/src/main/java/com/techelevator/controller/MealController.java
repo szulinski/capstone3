@@ -33,5 +33,15 @@ public class MealController {
                 return mealDao.findMealsByDay(mealDay);
         }
 
+        @PreAuthorize("permitAll")
+        @RequestMapping(value = "/meals/{mealId}/addRecipe/{recipeId}", method = RequestMethod.POST)
+        public void addRecipeToAMeal(@PathVariable Long mealId, @PathVariable Long recipeId){
+                mealDao.addRecipeToAMeal(mealId, recipeId);
+        }
+        @PreAuthorize("permitAll")
+        @RequestMapping(value = "/meals/{mealId}/addRecipe/recipeName/{name}", method = RequestMethod.POST)
+        public void addRecipeToAMealWithName(@PathVariable String name, @PathVariable Long mealId){
+                mealDao.addRecipeToAMealWithName(name, mealId);
+        }
 }
 

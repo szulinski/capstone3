@@ -2,6 +2,7 @@ package com.techelevator.dao;
 
 import com.techelevator.model.Meal;
 import com.techelevator.model.Recipe;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Date;
 import java.util.List;
@@ -13,7 +14,9 @@ public interface MealDao {
     List <Meal> findMealsByDay(String mealDay);
 
     List <Meal> findMealsByMealType(String mealType);
-//
-//    Recipe displayRecipesInMeal(Long mealId);
+
+    void addRecipeToAMeal(Long mealId, Long recipeId);
+
+    void addRecipeToAMealWithName(String name, Long mealId);
 
 }

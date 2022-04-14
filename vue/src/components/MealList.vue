@@ -12,6 +12,7 @@ import MealCard from './MealCard.vue'
 import MealService from '@/services/MealService'
 export default {
     name: "my-meals-list",
+    
     components: {
         MealCard,
     },

@@ -46,7 +46,7 @@ public class MealController {
         }
 
         @PreAuthorize("permitAll")
-        @RequestMapping(path = "/users/{userId}/meals", method = RequestMethod.GET)
+        @RequestMapping(path = "/user/{userId}/meals", method = RequestMethod.GET)
         public List <Meal> displayMealsByUserId(@PathVariable Long userId){
                 return mealDao.displayMealsByUserId(userId);
         }

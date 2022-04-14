@@ -34,9 +34,6 @@ export default {
         is_high_protein: false,
         is_low_carb: false,
         is_low_sodium: false,
-        is_breakfast: false,
-        is_lunch: false,
-        is_dinner: false,
         saved: false,
         }
       }

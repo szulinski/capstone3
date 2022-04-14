@@ -10,12 +10,6 @@
       <label for="lowsodium"> Is this recipe low sodium? </label>
       <input class="is_high_protein" id="highprotein" type="checkbox" v-model="recipe.is_high_protein" />
       <label for="highprotein"> Is this recipe high protein? </label>
-      <input class="is_breakfast" id="breakfastq" type="checkbox" v-model="recipe.is_breakfast" />
-      <label for="breakfastq"> Is this for breakfast? </label>
-      <input class="is_lunch" id="lunchq" type="checkbox" v-model="recipe.is_lunch" />
-      <label for="lunchq"> Is this for lunch? </label>
-      <input class="is_dinner" id="dinnerq" type="checkbox" v-model="recipe.is_dinner" />
-      <label for="dinnerq"> Is this for dinner? </label>
       <input class="ingredients" type="text" size="100" placeholder="Ingredients Here" />
       <input class="directions" type="text" size="150" placeholder="Please Enter Directions Here" />
       </form>
@@ -28,18 +22,15 @@ export default {
     return {
       recipe: {
           id: 0,
-          image: '',
+          URL: 0,
           name: '',
-          ingredients: '',
+          ingredients: [],
           directions: '',
           calories: 0,
           is_low_fat: false,
           is_high_protein: false,
           is_low_carb: false,
           is_low_sodium: false,
-          is_breakfast: false,
-          is_lunch: false,
-          is_dinner: false,
           saved: false,
       }
     }

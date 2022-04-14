@@ -22,7 +22,7 @@ export default {
         return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${name}`, name, mealId);
     },
     getMeals(userId){
-        return mealApi.get(`user/${userId}/meals`);
+        return mealApi.get(`users/${userId}/meals`);
     }
     
 

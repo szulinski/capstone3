@@ -4,6 +4,7 @@
     <img v-if="recipe.image" v-bind:src="recipe.image"/>
     <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
     <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
+    <hr>
     <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
     <!-- <p></p>
     <p></p>

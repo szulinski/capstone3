@@ -11,7 +11,7 @@
       placeholder="enter name"
       v-model="searchValue"
     />
-    <recipe-list/>
+    <recipe-list/>  
   </div>
 </template>
 

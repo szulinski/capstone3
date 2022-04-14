@@ -114,7 +114,7 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img) 
 	VALUES ('Roasted Chicken And Vegetables',
-		   '4 free range organic chicken breasts, 2 1/2 cups big diced potatoes,1 medium red bell pepper diced, 1 medium orange bell pepper diced, 1 medium green bell pepper diced, 1 small onion diced, 5 garlic cloves, 1 tbsp olive oil, Salt, Pepper',
+		   '4 free range organic chicken breasts, 2 1/2 cups big diced potatoes, 1 medium red bell pepper diced, 1 medium orange bell pepper diced, 1 medium green bell pepper diced, 1 small onion diced, 5 garlic cloves, 1 tbsp olive oil, Salt, Pepper',
 		   '1, line your baking sheet with aluminum foil or parchment paper. 2, Chop up all of your veggies and arrange them in a single layer on your pan. Drizzle with oil and season with salt and pepper. Then, use a mixing spatula or large spoon to toss the veggies so they are evenly coated. 3, Toss the chicken breasts with oil and spices, then lay them on top of the veggies. Be sure there is plenty of space between each one. As a result, they will all cook evenly. 4, Bake for 20-25 minutes, or until chicken is cooked through. If you’re meal prepping, divide the chicken and vegetables into equal amounts and place into individual containers.',
 			500, true, true, true, true, false, true, true, 'https://www.primaverakitchen.com/wp-content/uploads/2020/02/Mediterranean-Roasted-Chicken-Breast-Primavera-Kitchen-3-800x1200.jpg' );
 

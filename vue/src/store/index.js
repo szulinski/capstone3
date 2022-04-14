@@ -69,7 +69,10 @@ export default new Vuex.Store({
     },
     ADD_RECIPES(state, recipes) {
       state.recipes = recipes;
-    }
+    },
+    ADD_MEALS(state, meals) {
+      state.meals = meals;
+    },
   },
   strict: true
 });

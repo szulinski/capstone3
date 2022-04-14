@@ -10,6 +10,7 @@
     <p></p>
     <p></p>
     <p></p> -->
+    <router-link>Edit</router-link>
   </div>
 </template>
 

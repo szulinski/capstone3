@@ -103,6 +103,16 @@ public class JdbcRecipeDao implements RecipeDao {
         return recipesInMeal;
     }
 
+    @Override
+    public void updateRecipe(Recipe recipe) {
+        String sql = "INSERT INTO recipes VALUES(DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            jdbcTemplate.update(sql,recipe.getName(), recipe.getIngredients(), recipe.getDirections(), recipe.getCalories(), recipe.getLowFat(), recipe.getHighProtein(), recipe.getLowCarb(), recipe.getLowSodium(), recipe.getBreakfast(), recipe.getLunch(), recipe.getDinner(), recipe.getImage());
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     private Recipe mapRowToRecipe(SqlRowSet rowSet){
         Recipe recipe = new Recipe();
         recipe.setRecipeId(rowSet.getLong("recipe_id"));

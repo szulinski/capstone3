@@ -17,4 +17,6 @@ public interface RecipeDao {
     List<Recipe> findRecipesByType(String type);
 
     List<Recipe> displayRecipesInMeal(Long mealId);
+
+    void updateRecipe(Recipe recipe);
 }

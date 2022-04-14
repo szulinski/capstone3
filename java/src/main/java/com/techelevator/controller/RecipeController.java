@@ -45,6 +45,12 @@ public class RecipeController {
 
     @RequestMapping(path = "/recipes/recipe/{mealId}", method = RequestMethod.GET)
     public List <Recipe> displayRecipesInMeal(@PathVariable Long mealId){
-        return recipeDao.displayRecipesInMeal(mealId);}
+        return recipeDao.displayRecipesInMeal(mealId);
+    }
+
+    @RequestMapping(path = "/recipes", method = RequestMethod.POST)
+    public void updateRecipe(@RequestBody Recipe recipe){
+        recipeDao.updateRecipe(recipe);
+    }
 
 }

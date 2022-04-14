@@ -18,7 +18,7 @@ CREATE SEQUENCE seq_recipe_id
 
 CREATE TABLE recipes (
 	recipe_id int DEFAULT nextval('seq_recipe_id'::regclass) NOT NULL,
-	recipe_name varchar (75) NOT NULL,
+	recipe_name varchar (75)  UNIQUE NOT NULL,
 	ingredients varchar (2000) NOT NULL,
 	directions varchar (3000) NOT NULL,
 	calories int,

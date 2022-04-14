@@ -10,7 +10,7 @@
     <p></p>
     <p></p>
     <p></p> -->
-    <router-link>Edit</router-link>
+    <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}">Edit</router-link>
   </div>
 </template>
 

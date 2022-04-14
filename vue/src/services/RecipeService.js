@@ -12,6 +12,9 @@ export default {
     getRecipe(id){
         return recipeApi.get(`/recipe/${id}`);
     },
+    sendRecipe(recipe){
+        return recipeApi.post(`/recipes`, recipe);
+    }
 
 
 }

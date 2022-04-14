@@ -15,11 +15,11 @@ export default {
     findMealsByDay(mealDay){
         return mealApi.get(`/meals/mealDay/${mealDay}`);
     },
-    addRecipeToAMeal(mealId, id){
-        return mealApi.post(`/meals/${mealId}/addRecipe/${id}`, mealId, id);
+    addRecipeToAMeal(mealId, recipeId){
+        return mealApi.post(`/meals/${mealId}/addRecipe/${recipeId}`, mealId, recipeId);
     },
-    addRecipeToAMealByName(name, mealId){
-        return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${name}`, name, mealId);
+    addRecipeToAMealByName(recipeName, mealId){
+        return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${recipeName}`, recipeName, mealId);
     },
     getMeals(userId){
         return mealApi.get(`user/${userId}/meals`);

@@ -20,6 +20,9 @@ export default {
     },
     addRecipeToAMealByName(name, mealId){
         return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${name}`, name, mealId);
+    },
+    getMeals(){
+        return mealApi.get('/meals');
     }
 
 

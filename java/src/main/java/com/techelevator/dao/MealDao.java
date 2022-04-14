@@ -19,4 +19,6 @@ public interface MealDao {
 
     void addRecipeToAMealWithName(String name, Long mealId);
 
+    List<Meal> displayMealsByUserId(Long userId);
+
 }

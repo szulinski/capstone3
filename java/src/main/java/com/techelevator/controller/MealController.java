@@ -43,5 +43,12 @@ public class MealController {
         public void addRecipeToAMealWithName(@PathVariable String name, @PathVariable Long mealId){
                 mealDao.addRecipeToAMealWithName(name, mealId);
         }
+
+        @PreAuthorize("permitAll")
+        @RequestMapping(path = "/users/{userId}/meals", method = RequestMethod.GET)
+        public List <Meal> displayMealsByUserId(@PathVariable Long userId){
+                return mealDao.displayMealsByUserId(userId);
+        }
+
 }
 

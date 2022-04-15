@@ -13,7 +13,7 @@ export default {
         return planApi.get(`/user/${userId}/plans`);
     },
     
-    // createPlanForUser(userId, planName){
-    //     return planApi.post(`/plan/create/${userId}`, planName);
-    // }
+    createPlanForUser(userId, planName){
+        return planApi.post(`/plan/create`, userId, planName);
+    }
 }

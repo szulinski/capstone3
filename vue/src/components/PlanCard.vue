@@ -1,7 +1,9 @@
 <template>
 <div>
   <div class="plan-card" v-bind:key="plan.planId">
-  <h2 class="plan-name"> {{ plan.planName }}</h2>
+<router-link v-bind:to="{name: 'plan', params: {id : plan.planId}}">
+    <h2 class="plan-name"> {{ plan.planName }}</h2>
+</router-link>
   </div>
   </div>
 </template>

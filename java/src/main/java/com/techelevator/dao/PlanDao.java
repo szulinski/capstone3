@@ -10,6 +10,6 @@ public interface PlanDao {
 
     List<Plan> findPlansByUserId(Long userId);
 
-    boolean createPlan(String planName);
+    boolean createPlan(Long userId, String planName);
 }
 

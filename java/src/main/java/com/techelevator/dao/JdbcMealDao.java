@@ -104,8 +104,7 @@ public class JdbcMealDao implements MealDao{
         List <Meal> mealsInPlan = new ArrayList<>();
         String sql = "SELECT * FROM meals m \n" +
                 "JOIN meal_plan mp ON m.meal_id = mp.meal_id \n" +
-                "JOIN plans p ON p.plan_id = mp.plan_id\n" +
-                "WHERE up.user_id = ?;";
+                "WHERE mp.plan_id = ?;";
         SqlRowSet mealsResult = jdbcTemplate.queryForRowSet(sql, planId);
         while(mealsResult.next()) {
             Meal meals= mapRowToMeal(mealsResult);

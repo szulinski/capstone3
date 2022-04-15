@@ -16,6 +16,9 @@ export default {
     components: {
         MealCard,
     },
+    props: {
+        plan : Object
+    },
     data() {
         return {
             meals:[]
@@ -28,7 +31,7 @@ export default {
     },
     created() {
 
-        MealService.getMeals(this.$store.state.user.id).then(response => {
+        MealService.findMealsByPlanId(this.plan.planId).then(response => {
             this.$store.commit('ADD_MEALS', response.data);
             this.meals = response.data;
         })

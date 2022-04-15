@@ -23,6 +23,10 @@ export default {
     },
     getMeals(userId){
         return mealApi.get(`user/${userId}/meals`);
+    },
+    getRecipesFromMeal(mealId){
+        return mealApi.get(`/meal/${mealId}/recipes`)
+
     }
     
 

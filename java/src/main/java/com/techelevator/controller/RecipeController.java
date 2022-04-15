@@ -43,7 +43,7 @@ public class RecipeController {
         return recipeDao.findRecipesByType(type);
     }
 
-    @RequestMapping(path = "/recipes/recipe/{mealId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/meal/{mealId}/recipes", method = RequestMethod.GET)
     public List <Recipe> displayRecipesInMeal(@PathVariable Long mealId){
         return recipeDao.displayRecipesInMeal(mealId);
     }

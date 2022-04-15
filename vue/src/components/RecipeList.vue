@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .my-recipe-list {
     display: flex;
     justify-content: space-evenly;

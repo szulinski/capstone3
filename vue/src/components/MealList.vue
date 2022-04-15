@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .my-meals-list {
     display: flex;
     justify-content: space-evenly;

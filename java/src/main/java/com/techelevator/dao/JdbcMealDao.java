@@ -114,6 +114,12 @@ public class JdbcMealDao implements MealDao{
         return mealsInPlan;
     }
 
+    @Override
+    public void removeRecipeFromAMeal(Long mealId, Long recipeId) {
+            String sql = "DELETE FROM meal_recipe WHERE meal_id = ? AND recipe_id = ?;";
+            jdbcTemplate.update(sql, mealId, recipeId);
+    }
+
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();
         meal.setMealId(mealSet.getLong("meal_id"));

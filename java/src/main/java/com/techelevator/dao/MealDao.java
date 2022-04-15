@@ -23,4 +23,6 @@ public interface MealDao {
 
     List<Meal> findMealsByPlanId(Long planId);
 
+    void removeRecipeFromAMeal(Long mealId, Long recipeId);
+
 }

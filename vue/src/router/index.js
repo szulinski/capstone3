@@ -10,7 +10,7 @@ import RecipeDetails from '@/components/RecipeDetails.vue'
 import UpdateRecipe from '@/components/UpdateRecipe.vue'
 import MealList from '@/components/MealList.vue'
 import MealCard from '@/components/MealCard.vue'
-
+import MealDetails from '@/components/MealDetails.vue'
 
 Vue.use(Router)
 
@@ -87,6 +87,14 @@ const router = new Router({
       path: "/meals",
       name: "my-meals",
       component: MealList,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+    path: "/meal/:id",
+      name: "meal",
+      component: MealDetails,
       meta: {
         requiresAuth: true
       }

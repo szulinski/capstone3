@@ -1,7 +1,7 @@
 <template>
   <div class="card" v-bind:key="meal.id">
       <router-link v-bind:to="{name: 'meal', params: {id : meal.mealId}}">
-        <h2 class="meal-name">{{meal.mealDay}}</h2>
+        <h2 class="meal-day">{{meal.mealDay}}'s</h2>
       </router-link>
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id">

@@ -25,4 +25,6 @@ public interface MealDao {
 
     void removeRecipeFromAMeal(Long mealId, Long recipeId);
 
+    void createMeal(String mealType, String mealDay, Long planId);
+
 }

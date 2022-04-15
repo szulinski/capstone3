@@ -119,6 +119,18 @@ public class JdbcMealDao implements MealDao{
             jdbcTemplate.update(sql, mealId, recipeId);
     }
 
+    @Override
+    public void createMeal(String mealType, String mealDay, Long planId) {
+        String sql = "INSERT INTO meals VALUES (DEFAULT, ?, ?) RETURNING meal_id;";
+        Long newMealId = jdbcTemplate.queryForObject(sql, Long.class, mealType, mealDay);
+
+        String sqlNew = "INSERT INTO meal_plan values(?, ?);";
+        try {
+            jdbcTemplate.update(sqlNew, newMealId, planId);
+        } catch (DataAccessException e) {
+        }
+    }
+
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();
         meal.setMealId(mealSet.getLong("meal_id"));

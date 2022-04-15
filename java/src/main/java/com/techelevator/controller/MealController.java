@@ -63,5 +63,11 @@ public class MealController {
         public void removeRecipeFromAMeal(@PathVariable Long mealId, @PathVariable Long recipeId) {
                 mealDao.removeRecipeFromAMeal(mealId, recipeId);
         }
+
+        @PreAuthorize("permitAll")
+        @RequestMapping(value = "/{planId}/createMeal/{mealType}/{mealDay}", method = RequestMethod.POST)
+        public void createMeal(@PathVariable String mealType, @PathVariable String mealDay, @PathVariable Long planId){
+                mealDao.createMeal(mealType, mealDay, planId);
+        }
 }
 

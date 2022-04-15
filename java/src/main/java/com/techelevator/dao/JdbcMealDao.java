@@ -59,7 +59,7 @@ public class JdbcMealDao implements MealDao{
             jdbcTemplate.update(sql, mealId, recipeId);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-    }
+        }
         System.out.println("Meal updated with a recipe");
 
     }
@@ -69,7 +69,7 @@ public class JdbcMealDao implements MealDao{
         String sql = "SELECT recipe_id FROM recipes WHERE recipe_name ILIKE ?";
         Long newRecipeId = null;
         try{
-           newRecipeId = jdbcTemplate.queryForObject(sql, Long.class, name);
+            newRecipeId = jdbcTemplate.queryForObject(sql, Long.class, name);
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -84,10 +84,6 @@ public class JdbcMealDao implements MealDao{
         System.out.println("Meal updated with a recipe");
     }
 
-    public void removeRecipeFromAMeal(Long mealId, Long recipeId){
-        String sql = "DELETE FROM meal_recipe WHERE meal_id = ? AND recipe_id = ?;";
-        jdbcTemplate.update(sql, mealId, recipeId);
-    }
 
     public List<Meal> displayMealsByUserId(Long userId){
         List <Meal> mealsInPlan = new ArrayList<>();
@@ -104,6 +100,19 @@ public class JdbcMealDao implements MealDao{
         return mealsInPlan;
     }
 
+    public List<Meal> findMealsByPlanId(Long planId){
+        List <Meal> mealsInPlan = new ArrayList<>();
+        String sql = "SELECT * FROM meals m \n" +
+                "JOIN meal_plan mp ON m.meal_id = mp.meal_id \n" +
+                "JOIN plans p ON p.plan_id = mp.plan_id\n" +
+                "WHERE up.user_id = ?;";
+        SqlRowSet mealsResult = jdbcTemplate.queryForRowSet(sql, planId);
+        while(mealsResult.next()) {
+            Meal meals= mapRowToMeal(mealsResult);
+            mealsInPlan.add(meals);
+        }
+        return mealsInPlan;
+    }
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();

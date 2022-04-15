@@ -52,9 +52,10 @@ public class MealController {
         }
 
         @PreAuthorize("permitAll")
-        @RequestMapping(path= "/meals/{mealId}/removeRecipe/{recipeId}", method = RequestMethod.DELETE)
-        public void removeRecipeFromAMeal(@PathVariable Long mealId, @PathVariable Long recipeId){
-                mealDao.removeRecipeFromAMeal(mealId, recipeId);
+        @RequestMapping(path = "/plan/{id}/meals", method = RequestMethod.GET)
+        public List <Meal> findMealsByPlanId(@PathVariable Long id){
+                return mealDao.findMealsByPlanId(id);
         }
+
 }
 

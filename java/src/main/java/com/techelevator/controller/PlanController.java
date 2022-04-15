@@ -25,10 +25,17 @@ public class PlanController {
     public Plan getPlan(@PathVariable Long id) {
         return planDao.findPlanById(id);
     }
+
+    @PreAuthorize("permitAll")
+    @RequestMapping(path = "/user/{id}/plans", method = RequestMethod.GET)
+    public List<Plan> findPlansByUserId(@PathVariable Long id) {
+        return planDao.findPlansByUserId(id);
+    }
+
     @PreAuthorize("permitAll")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/plan/create", method = RequestMethod.POST)
-    public void register(@RequestBody Plan plan) {
+    public void createPlan(@RequestBody Plan plan) {
         Long planId = plan.getPlanId();
         String planName = plan.getPlanName();
         if (!planDao.createPlan(planName)) {

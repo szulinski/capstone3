@@ -51,5 +51,11 @@ public class MealController {
                 return mealDao.displayMealsByUserId(userId);
         }
 
+        @PreAuthorize("permitAll")
+        @RequestMapping(path = "/plan/{id}/meals", method = RequestMethod.GET)
+        public List <Meal> findMealsByPlanId(@PathVariable Long id){
+                return mealDao.findMealsByPlanId(id);
+        }
+
 }
 

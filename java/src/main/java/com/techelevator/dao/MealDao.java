@@ -21,4 +21,6 @@ public interface MealDao {
 
     List<Meal> displayMealsByUserId(Long userId);
 
+    List<Meal> findMealsByPlanId(Long planId);
+
 }

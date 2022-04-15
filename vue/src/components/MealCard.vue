@@ -23,6 +23,7 @@ export default {
     },
     created() {
         MealService.getRecipesFromMeal(this.$route.params.id).then(response => {
+            this.$store.commit('ADD_RECIPES', response.data)
             this.recipes = response.data;
         })
     }

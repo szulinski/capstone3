@@ -19,4 +19,8 @@ public interface RecipeDao {
     List<Recipe> displayRecipesInMeal(Long mealId);
 
     void updateRecipe(Recipe recipe);
+
+    List<Recipe> findRecipesBySaved(Long userId);
+
+    void addSavedRecipe(Long recipeId,Long userId);
 }

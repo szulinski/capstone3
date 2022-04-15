@@ -10,7 +10,6 @@
       <button class="mark-saved" v-on:click.prevent="setSaved(true)" v-if="!recipe.saved">Save Recipe</button>
       <button class="mark-unsaved" v-on:click.prevent="setSaved(false)" v-if="recipe.saved">Forget Recipe</button>
   </div>
-  <button v-on:click.prevent="addToSaved(recipe)">Add to Favorites</button>
   </div>
   </div>
 </template>
@@ -25,11 +24,7 @@ export default {
     methods: {
         setSaved(value) {
             this.$store.commit('SET_SAVED_STATUS', {recipe: this.recipe, value: value});
-        },
-        addToSaved(recipe) {
-            let addedRecipe = Object.assign({ saved: true }, recipe);
-            this.$store.commit('SAVE_RECIPE', addedRecipe)
-        },
+        }
     }
 
 }

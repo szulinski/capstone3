@@ -34,7 +34,6 @@ export default {
   created() {
     if (this.searchValue) {
         recipeService.getRecipesByName(this.searchValue).then(response => {
-            this.$store.commit('ADD_RECIPES',response.data);
             this.recipes = response.data;
         });
     }else{

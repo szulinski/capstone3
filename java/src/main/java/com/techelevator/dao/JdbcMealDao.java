@@ -84,6 +84,10 @@ public class JdbcMealDao implements MealDao{
         System.out.println("Meal updated with a recipe");
     }
 
+    public void removeRecipeFromAMeal(Long mealId, Long recipeId){
+        String sql = "DELETE FROM meal_recipe WHERE meal_id = ? AND recipe_id = ?;";
+        jdbcTemplate.update(sql, mealId, recipeId);
+    }
 
     public List<Meal> displayMealsByUserId(Long userId){
         List <Meal> mealsInPlan = new ArrayList<>();
@@ -99,6 +103,7 @@ public class JdbcMealDao implements MealDao{
         }
         return mealsInPlan;
     }
+
 
     private Meal mapRowToMeal(SqlRowSet mealSet) {
         Meal meal = new Meal();

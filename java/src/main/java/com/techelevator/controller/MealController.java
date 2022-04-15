@@ -51,5 +51,10 @@ public class MealController {
                 return mealDao.displayMealsByUserId(userId);
         }
 
+        @PreAuthorize("permitAll")
+        @RequestMapping(path= "/meals/{mealId}/removeRecipe/{recipeId}", method = RequestMethod.DELETE)
+        public void removeRecipeFromAMeal(@PathVariable Long mealId, @PathVariable Long recipeId){
+                mealDao.removeRecipeFromAMeal(mealId, recipeId);
+        }
 }
 

@@ -19,6 +19,8 @@ public interface MealDao {
 
     void addRecipeToAMealWithName(String name, Long mealId);
 
+    void removeRecipeFromAMeal(Long mealId, Long recipeId);
+
     List<Meal> displayMealsByUserId(Long userId);
 
 }

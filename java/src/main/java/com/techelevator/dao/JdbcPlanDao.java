@@ -1,9 +1,13 @@
 package com.techelevator.dao;
 import com.techelevator.model.Plan;
+import com.techelevator.model.Recipe;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class JdbcPlanDao implements PlanDao {
@@ -23,6 +27,20 @@ public class JdbcPlanDao implements PlanDao {
             plan = mapRowToPlan(results);
         }
         return plan;
+    }
+
+    @Override
+    public List<Plan> findPlansByUserId (Long userId) {
+        List<Plan> listOfPlans = new ArrayList<>();
+        String sql = "SELECT * FROM plans p\n" +
+                "JOIN user_plan up ON p.plan_id = up.plan_id\n" +
+                "WHERE up.user_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            Plan plan = mapRowToPlan(results);
+            listOfPlans.add(plan);
+        }
+        return listOfPlans;
     }
 
     @Override

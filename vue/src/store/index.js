@@ -44,6 +44,11 @@ export default new Vuex.Store({
     mealType: '',
     mealDay: '',
   },
+  plans: [],
+  plan: {
+    planId: 0,
+    planName: ''
+  },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -73,6 +78,9 @@ export default new Vuex.Store({
     ADD_MEALS(state, meals) {
       state.meals = meals;
     },
+    ADD_PLANS(state, plans) {
+      state.plans = plans;
+    }
   },
   strict: true
 });

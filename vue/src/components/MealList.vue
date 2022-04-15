@@ -27,7 +27,8 @@ export default {
         }
     },
     created() {
-        MealService.getMeals().then(response => {
+
+        MealService.getMeals(this.$store.state.user.id).then(response => {
             this.$store.commit('ADD_MEALS', response.data);
             this.meals = response.data;
         })
@@ -35,7 +36,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .my-meals-list {
     display: flex;
     justify-content: space-evenly;

@@ -6,6 +6,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
+@CrossOrigin
 @PreAuthorize("isAuthenticated()")
 public class MealController {
 
@@ -45,7 +46,7 @@ public class MealController {
         }
 
         @PreAuthorize("permitAll")
-        @RequestMapping(path = "/users/{userId}/meals", method = RequestMethod.GET)
+        @RequestMapping(path = "/user/{userId}/meals", method = RequestMethod.GET)
         public List <Meal> displayMealsByUserId(@PathVariable Long userId){
                 return mealDao.displayMealsByUserId(userId);
         }

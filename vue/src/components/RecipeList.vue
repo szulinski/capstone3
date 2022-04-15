@@ -21,9 +21,11 @@ export default {
           recipes:[]
       }
   },
-  computed: {
-      recipesFilter() {
-          return this.$store.state.recipes;
+  methods: {
+      recipesFilter(name) {
+        recipeService.getRecipesByName(name).then(response => {
+            this.recipes = response.data;
+        });
       }
   },
   created() {

@@ -36,20 +36,32 @@ public class MealController {
 
         @PreAuthorize("permitAll")
         @RequestMapping(value = "/meals/{mealId}/addRecipe/{recipeId}", method = RequestMethod.POST)
-        public void addRecipeToAMeal(@PathVariable Long mealId, @PathVariable Long recipeId){
+        public void addRecipeToAMeal(@PathVariable Long mealId, @PathVariable Long recipeId) {
                 mealDao.addRecipeToAMeal(mealId, recipeId);
         }
+
         @PreAuthorize("permitAll")
         @RequestMapping(value = "/meals/{mealId}/addRecipe/recipeName/{name}", method = RequestMethod.POST)
-        public void addRecipeToAMealWithName(@PathVariable String name, @PathVariable Long mealId){
+        public void addRecipeToAMealWithName(@PathVariable String name, @PathVariable Long mealId) {
                 mealDao.addRecipeToAMealWithName(name, mealId);
         }
 
         @PreAuthorize("permitAll")
         @RequestMapping(path = "/user/{userId}/meals", method = RequestMethod.GET)
-        public List <Meal> displayMealsByUserId(@PathVariable Long userId){
+        public List<Meal> displayMealsByUserId(@PathVariable Long userId) {
                 return mealDao.displayMealsByUserId(userId);
         }
 
+        @PreAuthorize("permitAll")
+        @RequestMapping(path = "/plan/{id}/meals", method = RequestMethod.GET)
+        public List<Meal> findMealsByPlanId(@PathVariable Long id) {
+                return mealDao.findMealsByPlanId(id);
+        }
+
+        @PreAuthorize("permitAll")
+        @RequestMapping(path = "/meals/{mealId}/removeRecipe/{recipeId}", method = RequestMethod.DELETE)
+        public void removeRecipeFromAMeal(@PathVariable Long mealId, @PathVariable Long recipeId) {
+                mealDao.removeRecipeFromAMeal(mealId, recipeId);
+        }
 }
 

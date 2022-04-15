@@ -2,6 +2,9 @@
   <div class="my-plans">
     <h1>My Plans</h1>
     <plan-list/>  
+    <div class="button-container">
+      <button v-on:click.prevent="setSaved(false)">Add a Plan</button>
+  </div>
   </div>
 </template>
 

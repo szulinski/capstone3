@@ -44,11 +44,13 @@ public class JdbcPlanDao implements PlanDao {
     }
 
     @Override
-    public boolean createPlan(String planName) {
+    public boolean createPlan(Long userId, String planName) {
         String sql = "INSERT INTO plans " +
-                "(plan_name) values(?)";
+                "(plan_name) values(?) RETURNING plan_id;";
+        Integer planId = jdbcTemplate.queryForObject(sql, Integer.class, planName);
+        String sqlNew = "INSERT INTO user_plan values(?, ?);";
         try {
-            jdbcTemplate.update(sql, planName);
+            jdbcTemplate.update(sqlNew, userId, planId);
         } catch (DataAccessException e) {
             return false;
         }

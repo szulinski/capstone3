@@ -15,7 +15,7 @@ export default {
     sendRecipe(recipe){
         return recipeApi.post(`/recipes`, recipe);
     },
-    getRecipeByName(name){
+    getRecipesByName(name){
         return recipeApi.get(`/recipes/${name}`);
     }
 

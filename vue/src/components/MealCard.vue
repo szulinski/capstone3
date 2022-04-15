@@ -1,5 +1,5 @@
 <template>
-  <div class="card" v-bind:key="meal.id">
+  <div class="meal-card" v-bind:key="meal.id">
       <router-link v-bind:to="{name: 'meal', params: {id : meal.mealId}}">
         <h2 class="meal-day">{{meal.mealDay}}'s</h2>
       </router-link>
@@ -10,10 +10,11 @@
 </template>
 
 <script>
-import MealService from '@/services/MealService'
+ import MealService from '@/services/MealService'
 export default {
     name: 'meal-card',
     props: {
+       
         meal: Object
     },
     data(){
@@ -22,7 +23,8 @@ export default {
         }
     },
     created() {
-        MealService.getRecipesFromMeal(this.$route.params.id).then(response => {
+        const id = this.meal.mealId
+        MealService.getRecipesFromMeal(id).then(response => {
             this.$store.commit('ADD_RECIPES', response.data)
             this.recipes = response.data;
         })
@@ -31,8 +33,8 @@ export default {
 }
 </script>
 
-<style >
-.card {
+<style scoped>
+.meal-card {
     border: 2px solid black;
     border-radius: 10px;
     width: 250px;

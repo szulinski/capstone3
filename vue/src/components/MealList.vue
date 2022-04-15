@@ -2,7 +2,7 @@
   <div class="my-meal-list">
       <h2>My Meals</h2>
       <div>
-        <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.id"/>
+        <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.mealId" />
       </div>
    </div>   
 </template>

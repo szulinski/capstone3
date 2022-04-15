@@ -14,7 +14,7 @@
 export default {
     name: 'meal-card',
     props: {
-       
+    
         meal: Object
     },
     data(){

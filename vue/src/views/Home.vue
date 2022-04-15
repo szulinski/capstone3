@@ -11,10 +11,10 @@
       placeholder="enter name"
       v-model="searchValue"
     />
-    <recipe-list/>  
+    <recipe-list/>
   </div>
 </template>
-
+  
 <script>
 import RecipeList from '../components/RecipeList.vue';
 export default {
@@ -24,6 +24,6 @@ export default {
     return {
       searchValue: ''
     }
-  },
+  }
 };
 </script>

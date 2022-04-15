@@ -53,4 +53,14 @@ public class RecipeController {
         recipeDao.updateRecipe(recipe);
     }
 
+    @RequestMapping(path = "recipes/user/{userId}/{recipeId}", method = RequestMethod.POST)
+    public void addSavedRecipe(@PathVariable Long recipeId,@PathVariable Long userId){
+        recipeDao.addSavedRecipe(recipeId,userId);
+    }
+
+    @RequestMapping(path = "recipes/user/{userId}", method = RequestMethod.GET)
+    public List<Recipe> getRecipesBySaved(@PathVariable Long userId){
+        return recipeDao.findRecipesBySaved(userId);
+    }
+
 }

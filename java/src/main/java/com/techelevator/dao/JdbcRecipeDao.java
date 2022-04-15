@@ -89,7 +89,29 @@ public class JdbcRecipeDao implements RecipeDao {
         return listOfRecipes;
     }
 
-    public List <Recipe> displayRecipesInMeal(Long mealId) {
+    public List<Recipe> findRecipesBySaved(Long userId){
+        List<Recipe> listOfRecipes = new ArrayList<>();
+        String sql = "SELECT * FROM recipes r\n" +
+                "JOIN user_recipe ur ON ur.recipe_id = r.recipe_id\n" +
+                "WHERE ur.user_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,userId);
+        while(results.next()){
+            Recipe recipe = mapRowToRecipe(results);
+            listOfRecipes.add(recipe);
+        }
+        return listOfRecipes;
+    }
+
+    public void addSavedRecipe(Long recipeId, Long userId){
+        String sql = "INSERT INTO user_recipe VALUES(?,?)";
+        try{
+            jdbcTemplate.update(sql,userId,recipeId);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public List<Recipe> displayRecipesInMeal(Long mealId) {
         List <Recipe> recipesInMeal = new ArrayList<>();
         String sql = "SELECT * FROM recipes r\n" +
                 "JOIN meal_recipe mr ON r.recipe_id = mr.recipe_id\n" +

@@ -17,6 +17,12 @@ export default {
     },
     getRecipesByName(name){
         return recipeApi.get(`/recipes/${name}`);
+    },
+    saveRecipe(recipeId,userId){
+        return recipeApi.post(`/recipes/${userId}`,recipeId);
+    },
+    getRecipesBySaved(userId){
+        return recipeApi.get(`/recipes/user/${userId}`);
     }
 
 

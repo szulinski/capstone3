@@ -10,6 +10,7 @@
 
 <script>
 import PlanList from '../components/PlanList.vue';
+import planService from '../services/PlanService.js';
 export default {
   components: { PlanList },
   name: "my-plans",
@@ -18,6 +19,9 @@ export default {
       searchValue: ''
     }
   },
+  created() {
+      planService.createPlanForUser(this.$store.state.user.id, name)
+  }  
 };
 </script>
 

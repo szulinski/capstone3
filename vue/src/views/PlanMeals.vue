@@ -1,10 +1,7 @@
 <template>
   <div class="my-plans">
-    <h1>My Plan</h1>
+    <h1>Plan Meals</h1>
     <plan-details/>  
-    <div class="button-container">
-      <button v-on:click.prevent="setSaved(false)">Add a Plan</button>
-  </div>
   </div>
 </template>
 
@@ -18,6 +15,7 @@ export default {
       searchValue: ''
     }
   },
+  
 };
 </script>
 

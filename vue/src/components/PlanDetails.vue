@@ -1,6 +1,5 @@
 <template>
   <div class="plan-details">
-      <h2>Plan Meals</h2>
       <div>
         <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.id"/>
       </div>
@@ -31,7 +30,7 @@ export default {
     },
     created() {
 
-        MealService.findMealsByPlanId(this.plan.planId).then(response => {
+        MealService.findMealsByPlanId(this.$route.params.id).then(response => {
             this.$store.commit('ADD_MEALS', response.data);
             this.meals = response.data;
         })

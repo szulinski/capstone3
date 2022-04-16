@@ -3,10 +3,10 @@
     <h1>My Plans</h1>
     <plan-list/>  
     <div class="button-container">
-      <form>
+      <form v-on:submit.prevent="createPlan">
       <button v-on:click='toggle = !toggle'>Add a Plan</button>
-      <input v-show="toggle" type="text" placeholder="Add plan name" />
-      <button v-show="toggle" type="submit" v-on:click.prevent="createPlan()">Submit</button>
+      <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
+      <button v-show="toggle" type="submit"  >Submit</button>
       </form>
   </div>
   </div>
@@ -20,13 +20,16 @@ export default {
   name: "my-plans",
   data() {
     return {
-      searchValue: '',
-      toggle: true
+      toggle: true,
+      planName: '',
+      savedName: ''
     }
   },
   methods: {
     createPlan(){
-      planService.createPlanForUser(this.$store.state.user.id, name)
+      // const planName = this.plan.planName;
+      this.savedName = this.planName
+      planService.createPlanForUser(this.$store.state.user.id, this.savedName)
     }  
   }  
 };

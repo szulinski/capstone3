@@ -26,18 +26,17 @@ export default {
     },
     getRecipesFromMeal(mealId){
         return mealApi.get(`/meal/${mealId}/recipes`)
-
     },
     findMealsByPlanId(planId){
         return mealApi.get(`/plan/${planId}/meals`)
     },
-    // getMealsFromPlan(planId){
-    //     return mealApi.get(/plan/${planId}/meals);
-    // },
-    // removeRecipeFromMeal(mealId, recipeId){
-    // return mealApi.delete(/meals/{mealId}/removeRecipe/${recipeId});
-    // },
-    // createMeal(mealType, mealDay, planId){
-    //     return mealApi.post(/${planId}/createMeal/${mealType}/${mealDay}, planId, mealType, mealDay);
-    // }
+    getMealsFromPlan(planId){
+        return mealApi.get(`/plan/${planId}/meals`);
+    },
+    removeRecipeFromMeal(mealId, recipeId){
+    return mealApi.delete(`/meals/{mealId}/removeRecipe/${recipeId}`);
+    },
+    createMeal(mealType, mealDay, planId){
+        return mealApi.post(`/${planId}/createMeal/${mealType}/${mealDay}`, planId, mealType, mealDay);
+    }
 }

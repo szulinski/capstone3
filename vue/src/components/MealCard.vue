@@ -5,21 +5,34 @@
       </router-link>
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id">
-        {{recipe.name}}</div>
+        <h3>{{recipe.name}}</h3>
+        <button v-on:click="showRecipe = !showRecipe">Recipe</button>
+        <p v-show="showRecipe">{{recipe.directions}}</p>
+        </div>
+        
+        <form v-on:submit.prevent="addRecipe">
+      <button v-on:click='toggle = !toggle'>Add A Recipe</button>
+      <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
+      <button v-show="toggle" type="submit">Submit</button>
+      </form>
+
+        <button>Add A Recipe</button>
   </div>
 </template>
 
 <script>
- import MealService from '@/services/MealService'
+import MealService from '@/services/MealService';
 export default {
     name: 'meal-card',
+    components: {
+    },
     props: {
-    
         meal: Object
     },
     data(){
         return {
-            recipes:[]
+            recipes:[],
+            showRecipe: false
         }
     },
     created() {
@@ -38,7 +51,7 @@ export default {
     border: 2px solid black;
     border-radius: 10px;
     width: 250px;
-    height: 550px;
+    height: 850px;
     margin: 20px;
     
 }

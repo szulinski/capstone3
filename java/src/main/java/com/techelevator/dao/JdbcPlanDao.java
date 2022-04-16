@@ -49,10 +49,24 @@ public class JdbcPlanDao implements PlanDao {
                 "(plan_name) values(?) RETURNING plan_id;";
         Integer planId = jdbcTemplate.queryForObject(sql, Integer.class, planName);
         String sqlNew = "INSERT INTO user_plan values(?, ?);";
-        try {
-            jdbcTemplate.update(sqlNew, userId, planId);
-        } catch (DataAccessException e) {
-            return false;
+        jdbcTemplate.update(sqlNew, userId, planId);
+        String sqlNewish = "INSERT INTO meals (type_of_meal, day_of_week)" +
+                "VALUES ('Breakfast', 'Monday'), ('Lunch', 'Monday'), ('Dinner', 'Monday')," +
+                "('Breakfast', 'Tuesday'), ('Lunch', 'Tuesday'), ('Dinner', 'Tuesday')," +
+                "('Breakfast', 'Wednesday'), ('Lunch', 'Wednesday'), ('Dinner', 'Wednesday')," +
+                "('Breakfast', 'Thursday'), ('Lunch', 'Thursday'), ('Dinner', 'Thursday')," +
+                "('Breakfast', 'Friday'), ('Lunch', 'Friday'), ('Dinner', 'Friday')," +
+                "('Breakfast', 'Saturday'), ('Lunch', 'Saturday'), ('Dinner', 'Saturday')," +
+                "('Breakfast', 'Sunday'), ('Lunch', 'Sunday'), ('Dinner', 'Sunday')" +
+                "RETURNING meal_id;";
+        List<Integer> mealIds = jdbcTemplate.queryForList(sqlNewish, Integer.class);
+        String sqlNewer = "INSERT INTO meal_plan values(?, ?);";
+        for (Integer mealId : mealIds) {
+            try {
+                jdbcTemplate.update(sqlNewer, mealId, planId);
+            } catch (DataAccessException e) {
+                return false;
+            }
         }
         return true;
     }

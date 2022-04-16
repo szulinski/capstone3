@@ -23,4 +23,6 @@ public interface RecipeDao {
     List<Recipe> findRecipesBySaved(Long userId);
 
     void addSavedRecipe(Long recipeId,Long userId);
+
+    void deleteSavedRecipe(Long userId, Long recipeId);
 }

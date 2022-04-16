@@ -111,6 +111,15 @@ public class JdbcRecipeDao implements RecipeDao {
         }
     }
 
+    public void deleteSavedRecipe(Long userId, Long recipeId){
+        String sql = "DELETE FROM user_recipe WHERE user_id = ? AND recipe_id = ?";
+        try{
+            jdbcTemplate.update(sql,userId,recipeId);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     public List<Recipe> displayRecipesInMeal(Long mealId) {
         List <Recipe> recipesInMeal = new ArrayList<>();
         String sql = "SELECT * FROM recipes r\n" +

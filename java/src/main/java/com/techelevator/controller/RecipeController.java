@@ -3,6 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.RecipeDao;
 import com.techelevator.model.Recipe;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.GenericArrayType;
@@ -56,6 +57,11 @@ public class RecipeController {
     @RequestMapping(path = "recipes/user/{userId}/{recipeId}", method = RequestMethod.POST)
     public void addSavedRecipe(@PathVariable Long recipeId,@PathVariable Long userId){
         recipeDao.addSavedRecipe(recipeId,userId);
+    }
+
+    @RequestMapping(path = "recipes/user/{userId}", method = RequestMethod.DELETE)
+    public void deleteSavedRecipe(@PathVariable Long userId, @PathVariable Long recipeId){
+        recipeDao.deleteSavedRecipe(userId,recipeId);
     }
 
     @RequestMapping(path = "recipes/user/{userId}", method = RequestMethod.GET)

@@ -9,7 +9,7 @@
         <button v-on:click="showRecipe = !showRecipe">Recipe</button>
         <p v-show="showRecipe">{{recipe.directions}}</p>
         </div>
-        
+        <router-link v-bind:to="{name: '', params: {id : meal.mealId}}"><button v-on:click = 'toggle =!toggle'>Remove</button></router-link>
         <form v-on:submit.prevent="addRecipe">
        <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}"><button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
       <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />

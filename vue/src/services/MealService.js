@@ -16,10 +16,10 @@ export default {
         return mealApi.get(`/meals/mealDay/${mealDay}`);
     },
     addRecipeToAMeal(mealId, recipeId){
-        return mealApi.post(`/meals/${mealId}/addRecipe/${recipeId}`, mealId, recipeId);
+        return mealApi.post(`/meals/${mealId}/addRecipe/${recipeId}`, {mealId: mealId, recipeId: recipeId});
     },
     addRecipeToAMealByName(recipeName, mealId){
-        return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${recipeName}`, recipeName, mealId);
+        return mealApi.post(`/meals/${mealId}/addRecipe/recipeName/${recipeName}`, {mealId: mealId, recipeName: recipeName});
     },
     getMeals(userId){
         return mealApi.get(`user/${userId}/meals`);

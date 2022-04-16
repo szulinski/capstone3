@@ -19,7 +19,8 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    checkedRecipes: []
   },
   recipes: [],
   recipe: {
@@ -80,6 +81,15 @@ export default new Vuex.Store({
     },
     ADD_PLANS(state, plans) {
       state.plans = plans;
+    },
+    SET_CHECKED(state, id){
+      state.checkedRecipes.push({id: id});
+      console.log(state.checkedRecipes)
+    },
+    SET_UNCHECKED(state, id){
+      state.checkedRecipes = state.checkedRecipes.filter(i =>{
+        return i.id !== id
+      })
     }
   },
   strict: true

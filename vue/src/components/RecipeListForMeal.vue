@@ -1,55 +1,78 @@
-<template>
-  <div class="my-recipe-list">
-    <h2>Recipes</h2>
-    <div>
-      <recipe-card-for-meal v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
-    </div>
-    
+<div>
+  <div class="card" v-bind:key="recipe.id">
+  <h2 class="recipe-name"> {{ recipe.name }}</h2>
+  <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
+        <img v-if="recipe.image" v-bind:src="recipe.image"/>
+  </router-link>
+  <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
+  <div class="checkbox-container">
+      <input type="checkbox" id="addRecipe"  v-on:change="saveChecked($event)" v-bind:value="isChecked" >
+      <label for="addRecipe">Add Recipe To Meal</label>
+
+  </div>
+  </div>
   </div>
 </template>
 
 <script>
-import RecipeCardForMeal from "./RecipeCardForMeal.vue";
-import recipeService from "@/services/RecipeService";
 
 export default {
-  name: "my-recipe-list-for-meal",
-  props: ["searchValue"],
-  components: {
-    RecipeCardForMeal,
-  },
-  data() {
+    name: 'recipe-card-for-meal',
+    props: {
+        recipe: Object
+    },
+    data() {
     return {
-      recipes: [],
+      checkedRecipes: [],
     };
+
+  },
+  computed: {
+      isChecked(){
+          return this.$store.state.checkedRecipes.contains(this.recipe.recipeId);
+      }
   },
   methods: {
-    filteredRecipes() {
-      if (this.searchValue) {
-        recipeService.getRecipesByName(this.searchValue).then(response => {
-            this.recipes = response.data;
-        });
+      saveChecked(event){
+          if ( event.target.checked){
+            this.$store.commit('SET_CHECKED', this.recipe.recipeId)
+          }else {
+            this.$store.commit('SET_UNCHECKED', this.recipe.recipeId)
+          }
       }
-    }
-  },
-  created() {
-    if (this.searchValue) {
-        recipeService.getRecipesByName(this.searchValue).then(response => {
-            this.recipes = response.data;
-        });
-    }else{
-        recipeService.getRecipes().then((response) => {
-            this.recipes = response.data;
-        });
-    }
-  },
-};
+  }
+
+}
 </script>
 
-<style >
-.my-recipe-list {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+<style>
+.card {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 250px;
+    height: 550px;
+    margin: 20px;
+    
+}
+.card.saved {
+    background-color: crimson;
+}
+.card .recipe-name {
+    font-size: 1.5rem;
+}
+.card .book-author {
+    font-size: 1rem;
+}
+.checkbox-container{
+     align-content: center;
+     align-items: center;
+     justify-content: center;
+
+}
+img {
+   
+    max-width: 100%;
+    max-height: 50%;
+
 }
 </style>

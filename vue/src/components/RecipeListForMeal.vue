@@ -1,3 +1,4 @@
+<template>
 <div>
   <div class="card" v-bind:key="recipe.id">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>

@@ -26,11 +26,6 @@ export default {
       checkedRecipes: [],
     };
   },
-    methods: {
-        setSaved(value) {
-            this.$store.commit('SET_SAVED_STATUS', {recipe: this.recipe, value: value});
-        }
-    }
 
 }
 </script>

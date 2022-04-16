@@ -4,6 +4,7 @@
     <div>
       <recipe-card-for-meal v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
     </div>
+    
   </div>
 </template>
 
@@ -38,7 +39,6 @@ export default {
         });
     }else{
         recipeService.getRecipes().then((response) => {
-            this.$store.commit("ADD_RECIPES", response.data);
             this.recipes = response.data;
         });
     }

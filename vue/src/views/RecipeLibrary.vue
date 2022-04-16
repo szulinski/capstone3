@@ -15,6 +15,7 @@
   <recipe-list-for-meal/>
   <form>
       <button>Add Recipes To Meal</button>
+  </form>
   </div>
 
 </template>
@@ -26,7 +27,8 @@ export default {
     name: "recipes-for-meal",
     created() {
         
-    }
+    },
+
 }
 </script>
 

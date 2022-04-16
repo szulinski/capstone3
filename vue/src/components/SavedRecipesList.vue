@@ -2,7 +2,7 @@
   <div class="my-saved-recipe-list">
     <h2>My Saved Recipes</h2>
     <div>
-      <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
+      <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId"/>
     </div>
   </div>
 </template>

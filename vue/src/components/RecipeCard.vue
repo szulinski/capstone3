@@ -7,8 +7,8 @@
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="button-container">
-      <button class="mark-saved" v-on:click.prevent="setSaved()" v-if="!recipe.saved">Save Recipe</button>
-      <button class="mark-unsaved" v-on:click.prevent="" v-if="recipe.saved">Forget Recipe</button>
+      <button class="mark-saved" v-on:click.prevent="setSaved()" v-if="!isSaved">Save Recipe</button>
+      <button class="mark-unsaved" v-on:click.prevent="unSave()" v-if="isSaved">Forget Recipe</button>
   </div>
   </div>
   </div>
@@ -21,13 +21,27 @@ export default {
     props: {
         recipe: Object
     },
+    data(){
+        return {
+            isSaved: true
+        }
+    },
     methods: {
         setSaved() {
-        RecipeService.saveRecipe(this.recipe.recipeId, this.$store.state.user.id).then((response) => {
-            if (response.status === 201) {
-                console.log("weeeee");
-            }
-        });
+            this.isSaved = !this.isSaved;
+            RecipeService.saveRecipe(this.recipe.recipeId, this.$store.state.user.id).then((response) => {
+                if (response.status === 201) {
+                    console.log("weeeee");
+                }
+            });
+        },
+        unSave() {
+            this.isSaved = !this.isSaved;
+            RecipeService.forgetRecipe(this.recipe.recipeId, this.$store.state.user.id).then(response => {
+                if(response.status === 201){
+                    console.log('WEEE');
+                }
+            })
         }
     }
 };

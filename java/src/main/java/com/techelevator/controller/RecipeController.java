@@ -59,8 +59,8 @@ public class RecipeController {
         recipeDao.addSavedRecipe(recipeId,userId);
     }
 
-    @RequestMapping(path = "recipes/user/{userId}", method = RequestMethod.DELETE)
-    public void deleteSavedRecipe(@PathVariable Long userId, @PathVariable Long recipeId){
+    @RequestMapping(path = "recipes/user/{userId}/{recipeId}", method = RequestMethod.DELETE)
+    public void deleteSavedRecipe(@PathVariable Long userId,@PathVariable Long recipeId){
         recipeDao.deleteSavedRecipe(userId,recipeId);
     }
 

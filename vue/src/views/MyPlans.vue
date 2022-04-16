@@ -3,10 +3,11 @@
     <h1>My Plans</h1>
     <plan-list/>  
     <div class="button-container">
+      <button v-show='toggle' v-on:click='toggle = !toggle'>Add a Plan</button>
       <form v-on:submit.prevent="createPlan">
-      <button v-on:click='toggle = !toggle'>Add a Plan</button>
-      <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
-      <button v-show="toggle" type="submit"  >Submit</button>
+      
+      <input v-show="!toggle" v-model="planName" type="text" placeholder="Add plan name" />
+      <button v-show="!toggle" type="submit"  >Submit</button>
       </form>
   </div>
   </div>
@@ -30,6 +31,8 @@ export default {
       // const planName = this.plan.planName;
       this.savedName = this.planName
       planService.createPlanForUser(this.$store.state.user.id, this.savedName)
+      this.toggle = true;
+      this.planName = "";
     }  
   }  
 };

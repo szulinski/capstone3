@@ -9,7 +9,6 @@
   <div class="checkbox-container">
       <input type="checkbox" id="addRecipe" value="Add Recipe" v-model="checkedRecipes">
       <label for="addRecipe">Add Recipe To Meal</label>
-      
   </div>
   </div>
   </div>
@@ -22,6 +21,11 @@ export default {
     props: {
         recipe: Object
     },
+    data() {
+    return {
+      checkedRecipes: [],
+    };
+  },
     methods: {
         setSaved(value) {
             this.$store.commit('SET_SAVED_STATUS', {recipe: this.recipe, value: value});

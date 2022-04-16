@@ -15,8 +15,6 @@
       <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
       <button v-show="toggle" type="submit">Submit</button>
       </form>
-
-        <button>Add A Recipe</button>
   </div>
 </template>
 

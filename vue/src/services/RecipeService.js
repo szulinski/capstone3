@@ -12,18 +12,26 @@ export default {
     getRecipe(id){
         return recipeApi.get(`/recipe/${id}`);
     },
+    getRecipesByName(name){
+        return recipeApi.get(`/recipes/${name}`);
+    },
+    getRecipesBySaved(userId){
+        return recipeApi.get(`/recipes/user/${userId}`);
+    },
     sendRecipe(recipe){
         return recipeApi.post(`/recipes`, recipe);
     },
-    getRecipesByName(name){
-        return recipeApi.get(`/recipes/${name}`);
+    updateRecipe(recipe){
+        return recipeApi.put(`/recipes`, recipe);
     },
     saveRecipe(recipeId,userId){
         return recipeApi.post(`/recipes/${userId}`,recipeId);
     },
-    getRecipesBySaved(userId){
-        return recipeApi.get(`/recipes/user/${userId}`);
-    }
+    forgetRecipe(recipeId, userId){
+        return recipeApi.delete(`/recipes/${userId}`, recipeId)
+    },
+
+
 
 
 }

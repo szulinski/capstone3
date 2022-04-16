@@ -1,33 +1,36 @@
 <template>
 <div>
-  <div class="card" v-bind:key="recipe.id">
+  <div class="card" v-bind:key="recipe.recipeId">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
   <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
         <img v-if="recipe.image" v-bind:src="recipe.image"/>
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="button-container">
-      <button class="mark-saved" v-on:click.prevent="setSaved(true)" v-if="!recipe.saved">Save Recipe</button>
-      <button class="mark-unsaved" v-on:click.prevent="setSaved(false)" v-if="recipe.saved">Forget Recipe</button>
+      <button class="mark-saved" v-on:click.prevent="setSaved()" v-if="!recipe.saved">Save Recipe</button>
+      <button class="mark-unsaved" v-on:click.prevent="" v-if="recipe.saved">Forget Recipe</button>
   </div>
   </div>
   </div>
 </template>
 
 <script>
-
+import RecipeService from '@/services/RecipeService.js';
 export default {
     name: 'recipe-card',
     props: {
         recipe: Object
     },
     methods: {
-        setSaved(value) {
-            this.$store.commit('SET_SAVED_STATUS', {recipe: this.recipe, value: value});
+        setSaved() {
+        RecipeService.saveRecipe(this.recipe.recipeId, this.$store.state.user.id).then((response) => {
+            if (response.status === 201) {
+                console.log("weeeee");
+            }
+        });
         }
     }
-
-}
+};
 </script>
 
 <style>

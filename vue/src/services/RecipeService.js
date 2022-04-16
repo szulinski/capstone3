@@ -25,10 +25,10 @@ export default {
         return recipeApi.put(`/recipes`, recipe);
     },
     saveRecipe(recipeId,userId){
-        return recipeApi.post(`/recipes/${userId}`,recipeId);
+        return recipeApi.post(`/recipes/user/${userId}/${recipeId}`);
     },
     forgetRecipe(recipeId, userId){
-        return recipeApi.delete(`/recipes/${userId}`, recipeId)
+        return recipeApi.delete(`/recipes/user/${userId}/${recipeId}`);
     },
 
 

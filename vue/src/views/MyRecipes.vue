@@ -1,15 +1,15 @@
 <template>
-  <recipe-list/>
+<div>
+  <saved-recipes-list/>
+</div>
 </template>
 
 <script>
-import RecipeList from '@/components/RecipeList';
+import SavedRecipesList from '../components/SavedRecipesList.vue'
 export default {
-    components: { RecipeList },
-    name: "saved-recipes",
-    created() {
-        
-    }
+  name: "saved-recipes",
+  components: { SavedRecipesList },
+
 }
 </script>
 

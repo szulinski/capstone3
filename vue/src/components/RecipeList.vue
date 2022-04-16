@@ -13,7 +13,7 @@ import recipeService from "@/services/RecipeService";
 
 export default {
   name: "my-recipe-list",
-  props: ["searchValue"],
+  props: ["searchValue", ""],
   components: {
     RecipeCard,
   },

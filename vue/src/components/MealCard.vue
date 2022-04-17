@@ -4,12 +4,11 @@
         <h2 class="meal-day">{{meal.mealDay}}'s</h2>
       </router-link>
       <h2 class="meal-type">{{meal.mealType}}</h2>
-      <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id">
-        <h3>{{recipe.name}}</h3>
-        <button v-on:click="showRecipe = !showRecipe">Recipe</button>
-        <p v-show="showRecipe">{{recipe.directions}}</p>
+      <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
+        <h3>{{recipe.name}}
+        <button v-on:click ="remove(meal.mealId, recipe.recipeId)">Remove</button>
+        </h3>
         </div>
-        <router-link v-bind:to="{name: '', params: {id : meal.mealId}}"><button v-on:click = 'toggle =!toggle'>Remove</button></router-link>
         <form v-on:submit.prevent="addRecipe">
        <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}"><button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
       <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
@@ -30,7 +29,15 @@ export default {
     data(){
         return {
             recipes:[],
-            showRecipe: false
+        }
+    },
+    methods:{
+        remove(mealId, recipeId){
+            MealService.removeRecipeFromMeal(mealId, recipeId).then(resp =>{
+                if (resp.status === 200 || resp.status === 204){
+                    this.getRecipesFromMeal();
+                }
+            })
         }
     },
     created() {

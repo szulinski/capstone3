@@ -34,7 +34,7 @@ export default {
         return mealApi.get(`/plan/${planId}/meals`);
     },
     removeRecipeFromMeal(mealId, recipeId){
-    return mealApi.delete(`/meals/{mealId}/removeRecipe/${recipeId}`);
+    return mealApi.delete(`/meals/${mealId}/removeRecipe/` + recipeId);
     },
     createMeal(mealType, mealDay, planId){
         return mealApi.post(`/${planId}/createMeal/${mealType}/${mealDay}`, planId, mealType, mealDay);

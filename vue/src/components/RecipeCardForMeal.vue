@@ -6,7 +6,8 @@
         <img v-if="recipe.image" v-bind:src="recipe.image"/>
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
-  <div class="checkbox-container" v-bind:value="isChecked" >
+  <div class="checkbox-container">
+    <!-- v-bind:value="isChecked" -->
       <input type="checkbox" id="addRecipe"  v-on:change="saveChecked($event)" >
       <label for="addRecipe">Add Recipe To Meal</label>
   </div>

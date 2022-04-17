@@ -6,7 +6,7 @@
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
         <h3>{{recipe.name}}
-        <button v-on:click ="remove(meal.mealId, recipe.recipeId)">Remove</button>
+        <button v-on:click.prevent="remove(meal.mealId, recipe.recipeId)">Remove</button>
         </h3>
         </div>
         <form v-on:submit.prevent="addRecipe">
@@ -31,22 +31,22 @@ export default {
             recipes:[],
         }
     },
-    methods:{
-        remove(mealId, recipeId){
-            MealService.removeRecipeFromMeal(mealId, recipeId).then(resp =>{
-                if (resp.status === 200 || resp.status === 204){
-                    this.getRecipesFromMeal();
-                }
-            })
-        }
-    },
     created() {
         const id = this.meal.mealId
         MealService.getRecipesFromMeal(id).then(response => {
             this.$store.commit('ADD_RECIPES', response.data)
             this.recipes = response.data;
         })
-    }
+    },
+      methods:{
+        remove(mealId, recipeId){
+            MealService.removeRecipeFromMeal(mealId, recipeId).then(resp =>{
+                if (resp.status === 200 || resp.status === 204){
+                    this.$router.push({name: 'plan'});
+                }
+            })
+        }
+    },
     
 }
 </script>

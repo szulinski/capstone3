@@ -1,13 +1,13 @@
 <template>
 <div>
-  <div class="card" v-bind:key="recipe.id">
+  <div class="card" v-bind:key="recipe.recipeId">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
   <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
         <img v-if="recipe.image" v-bind:src="recipe.image"/>
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
-  <div class="checkbox-container">
-      <input type="checkbox" id="addRecipe" value="Add Recipe" v-model="checkedRecipes">
+  <div class="checkbox-container" v-bind:value="isChecked" >
+      <input type="checkbox" id="addRecipe"  v-on:change="saveChecked($event)" >
       <label for="addRecipe">Add Recipe To Meal</label>
   </div>
   </div>
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'recipe-card-for-meal',
     props: {
@@ -25,7 +24,22 @@ export default {
     return {
       checkedRecipes: [],
     };
+
   },
+  computed: {
+    //   isChecked(){
+    //       return this.$store.state.checkedRecipes.contains(this.recipe.recipeId);
+    //   }
+  },
+  methods: {
+      saveChecked(event){
+          if ( event.target.checked){
+            this.$store.commit('SET_CHECKED', this.recipe.recipeId)
+          }else {
+            this.$store.commit('SET_UNCHECKED', this.recipe.recipeId)
+          }
+      }
+  }
 
 }
 </script>

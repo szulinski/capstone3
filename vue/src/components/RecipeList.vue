@@ -1,7 +1,7 @@
 <template>
   <div class="my-recipe-list">
     <h2>My Recipes</h2>
-    <div>
+    <div class="recipes">
       <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
     </div>
   </div>
@@ -50,6 +50,12 @@ export default {
 .my-recipe-list {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.recipes {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 </style>

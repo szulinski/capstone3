@@ -25,4 +25,6 @@ public interface RecipeDao {
     void addSavedRecipe(Long recipeId,Long userId);
 
     void deleteSavedRecipe(Long userId, Long recipeId);
+
+    String getIngredientsByPlanName(String planName);
 }

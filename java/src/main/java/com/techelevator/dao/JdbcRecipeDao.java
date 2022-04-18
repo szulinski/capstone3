@@ -144,6 +144,23 @@ public class JdbcRecipeDao implements RecipeDao {
         }
     }
 
+    @Override
+    public String getIngredientsByPlanName(String planName){
+        String ingredients = "";
+        String sql = "SELECT ingredients FROM recipes r\n" +
+                "JOIN meal_recipe mr ON mr.recipe_id = r.recipe_id\n" +
+                "JOIN meals m ON m.meal_id = mr.recipe_id\n" +
+                "JOIN meal_plan mp ON mp.meal_id = m.meal_id\n" +
+                "JOIN plans p ON p.plan_id = mp.plan_id\n" +
+                "WHERE p.plan_name = ?";
+        try {
+            ingredients = jdbcTemplate.queryForObject(sql, String.class, planName);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return ingredients;
+    }
+
     private Recipe mapRowToRecipe(SqlRowSet rowSet){
         Recipe recipe = new Recipe();
         recipe.setRecipeId(rowSet.getLong("recipe_id"));

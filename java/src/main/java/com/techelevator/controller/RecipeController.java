@@ -3,10 +3,8 @@ package com.techelevator.controller;
 import com.techelevator.dao.RecipeDao;
 import com.techelevator.model.Recipe;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.GenericArrayType;
 import java.util.List;
 
 @RestController
@@ -67,6 +65,11 @@ public class RecipeController {
     @RequestMapping(path = "recipes/user/{userId}", method = RequestMethod.GET)
     public List<Recipe> getRecipesBySaved(@PathVariable Long userId){
         return recipeDao.findRecipesBySaved(userId);
+    }
+
+    @RequestMapping(path = "/grocerieslist/{planName}", method = RequestMethod.GET)
+    public String getIngredientsByPlanName(@PathVariable String planName){
+        return recipeDao.getIngredientsByPlanName(planName);
     }
 
 }

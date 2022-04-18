@@ -1,6 +1,6 @@
 <template>
   <div class="plans-list">
-      <div >
+      <div class="plans">
         <plan-card v-for="plan in plans" v-bind:plan="plan" v-bind:key="plan.planId" />
       </div>
   </div>

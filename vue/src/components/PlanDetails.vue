@@ -1,6 +1,6 @@
 <template>
   <div class="plan-details">
-      <div>
+      <div class ="mealcards">
         <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.id"/>
       </div>
    </div>   
@@ -43,5 +43,12 @@ export default {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.mealcards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 </style>

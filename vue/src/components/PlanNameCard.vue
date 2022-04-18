@@ -1,7 +1,9 @@
 <template>
 <div>
   <div class="plan-card" v-bind:key="plan.planId">
+    <router-link :to="{name: 'shopping-list', params: {planName : plan.planName}}">
     <h2 class="plan-name" v-on:click="setCurrentPlanName"> {{ plan.planName }}</h2>
+    </router-link>
   </div>
   </div>
 </template>

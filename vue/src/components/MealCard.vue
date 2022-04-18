@@ -11,8 +11,6 @@
         </div>
         <form v-on:submit.prevent="addRecipe">
        <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}"><button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
-      <input v-show="toggle" v-model="planName" type="text" placeholder="Add plan name" />
-      <button v-show="toggle" type="submit">Submit</button>
       </form>
   </div>
 </template>

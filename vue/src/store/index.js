@@ -92,7 +92,7 @@ export default new Vuex.Store({
         return i.id !== id
       })
     },
-    SET_CURRENTPLAN(state,planName){
+    SET_CURRENTPLAN(state, planName){
       state.currentPlanName = planName;
     }
   },

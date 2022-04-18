@@ -1,6 +1,6 @@
 <template>
   <div class="plan-details">
-      <div class ="mealcards">
+      <div class ="meal-cards">
         <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.id"/>
       </div>
    </div>   
@@ -39,16 +39,10 @@ export default {
 </script>
 
 <style >
-.plan-details {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.mealcards {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.meal-cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
 }
 </style>

@@ -167,9 +167,9 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Monday');
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Monday');
--- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuseday');		
--- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');	
--- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Tuseday');
+-- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuesday');		
+-- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuesday');	
+-- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Tuesday');
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Wednesday');
 -- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');

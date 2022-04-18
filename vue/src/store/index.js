@@ -21,6 +21,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     checkedRecipes: [],
+    currentPlanName: '',
   },
   recipes: [],
   recipe: {
@@ -90,6 +91,9 @@ export default new Vuex.Store({
       state.checkedRecipes = state.checkedRecipes.filter(i =>{
         return i.id !== id
       })
+    },
+    SET_CURRENTPLAN(state,planName){
+      state.currentPlanName = planName;
     }
   },
   strict: true

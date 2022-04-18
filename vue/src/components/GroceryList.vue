@@ -15,7 +15,7 @@ export default {
     data() {
         return {
             groceries: [],
-            planName: 'testname',
+            planName: 'high protein',
         }
     },
     created() {

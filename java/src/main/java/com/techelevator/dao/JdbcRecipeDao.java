@@ -7,6 +7,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import javax.sql.RowSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,17 +148,19 @@ public class JdbcRecipeDao implements RecipeDao {
     @Override
     public String getIngredientsByPlanName(String planName){
         String ingredients = "";
-        String sql = "SELECT ingredients FROM recipes r\n" +
+        String sql = "SELECT DISTINCT ingredients FROM recipes r\n" +
                 "JOIN meal_recipe mr ON mr.recipe_id = r.recipe_id\n" +
-                "JOIN meals m ON m.meal_id = mr.recipe_id\n" +
+                "JOIN meals m ON m.meal_id = mr.meal_id\n" +
                 "JOIN meal_plan mp ON mp.meal_id = m.meal_id\n" +
                 "JOIN plans p ON p.plan_id = mp.plan_id\n" +
                 "WHERE p.plan_name = ?";
-        try {
-            ingredients = jdbcTemplate.queryForObject(sql, String.class, planName);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        SqlRowSet rs  = jdbcTemplate.queryForRowSet(sql, planName);
+        while (rs.next()) {
+            ingredients = ingredients + rs.getString("ingredients");
         }
+//        }catch(Exception e){
+//            System.out.println(e.getMessage());
+//        }
         return ingredients;
     }
 

@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
-import RecipeList from '@/components/RecipeList.vue'
+import SearchRecipes from '@/components/SearchRecipes.vue'
 import store from '../store/index'
 import RecipeDetails from '@/components/RecipeDetails.vue'
 import UpdateRecipe from '@/components/UpdateRecipe.vue'
@@ -65,7 +65,7 @@ const router = new Router({
       }
     },
     {
-      path: "/myRecipes",
+      path: "/savedRecipes",
       name: "my-recipes",
       component: MyRecipes,
       meta: {
@@ -81,9 +81,9 @@ const router = new Router({
       }
     },
     {
-      path: "/recipes/:id",
-      name: "savedRecipes",
-      component: RecipeList,
+      path: "/recipes",
+      name: "all-recipes",
+      component: SearchRecipes,
       meta: {
         requiresAuth: true
       }

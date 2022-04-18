@@ -114,7 +114,6 @@ public class JdbcRecipeDao implements RecipeDao {
     public void deleteSavedRecipe(Long userId, Long recipeId){
         String sql = "DELETE FROM user_recipe WHERE user_id = ? AND recipe_id = ?";
         try{
-            System.out.println(userId + " " + recipeId);
             jdbcTemplate.update(sql,userId,recipeId);
         }catch(Exception e){
             System.out.println(e.getMessage());

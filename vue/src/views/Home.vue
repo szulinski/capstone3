@@ -1,38 +1,16 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
-    <h2>Search for recipes</h2>
-    <form id = "form">
-      <label for="recipeName">Search </label>
-      <input
-        type="text"
-        id="searchBar"
-        class="form-control"
-        placeholder="enter name"
-        v-model="searchValue"
-      />
-      <button v-on:click.prevent="filterBySearch()">Search</button>
-    </form>
-    <recipe-list v-bind:searchValue="savedSearchValue" v-bind:key="savedSearchValue"/>
+    <h1>Meal Planner v1.0</h1>
+    <p>Description text.</p>
+    <div class="router-links">
+      <router-link v-bind:to="{ name: 'my-recipes' }" v-if="$store.state.token != ''">My Recipes</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{ name: 'my-plans'}" v-if="$store.state.token != ''">My Plans</router-link>
+    </div>
   </div>
 </template>
   
 <script>
-import RecipeList from '../components/RecipeList.vue';
 export default {
-  components: { RecipeList },
   name: "home",
-  data() {
-    return {
-      searchValue: '',
-      savedSearchValue: ''
-    }
-  },
-  methods: {
-    filterBySearch(){
-      this.savedSearchValue = this.searchValue;
-    }
-  }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
 <div>
-<grocery-list v-for:ingredient in planName v-bind: />    
+<grocery-list />    
 </div>
 </template>
 

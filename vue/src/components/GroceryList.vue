@@ -1,5 +1,9 @@
 <template>
 <div>
+    <h1>Groceries List</h1>
+    <ul>
+        <li v-for="grocery in groceries" v-bind:key="grocery">{{grocery}}</li>
+    </ul>
 </div>
 </template>
 
@@ -11,17 +15,16 @@ export default {
     data() {
         return {
             groceries: [],
-            planName: 'aljgbakuhgahlahal=',
+            planName: 'testname',
         }
     },
-    methods: {
-        parseGroceries() {
-            RecipeService.getIngredients(this.planName).then((response) => {
-                return this.groceries = response.data.split(',');
-            })
-            }
-        }
+    created() {
+        RecipeService.getIngredients(this.planName).then((response) => {
+            return this.groceries = response.data.split(',');
+        });
+    }
 }
+
 </script>
 
 <style>

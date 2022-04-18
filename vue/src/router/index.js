@@ -14,7 +14,7 @@ import PlanMeals from '../views/PlanMeals.vue'
 import MealCard from '@/components/MealCard.vue'
 import MealDetails from '@/components/MealDetails.vue'
 import MyRecipes from '@/views/MyRecipes.vue'
-
+import GroceriesDisplay from '@/views/GroceriesDisplay.vue'
 import RecipeLibrary from '@/views/RecipeLibrary.vue'
 
 Vue.use(Router)
@@ -92,6 +92,14 @@ const router = new Router({
       path: "/recipe/:id/update",
       name: "recipe-update",
       component: UpdateRecipe,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/grocerieslist",
+      name: "groceries-list",
+      component: GroceriesDisplay,
       meta: {
         requiresAuth: true
       }

@@ -35,8 +35,8 @@ public class PlanController {
     @PreAuthorize("permitAll")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/{id}/plan", method = RequestMethod.POST)
-    public void createPlan(@PathVariable Long id, @RequestBody String planName) {
-        if (!planDao.createPlan(id, planName)) {
+    public void createPlan(@PathVariable Long id, @RequestBody Plan plan) {
+        if (!planDao.createPlan(id, plan.getPlanName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to create plan");
         }
 

@@ -28,9 +28,9 @@ export default {
 
   },
   computed: {
-    //   isChecked(){
-    //       return this.$store.state.checkedRecipes.contains(this.recipe.recipeId);
-    //   }
+      isChecked(){
+          return this.$store.state.checkedRecipes.contains(this.recipe.recipeId);
+      }
   },
   methods: {
       saveChecked(event){

@@ -53,7 +53,7 @@ export default {
              console.log(r)
            }
            )
-           return this.$store.state.checkedRecipes.includes(this.recipe.recipeId);
+          this.$store.state.checkedRecipes = [];
         });
        
       }

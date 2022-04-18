@@ -192,7 +192,7 @@ INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SE
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 4 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 5 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 6 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
- INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 8 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 9 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 10 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
@@ -215,23 +215,23 @@ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 4 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));		
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 5 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));		
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 6 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));		
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 4));		
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 8 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 9 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 9));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 10 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 11 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 12 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 13 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 10));								  
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 14 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 6));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 15 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 16 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 4));		
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 8 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 9 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 9));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 10 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 11 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 12 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 13 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 10));								  
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 14 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 6));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 15 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 16 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 17 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 18 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 9));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 19 ),(SELECT recipe_id FROM recipes WHERE recipe_id =7));							  
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 20 ),(SELECT recipe_id FROM recipes WHERE recipe_id =8));
- INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 21 ),(SELECT recipe_id FROM recipes WHERE recipe_id =9));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 19 ),(SELECT recipe_id FROM recipes WHERE recipe_id =7));							  
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 20 ),(SELECT recipe_id FROM recipes WHERE recipe_id =8));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 21 ),(SELECT recipe_id FROM recipes WHERE recipe_id =9));
 INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 22 ),(SELECT recipe_id FROM recipes WHERE recipe_id =7));
--SELECT * FROM meal_recipe							  
+--SELECT * FROM meal_recipe							  
 							  
 							  
 							  

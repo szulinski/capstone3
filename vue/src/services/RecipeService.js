@@ -30,7 +30,9 @@ export default {
     forgetRecipe(recipeId, userId){
         return recipeApi.delete(`/recipes/user/${userId}/${recipeId}`);
     },
-
+    getIngredients(planName) {
+        return recipeApi.get(`/grocerieslist/${planName}`);
+    },
 
 
 

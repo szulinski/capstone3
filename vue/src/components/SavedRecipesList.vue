@@ -1,7 +1,7 @@
 <template>
   <div class="my-saved-recipe-list">
     <h2>My Saved Recipes</h2>
-    <div>
+    <div class="saved-recipes">
       <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId"/>
     </div>
   </div>
@@ -34,5 +34,12 @@ export default {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.saved-recipes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 </style>

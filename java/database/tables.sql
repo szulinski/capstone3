@@ -156,7 +156,7 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 			475, true, true, true, true, false, false, true, 'https://images-gmi-pmc.edge-generalmills.com/5cdc7032-ca50-4b1d-9210-72d992e5a71f.jpg');
 
 --select * from recipes
-
+INSERT INTO users (username,password_hash,role) VALUES ('rs','$2a$10$BUHiw09.C2zkeo7.W.SO.jBOUj2ZGNx4H95hJlvElv(fcEOZ9J4y)','ROLE_USER');
 INSERT INTO plans (plan_name) VALUES ( 'high protein');
 --SELECT * FROM plans
 --SELECT * FROM users
@@ -164,8 +164,8 @@ INSERT INTO plans (plan_name) VALUES ( 'high protein');
 INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 --SELECT * FROM user_plan	
 	
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Monday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Monday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Monday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuseday');		
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');	
@@ -176,15 +176,15 @@ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday')
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Thursday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Thursday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Thursday');
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Friday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Friday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Friday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Friday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Saturday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Saturday');
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Saturday');
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Sunday');
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Sunday');
- INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Sunday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Saturday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Sunday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Sunday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Sunday');
 --SELECT * FROM meals
 
 INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 2 ),(SELECT plan_id FROM plans WHERE plan_id = 1));					  

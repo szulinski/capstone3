@@ -14,6 +14,6 @@ export default {
     },
     
     createPlanForUser(userId, planName){
-        return planApi.post(`/${userId}/plan`, {planName: planName});
+        return planApi.post(`/${userId}/plan`, {planName: planName });
     }
 }

@@ -66,8 +66,8 @@ CREATE TABLE plans(
 CREATE TABLE meal_plan (
 	meal_id int NOT NULL,
 	plan_id int NOT NULL,
-	CONSTRAINT fk_plan_id FOREIGN KEY (plan_id) REFERENCES plans(plan_id),
-	CONSTRAINT fk_meal_id FOREIGN KEY (meal_id) REFERENCES meals(meal_id)
+	CONSTRAINT fk_meal_id FOREIGN KEY (meal_id) REFERENCES meals(meal_id),
+	CONSTRAINT fk_plan_id FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 	);
 	
 
@@ -137,26 +137,109 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 			'1, Trim and spiralize the zucchini. 2, Add olive oil, garlic, and the red pepper flakes to a large, deep skillet. Turn to medium heat. When the oil begins to bubble around the garlic, add the zucchini noodles 5 yo 7 minutes. 3, Stir in the tomatoes, basil, and parmesan cheese. Cook for one minute. Use pasta tongs to transfer the noodles, tomatoes, and basil to a serving dish. Leave the liquid in the skillet. 4,Bring the liquid left in the skillet to a simmer and combine cornstarch and cold water in a small bowl then whisk into the simmering liquid. Cook, while whisking until the liquid thickens to a sauce; about 1 minute. 5, Taste the sauce and season with salt. Pour the sauce over the zucchini, tomatoes, and basil. Finish with more parmesan cheese on top',
 			200, true, false, true, false, false, true, true, 'https://www.inspiredtaste.net/wp-content/uploads/2016/08/Zucchini-Pasta-Recipe-1.jpg');
 
-INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');
-			
-INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Sunday');
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium,is_breakfast, is_lunch, is_dinner, img) 
+	VALUES ('Egg Omelette',
+			'2 large eggs, 1 tablespoon unsalted butter, 2 tablespoons grated cheese,  3 to 4 cherry tomatoes, 2 tablespoons chopped basil ',
+			'1, Beat the eggs. 2, Melt the butter. 3, Add the eggs. 4, Fill the omelette. 5, Fold and serve.',
+			340, false, true, true, true, true,true, false, 'https://www.simplyrecipes.com/thmb/gZF2-5xBQOjQD8ToXjmUbtLbQJo=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__10__HT-Make-an-Omelet-LEAD-HORIZONTAL-17cd2e469c4a4ccbbd1273a7cae6425c.jpg' );
 
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium,is_breakfast, is_lunch, is_dinner, img) 
+	VALUES ('Turkey Sandwich',
+			'2 slices of toasted bread, Sliced or pulled turkey, 1 tbsp crandberry sauce, 2 tbsp mayo or garlic aoli, 2 oz mozzarella or provalone ',
+			'1, Lightly toast the bread. 2, Spread 2 of the slices with mayonnaise. 3, Top with cheese, turkey, lettuce, and tomatoes (optional). Season with salt & pepper if desired. 4, Spread remaining slices of bread with cranberry sauce and top sandwich. ',
+			420, false, true, false, true, false, true, false, 'https://www.spendwithpennies.com/wp-content/uploads/2019/11/Turkey-Sandwich-SpendWithPennies-2.jpg');
+
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium,is_breakfast, is_lunch, is_dinner, img) 
+	VALUES ('Salmon With Roasted Veggies',
+			'1 8oz Salmon filet, 1 head of brocolli, 1 diced potatoes, onion diced, garlic minced, 1 red pepper diced',
+			'1, preheat oven to 400F. 2, toss chopped veggies in olive oil, salt, pepper, oregano, smoked paprika, tyme, rosemarry, and any other seasonings you like. 3, place the pan of veggies and slmon on a seporate plan in oven and bake until salmon reaches 130F internal temp, stir veggies occasionally. ',
+			475, true, true, true, true, false, false, true, 'https://images-gmi-pmc.edge-generalmills.com/5cdc7032-ca50-4b1d-9210-72d992e5a71f.jpg');
+
+--select * from recipes
+
+INSERT INTO plans (plan_name) VALUES ( 'high protein');
+--SELECT * FROM plans
+--SELECT * FROM users
+
+INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+--SELECT * FROM user_plan	
+	
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Monday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Monday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuseday');		
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');	
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Tuseday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Wednesday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Thursday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Thursday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Thursday');
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Friday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Friday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Friday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Saturday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Saturday');
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Saturday');
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Sunday');
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Sunday');
+ INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Sunday');
+--SELECT * FROM meals
 
-INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 1 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 5));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 2 ),(SELECT plan_id FROM plans WHERE plan_id = 1));					  
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));									  
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 4 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 5 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 6 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
+ INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT plan_id FROM plans WHERE plan_id = 1));		
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 8 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 9 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 10 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 11 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 12 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 13 ),(SELECT plan_id FROM plans WHERE plan_id = 1));								  
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 14 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 15 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 16 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 17 ),(SELECT plan_id FROM plans WHERE plan_id =1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 18 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 19 ),(SELECT plan_id FROM plans WHERE plan_id =1));							  
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 20 ),(SELECT plan_id FROM plans WHERE plan_id =1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 21 ),(SELECT plan_id FROM plans WHERE plan_id =1));
+INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 22 ),(SELECT plan_id FROM plans WHERE plan_id =1));
 
-INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 2 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 6));
 
-INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));
-INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 7));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 2 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 6));					  
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));									  
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 4 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));		
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 5 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));		
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 6 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));		
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 7 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 4));		
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 8 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 9 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 9));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 10 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 11 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 3));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 12 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 2));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 13 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 10));								  
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 14 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 6));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 15 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 16 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 1));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 17 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 8));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 18 ),(SELECT recipe_id FROM recipes WHERE recipe_id = 9));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 19 ),(SELECT recipe_id FROM recipes WHERE recipe_id =7));							  
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 20 ),(SELECT recipe_id FROM recipes WHERE recipe_id =8));
+ INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 21 ),(SELECT recipe_id FROM recipes WHERE recipe_id =9));
+INSERT INTO meal_recipe VALUES ((SELECT meal_id FROM meals WHERE meal_id = 22 ),(SELECT recipe_id FROM recipes WHERE recipe_id =7));
+-SELECT * FROM meal_recipe							  
+							  
+							  
+							  
+							  
+							  
+--INSERT INTO plans (plan_name) VALUES ( 'Cheat Week');
 
-INSERT INTO plans (plan_name) VALUES ( 'Tusedays lunch');
 
-INSERT INTO plans (plan_name) VALUES ( 'Weekend meals' );
-
-INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 1 ),(SELECT plan_id FROM plans WHERE plan_id = 4));
-
-INSERT INTO meal_plan VALUES ((SELECT meal_id FROM meals WHERE meal_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 5));
 
 
 COMMIT;

@@ -1,4 +1,5 @@
 <template>
+<div id="container">
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -43,6 +44,7 @@
       </div>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -84,21 +86,37 @@ export default {
 </script>
 
 <style>
-
+#container {
+  background-color: #F7BFB4;
+  padding: 10%;
+}
 #login{
-  margin: 0;
-  padding: 0;
+  border-radius: 100px;
+  background-color:#23967f;
+  margin: 20%;
+  padding: 10%;
   font-family: 'Arial';
   text-align: center;
 }
 
 .usernameSection {
+  padding: 5%;
   
 }
 
 .passwordSection {
+  padding-bottom: 5%;
+}
+.needAccountButton{
+  padding-bottom: 3%;
   
 }
-
+.needAccountButton:hover {
+  color: black;
+}
+.submitButton{
+  border-radius: 5px;
+  border-color: black;
+}
 
 </style>

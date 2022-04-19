@@ -6,11 +6,12 @@
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
         <h3>{{recipe.name}}
-        <button v-on:click.prevent="remove(meal.mealId, recipe.recipeId)">Remove</button>
+        <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
         </h3>
         </div>
         <form v-on:submit.prevent="addRecipe">
-       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}"><button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
+       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}">
+           <button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
       </form>
   </div>
 </template>
@@ -51,14 +52,19 @@ export default {
 
 <style scoped>
 .meal-card {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap; */
+    flex-basis: content;
+    flex-grow: auto;
+    justify-content: flex-start;
     border: 2px solid black;
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
     height: 300px;
-    margin: 5px;
-    margin-right: 10px;
+    margin: 10px;
+    margin-block: 15px;
 }
+#add-recipe{
+}
+
 </style>

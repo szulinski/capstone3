@@ -1,6 +1,8 @@
 <template>
 <div id="container">
+  
   <div id="login" class="text-center">
+    <img :src="require(`@/images/emptycarrot.png`)" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -87,12 +89,13 @@ export default {
 
 <style>
 #container {
-  background-color: #F7BFB4;
+  background-color:#7daf9c;
   padding: 10%;
 }
 #login{
   border-radius: 100px;
-  background-color:#23967f;
+  background-color: #F7BFB4;
+  border: 2px solid #5b4b49;
   margin: 20%;
   padding: 10%;
   font-family: 'Arial';
@@ -118,5 +121,7 @@ export default {
   border-radius: 5px;
   border-color: black;
 }
-
+img {
+  width: 25%;
+}
 </style>

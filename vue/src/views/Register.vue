@@ -39,7 +39,7 @@
         />
       </div>
       <div id='link'>
-        <router-link :to="{ name: 'login' }">Have an account?</router-link>
+        <router-link  :to="{ name: 'login' }">Have an account?</router-link>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
@@ -101,10 +101,10 @@ export default {
 </script>
 
 <style>
-img{
 
-}
 #register{
+  
+  max-width: 30%;
   border-color: #5b4b49;
   border-style: solid;
   border-width: 2px;
@@ -124,6 +124,12 @@ img{
 }
 #password {
   margin-left: 3px;
+}
+img {
+  width: 25%;
+}
+#link:hover {
+  color:black;
 }
 
 </style>

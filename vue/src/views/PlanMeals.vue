@@ -22,15 +22,17 @@ export default {
 </script>
 
 <style>
-/* .my-plans {
-  
+.my-plans {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 h1{
 display: flex;
     justify-content: center;
 }
-.meal-cards{
+/* .meal-cards{
   display: flex;
   justify-content: center;
-} */
+}  */
 </style>

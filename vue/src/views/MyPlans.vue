@@ -42,11 +42,12 @@ export default {
 
 <style>
 .my-plans {
-  grid-template: 1fr 2fr;
-    grid-template-areas: "title button" 
+  display: grid;
+  grid-template-co: 1fr 2fr;
+  grid-template-areas: "title button" 
     "plans plans";
     
-    background-color:#7daf9c;
+  background-color:#7daf9c;
     /* display: flex; */
     /* justify-content: space-evenly; */
     /* flex-wrap: wrap; */

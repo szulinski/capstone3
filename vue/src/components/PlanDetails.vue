@@ -40,16 +40,18 @@ export default {
 
 <style >
 .meal-cards {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  /* grid-auto-flow: column;
+  flex-wrap: wrap; */
+  display:grid;
+  grid-auto-flow: column;
   grid-template-columns: auto auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto; */
+  grid-template-rows: auto auto auto;
 }
 
 .plan-details {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
 }
 </style>

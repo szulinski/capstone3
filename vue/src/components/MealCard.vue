@@ -51,10 +51,14 @@ export default {
 
 <style scoped>
 .meal-card {
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
     border: 2px solid black;
     border-radius: 10px;
-    width: 250px;
-    height: 500px;
-    margin: 20px;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    margin-right: 10px;
 }
 </style>

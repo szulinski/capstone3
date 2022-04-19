@@ -1,7 +1,9 @@
 <template>
   <div class="my-plans">
     <h1>Plan Meals</h1>
-    <plan-details/>  
+    <div class ="meal-cards">
+    <plan-details/> 
+    </div> 
   </div>
 </template>
 
@@ -20,9 +22,15 @@ export default {
 </script>
 
 <style>
-.my-plans {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+/* .my-plans {
+  
 }
+h1{
+display: flex;
+    justify-content: center;
+}
+.meal-cards{
+  display: flex;
+  justify-content: center;
+} */
 </style>

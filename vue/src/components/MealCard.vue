@@ -1,8 +1,8 @@
 <template>
   <div class="meal-card" v-bind:key="meal.id">
-      <router-link v-bind:to="{name: 'meal', params: {id : meal.mealId}}">
-       <h2 class="meal-day">{{meal.mealDay}}'s</h2>
-      </router-link>
+      <!-- <router-link v-bind:to="{name: 'meal', params: {id : meal.mealId}}"> -->
+       <h1 class="meal-day">{{meal.mealDay}}</h1>
+      <!-- </router-link> -->
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
         <h3>{{recipe.name}}
@@ -63,8 +63,15 @@ export default {
     height: 300px;
     margin: 10px;
     margin-block: 15px;
+    font-size: 14px;
 }
 #add-recipe{
 }
-
+#remove {
+  background-color: #7daf9c;
+  color: #23967f;
+  border-color: #7daf9c;
+  display: inline-block;
+  font-size: 20px; 
+}
 </style>

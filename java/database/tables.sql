@@ -213,7 +213,7 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 	VALUES('Banana Oatmeal Pancakes',
 		   '3 small bananas very ripe, 2 tablespoons meltedbutter or coconut oil, 1 tablespoon lemon juice, 2 eggs,1 cup rolled oats,1⁄2 teaspoon salt,1⁄2 teaspoon baking soda, 1⁄2 teaspoon cinnamon, 1⁄4 teaspoon nutmeg',
 		   'Place oats in a blender or food processor and pulse until they are ground into a fine meal or flour-like consistency. In a large bowl, using a fork, mash the bananas until well combined. Add melted butter or coconut oil, lemon juice and eggs, and whisk until well combined. Add ground oats, salt, baking soda, cinnamon and nutmeg and mix until well combined. Once mixed, allow the batter to sit for at least 10 minutes. Depending on the size of your bananas, you may need to thin out the batter a bit with a splash of milk. Heat a griddle or pan to medium heat, add a knob of butter, and then pour 1/4 cup of batter onto the pan. Allow to cook for about 3 minutes or until bubbles begin to form on the surface, then carefully flip with a spatula and cook for another 1-2 minutes or until golden. Serve pancakes immediately or keep warm in the oven at 200°F until ready to serve.',
-			116, true, false, false, true, true, false false, 'https://kaynutrition.com/wp-content/uploads/2021/03/banana-oatmeal-pancakes-150x150.jpg');	
+			116, true, false, false, true, true, false ,false, 'https://kaynutrition.com/wp-content/uploads/2021/03/banana-oatmeal-pancakes-150x150.jpg');	
 		   
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
 	VALUES('Avocado Tomatillo Breakfast Tacos',
@@ -261,7 +261,7 @@ INSERT INTO plans (plan_name) VALUES ( 'high protein');
 --SELECT * FROM plans
 --SELECT * FROM users
 
-INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 1 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+--INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 --SELECT * FROM user_plan	
 	
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	

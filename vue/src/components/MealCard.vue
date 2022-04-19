@@ -29,6 +29,7 @@ export default {
     },
     data(){
         return {
+            isDeleted: false,
             recipes:[],
         }
     },
@@ -41,9 +42,10 @@ export default {
     },
       methods:{
         remove(mealId, recipeId){
+            this.isDeleted = !this.isDeleted;
             MealService.removeRecipeFromMeal(mealId, recipeId).then(resp =>{
                 if (resp.status === 200 || resp.status === 204){
-                    this.$router.push({name: 'plan'});
+                    this.$emit("deleteMeal",this.isDeleted);
                 }
             })
         }

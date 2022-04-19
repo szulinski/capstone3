@@ -2,7 +2,7 @@
   <div class="my-recipe-list">
     <h2>My Recipes</h2>
     <div class="recipes">
-      <recipe-card v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
+      <recipe-card v-on:savedChange="filteredRecipes" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
     </div>
   </div>
 </template>
@@ -28,20 +28,16 @@ export default {
         recipeService.getRecipesByName(this.$store.state.user.id, this.searchValue).then(response => {
             this.recipes = response.data;
         });
+      }else{
+        recipeService.getRecipesBySaved(this.$store.state.user.id).then((response) => {
+          this.$store.commit("ADD_RECIPES",response.data);
+          this.recipes = response.data;
+        });
       }
     }
   },
   created() {
-    if (this.searchValue) {
-        recipeService.getRecipesByName(this.$store.state.user.id, this.searchValue).then(response => {
-            this.recipes = response.data;
-        });
-    }else{
-        recipeService.getRecipesBySaved(this.$store.state.user.id).then((response) => {
-            this.$store.commit("ADD_RECIPES", response.data);
-            this.recipes = response.data;
-        });
-    }
+    this.filteredRecipes();
   },
 };
 </script>

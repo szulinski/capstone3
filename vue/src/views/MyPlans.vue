@@ -1,13 +1,17 @@
 <template>
   <div class="my-plans">
-    <h1>My Plans</h1>
-    <plan-list :key="this.version"/>  
+    <div class ="title-button">
+    <h1 class="title">My Plans</h1>
     <div class="button-container">
       <button v-show='toggle' v-on:click='toggle = !toggle'>Add a Plan</button>
       <form v-on:submit.prevent="createPlan">
       <input v-show="!toggle" v-model="planName" type="text" placeholder="Add plan name" />
       <button v-show="!toggle" type="submit"  >Submit</button>
       </form>
+      </div>
+      <div class = "plan-list">
+      <plan-list :key="this.version"/>
+      </div>
   </div>
   </div>
 </template>
@@ -42,8 +46,29 @@ export default {
 
 <style>
 .my-plans {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  background-color:#7daf9c;
+  
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+.title-button{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.title{
+  display:flex;
+  justify-content: center;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+.plan-list {
+ display: flex;
+ justify-content: center;
 }
 </style>

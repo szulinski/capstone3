@@ -1,6 +1,7 @@
 <template>
   
   <div id="register" class="text-center">
+    <!-- <img :src="require(images/emptycarrot.png)"> -->
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -37,7 +38,7 @@
           required
         />
       </div>
-      <div>
+      <div id='link'>
         <router-link :to="{ name: 'login' }">Have an account?</router-link>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -50,10 +51,12 @@
 <script>
 import authService from '../services/AuthService';
 
+
 export default {
   name: 'register',
   data() {
     return {
+      // logo:require("VUE/images/emptycarrot.png") ,
       user: {
         username: '',
         password: '',
@@ -98,12 +101,29 @@ export default {
 </script>
 
 <style>
+img{
 
+}
 #register{
-  margin: 0;
-  padding: 0;
+  border-color: #5b4b49;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 100px;
+  background-color: #F7BFB4;
+  margin: 20%;
+  padding: 10%;
   font-family: 'Arial';
   text-align: center;
+}
+#link{
+  padding-bottom: 10px;
+}
+#confirmPassword{
+  margin-top: 10px;
+  margin-left: 78px;
+}
+#password {
+  margin-left: 3px;
 }
 
 </style>

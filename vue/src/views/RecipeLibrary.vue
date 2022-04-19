@@ -15,7 +15,7 @@
   
   <form v-on:submit.prevent="addRecipeToThisMeal">
     <recipe-list-for-meal v-bind:searchValue="savedSearchValue" v-bind:key="savedSearchValue"/>
-      <button type="submit">Add Recipes To Meal</button>
+    <button type="submit">Add Recipes To Meal</button>
   </form>
   </div>
 
@@ -44,16 +44,14 @@ export default {
       },
       
       addRecipeToThisMeal(){
-       
         const mealId = this.$route.params.id;
         const ids = this.$store.state.checkedRecipes.slice();
         ids.forEach( id => {
-
-           MealService.addRecipeToAMeal(mealId, id.id ).then(r => { 
+          MealService.addRecipeToAMeal(mealId, id.id ).then(r => { 
              console.log(r)
-           }
-           )
+           });
           this.$store.state.checkedRecipes = [];
+          this.router.push({ name: 'plan', params: { id: this.$store.state.user.id } })
         });
        
       }

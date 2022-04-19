@@ -261,7 +261,7 @@ INSERT INTO plans (plan_name) VALUES ( 'high protein');
 --SELECT * FROM plans
 --SELECT * FROM users
 
---INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 1 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 --SELECT * FROM user_plan	
 	
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	

@@ -253,6 +253,19 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 		   'Boil water and season with salt then add orzo. Chop all veggies, onion, galic and place into preheated pan with olive oil. then, add seasonings to pan. In a seporate pan sear the shrimp on both sides. When orzo is finished drain it and squeeze 1/2 a lemon over it. Combine orzo and veggies. plate the vegatable/ orzo mixture and plae shrimp on top. drizzle chili oil on top',
 		   380, true,true,true,true, false, true,true,'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd21%2Fshrimp-orzo-med108373%2Fshrimp-orzo-med108373_horiz.jpg%3Fitok%3D_JgejBNo');
 
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Baked Red Snapper Recipe',
+		   '1 pound snapper filets, 1 tablespoon extra virgin olive oil, 1 tablespoon lemon juice, 3 cloves garlic, grated, 1/2 teaspoon fine sea salt, 1/4 teaspoon ground black pepper, 1 lemon, cut into wedges',
+		   'Preheat the oven to 375 F. Place the snapper filets in a baking dish or on a rimmed baking sheet, then rub on both sides with the olive oil, lemon juice, garlic, salt, and pepper. Place the lemons around the snapper, then transfer to the oven to bake for 20 minutes, until the snapper easily flakes with a fork. Let cool slightly, then squeeze the baked lemons over the snapper and serve!',
+		   150, true, true, true, true, false, false, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXZZ7gIX5HSLk7CEOVgAAKx7QT3vF5j8rm7A&usqp=CAU');
+		   
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Tuna Steaks',
+		   '2 ahi tuna steaks, 2 tablespoons soy sauce, 1 tablespoon toasted sesame oil see notes, 1 tablespoon honey see notes, 1/2 teaspoon kosher salt, 1/4 teaspoon black pepper to taste, 1/4 teaspoon cayenne pepper (optional), 1 tablespoon canola oil or olive oil, green onions, toasted sesame seeds, and lime wedges',
+		   'Pat the ahi tuna steaks dry with a paper towel. Place on a plate or inside a plastic bag Mix the soy sauce (2 tablespoons), toasted sesame oil (1 tablespoon), honey (1 tablespoon) kosher salt (1/2 teaspoon- OMIT if marinating for more than a couple hours, see notes), pepper (1/4 teaspoon), and cayenne pepper (1/4 teaspoon) until honey is fully dissolved. Pour over the ahi tuna steaks and turn over to coat completely. Optional: allow to marinate for at least 10 minutes, or up to overnight in the refrigerator. Heat a medium skillet (preferably non-stick or a well-seasoned cast iron skillet) on medium-high to high until very hot,Add the canola oil (1 tablespoon) to the hot pan. Sear the tuna for 1 - 1½ minutes on each side for medium rare ( 2 -2½ minutes for medium-well to well, 30 seconds for very rare. allow to rest for at least 3 minutes. Slice into 1/2 inch slices and serve garnished with green onions, toasted sesame seeds, and a squeeze of fresh lime juice, if desired. ',
+		   330, true, true, true, true, false, false, true, 'https://www.bowlofdelicious.com/wp-content/uploads/2015/11/Ahi-Tuna-Steaks-1.jpg');
+		   
+		   
 --select * from recipes
 
 

@@ -138,7 +138,7 @@ const router = new Router({
       }
     },
     {
-    path: "/meal/:id/recipes-list",
+    path: "/plan/:planId/meal/:id/recipes-list",
     name: "recipe-list-for-meals",
     component: RecipeLibrary,
     meta: {

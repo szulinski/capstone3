@@ -51,6 +51,8 @@ export default new Vuex.Store({
     planId: 0,
     planName: ''
   },
+
+  
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;

@@ -10,8 +10,8 @@
         </h3>
         </div>
         <form v-on:submit.prevent="addRecipe">
-       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}">
-           <button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
+       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {planId: planId,  id : meal.mealId}}">
+           <button >Add A Recipe</button></router-link>
       </form>
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
     components: {
     },
     props: {
-        meal: Object
+        meal: Object,
+        planId: Number
     },
     data(){
         return {

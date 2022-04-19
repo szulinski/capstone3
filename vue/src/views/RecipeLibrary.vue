@@ -50,10 +50,11 @@ export default {
           MealService.addRecipeToAMeal(mealId, id.id ).then(r => { 
              console.log(r)
            });
-          this.$store.state.checkedRecipes = [];
-          this.router.push({ name: 'plan', params: { id: this.$store.state.user.id } })
+          
         });
-       
+        this.$store.state.checkedRecipes = []; 
+        const planId = this.$route.params.planId;
+       this.$router.push({ name: 'plan', params: { id: planId } });
       }
     }
 

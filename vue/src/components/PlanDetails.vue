@@ -1,7 +1,7 @@
 <template>
   <div class="plan-details">
       <div class ="meal-cards">
-        <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.id"/>
+        <meal-card v-for="meal in meals" v-bind:planId="planId" v-bind:meal="meal" v-bind:key="meal.mealId"/>
       </div>
    </div>   
 </template>
@@ -26,6 +26,9 @@ export default {
     computed: {
         mealsFilter(){
             return this.$store.state.meals;
+        },
+        planId(){
+            return parseInt(this.$route.params.id)
         }
     },
     created() {

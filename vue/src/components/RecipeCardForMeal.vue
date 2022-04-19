@@ -54,9 +54,6 @@ export default {
     margin: 20px;
     
 }
-.card.saved {
-    background-color: crimson;
-}
 .card .recipe-name {
     font-size: 1.5rem;
 }

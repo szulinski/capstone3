@@ -155,6 +155,44 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 			'1, preheat oven to 400F. 2, toss chopped veggies in olive oil, salt, pepper, oregano, smoked paprika, tyme, rosemarry, and any other seasonings you like. 3, place the pan of veggies and slmon on a seporate plan in oven and bake until salmon reaches 130F internal temp, stir veggies occasionally. ',
 			475, true, true, true, true, false, false, true, 'https://images-gmi-pmc.edge-generalmills.com/5cdc7032-ca50-4b1d-9210-72d992e5a71f.jpg');
 
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Waffle with Cream Cheese and Smashed Berries recipes',
+			'1 waffle, 2 tablespoons cream cheese, 2 tablespoons rasberries/blueberries/blackberries, 1 tablespoon honey or agave',
+		   'Toast a waffle and smear with cream cheese. Using a fork, smash raspberries, blueberries, or blackberries on top of cream cheese. Drizzle with honey or agave.',
+		   390, false, false, false, true, true, false, false, 'https://www.edamam.com/food-img/f35/f350a14e0e625e77a2a5031703a402e2.jpg');
+		   
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Mediterranean Chicken Wrap',
+		  '1 chicken cutlet, coarse salt, ground pepper, 1 whole-wheat wrap, 1 tablespoon olive tapenade, 2 canned artichoke hearts, 1/2 small tomato, 1/4 cup mixed baby greens',
+		  'Heat broiler with rack 4 inches from heat. Season chicken with salt and pepper and broil until opaque throughout, 4 to 5 minutes; let cool. Spread bottom of wrap with the olive tapenade. Layer with chicken, artichoke hearts, tomato, and baby greens; season with salt and pepper. Fold tortilla to seal.',
+		  325, true, true, false, true, false, true, true, 'https://res.cloudinary.com/hksqkdlah/image/upload/10938_sfs-mediterranean-chicken-wraps-016.jpg');
+		  
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Spaghetti Genovese',
+		  '200g trimmed green beans, olive oil, 120g fresh pesto, 300g spaghetti, 300g potatoes',
+		  'Pour a kettle of boiling water into a very large pan until half full. Return to the boil, then add the potatoes and spaghetti, and a little salt. Cook for 10 minutes until the potatoes and pasta are almost tender. Tip in the green beans and cook for 5 minutes more. Drain well, reserving 4 tbsp of the cooking liquid. Return the potatoes, pasta and beans to the pan, then stir in the fresh pesto and reserved cooking liquid. Season to taste, divide between four serving plates and drizzle with a little olive oil.',
+		  1915, false, false, false, true, false, true, true,'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1845_10-e6b81e8.jpg');
+		  
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Bacon with Citrus Glaze recipes',
+		  '8 slices of slab bacon, 2 navel oranges, 1 tablespoon cane syrup',
+		  'Preheat oven to 400 degrees. Lay bacon on a baking sheet. Juice oranges into a small saucepan, and add cane syrup. Cookover medium heat until glaze is thick enough to coat theback of a spoon, about 8 minutes. Brush some glaze over the bacon, and bake for 10 minutes.Brush with more glaze. Continue to bake until golden,about 15 minutes more (10 minutes if using regular bacon).Brush bacon with remaining glaze, and transfer to a parchment-or paper-towel-lined plate to drain before serving.',
+		  311, false, true, true, true, true, true, false, 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd31%2Fessentialemeril-bacon-mrkt-0915%2Fessentialemeril-bacon-mrkt-0915_horiz.jpg%3Fitok%3DwVw7DSKE&w=272&h=272&c=sc&poi=face&q=60');
+		  
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('Turkey Soup',
+		  '1 Turkey, 2 1/2 cups turkey stuffing, 2 cups turkey gravy, 3 carrots, 3 ribs of celery, 1 onion, 1/2 cup fresh parsley, 1 bay leaf, 2 tsp. dried thyme, salt',
+		  'Put all the ingredients with 10 cups the water into a large soup pot over medium heat, bring to a boil, and then reduce the heat to a simmer. Stir to break up all the clumps of stuffing and mix well. Let the soup simmer for about 1 1⁄2 hours. Add another 1 1⁄2 cups of cold water and let simmer for 10 more minutes. Taste for salt and adjust the flavoring if necessary. Serve hot.',
+		  840, true, true, true, false, false, true, true, 'https://dinnerthendessert.com/wp-content/uploads/2019/11/Turkey-Soup-4.jpg');
+		  
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
+	VALUES('The Ultimate Burger',
+		  '2 1/2 pounds skirt steak, burger buns, ketchup, mustard, pickle relish, lettuce, tomato',
+		  'Cut steak into 1 1/2-inch pieces and season with 11/2 teaspoon salt. Chill in a sealable bag 4 to 6 hours. Rinse steak under cold water, then pat dry. Grind using a meat grinder with a 3/8-or 1/4-inch die or finely chop in a food processor. Form into 6 balls and flatten into patties about 1 inch thick and 4 inches in diameter. Chill until ready to grill. Prepare grill for direct-heat cooking over medium-hot charcoal (medium-high heat for gas) Season burgers with 1/4 teaspoon pepper (total). Lightly oil grill rack. Grill burgers, covered only if using a gas grill, turning once, about 5 minutes total for rare or 6 minutes for medium-rare. (Burgers will continue to cook slightly once removed from grill.',
+		  650,false,true,false,false,false,true,true,'https://assets.epicurious.com/photos/5609a5a06a59cdb91b5ff550/master/w_1280,c_limit/353654_hires.jpg');
+		  
+
+
 INSERT INTO plans (plan_name) VALUES ( 'high protein');
 
 --INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));

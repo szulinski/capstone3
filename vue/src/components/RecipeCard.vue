@@ -29,18 +29,14 @@ export default {
     methods: {
         setSaved() {
             this.isSaved = !this.isSaved;
-            RecipeService.saveRecipe(this.recipe.recipeId, this.$store.state.user.id).then((response) => {
-                if (response.status === 201) {
-                    console.log("weeeee");
-                }
+            RecipeService.saveRecipe(this.recipe.recipeId, this.$store.state.user.id).then(() => {
+                this.$emit("savedChange",this.isSaved);
             });
         },
         unSave() {
             this.isSaved = !this.isSaved;
-            RecipeService.forgetRecipe(this.recipe.recipeId, this.$store.state.user.id).then(response => {
-                if(response.status === 201){
-                    console.log('WEEE');
-                }
+            RecipeService.forgetRecipe(this.recipe.recipeId, this.$store.state.user.id).then(() => {
+                this.$emit("savedChange",this.isSaved);
             })
         }
     }

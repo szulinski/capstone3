@@ -33,7 +33,6 @@ public class JdbcRecipeDao implements RecipeDao {
 
     @Override
     public Recipe findRecipeById(Long recipeId) {
-        Recipe recipe = null;
         String sql = "SELECT * FROM recipes WHERE recipe_id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,recipeId);
         if(results.next()){
@@ -162,9 +161,6 @@ public class JdbcRecipeDao implements RecipeDao {
         while (rs.next()) {
             ingredients = ingredients + rs.getString("ingredients");
         }
-//        }catch(Exception e){
-//            System.out.println(e.getMessage());
-//        }
         return ingredients;
     }
 

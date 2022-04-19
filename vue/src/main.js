@@ -4,9 +4,9 @@ import router from './router/index'
 import store from './store/index'
 import axios from 'axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faXmark )
+library.add(faXmark, faPlus )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

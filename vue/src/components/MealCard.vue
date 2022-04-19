@@ -3,16 +3,18 @@
       <!-- <router-link v-bind:to="{name: 'meal', params: {id : meal.mealId}}"> -->
        <h1 class="meal-day">{{meal.mealDay}}</h1>
       <!-- </router-link> -->
+      <div class= "add-recipe">
       <h2 class="meal-type">{{meal.mealType}}</h2>
+      <form v-on:submit.prevent="addRecipe">
+       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}">
+           <button id="add" v-on:click='toggle = !toggle'><font-awesome-icon icon="fa-solid fa-plus" />Add</button></router-link>
+      </form>
+      </div>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
         <h3>{{recipe.name}}
         <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
         </h3>
         </div>
-        <form v-on:submit.prevent="addRecipe">
-       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}">
-           <button v-on:click='toggle = !toggle'>Add A Recipe</button></router-link>
-      </form>
   </div>
 </template>
 
@@ -59,19 +61,30 @@ export default {
     justify-content: flex-start;
     border: 2px solid black;
     border-radius: 10px;
-    width: 250px;
-    height: 300px;
+    width: 275px;
+    height: 250px;
     margin: 10px;
     margin-block: 15px;
     font-size: 14px;
+    background-color: #23967f;
 }
-#add-recipe{
+.add-recipe{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: bottom;
+}
+#add {
+    background-color: #7daf9c;
+  color: #23967f;
+  border-color: #7daf9c;
+  font-size: 18px; 
+  ;
 }
 #remove {
   background-color: #7daf9c;
   color: #23967f;
   border-color: #7daf9c;
-  display: inline-block;
-  font-size: 20px; 
+  font-size: 18px; 
 }
 </style>

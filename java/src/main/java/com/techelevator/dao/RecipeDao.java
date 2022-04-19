@@ -10,7 +10,7 @@ public interface RecipeDao {
 
     Recipe findRecipeById(Long recipeId);
 
-    List<Recipe> findRecipeByName(String name);
+    List<Recipe> findRecipeByName(Long userId, String name);
 
     List<Recipe> findRecipesByCalorieCount(int calories);
 

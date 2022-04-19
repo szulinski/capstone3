@@ -15,6 +15,7 @@ public class Recipe {
     private Boolean isBreakfast;
     private Boolean isLunch;
     private Boolean isDinner;
+    private Boolean isSaved;
 
     public Recipe() { }
 
@@ -28,6 +29,7 @@ public class Recipe {
         this.isLowSodium = isLowSodium;
         this.isLowFat = isLowFat;
         this.isLowCarb = isLowCarb;
+
     }
 
     public Long getRecipeId() {return recipeId;}
@@ -81,4 +83,8 @@ public class Recipe {
     public Boolean getDinner() {return isDinner;}
 
     public void setDinner(Boolean dinner) {isDinner = dinner;}
+
+    public Boolean getSaved(){return this.isSaved;}
+
+    public void setSaved(Boolean saved){isSaved = saved;}
 }

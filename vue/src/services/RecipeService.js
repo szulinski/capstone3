@@ -12,8 +12,8 @@ export default {
     getRecipe(id){
         return recipeApi.get(`/recipe/${id}`);
     },
-    getRecipesByName(name){
-        return recipeApi.get(`/recipes/${name}`);
+    getRecipesByName(userId,name){
+        return recipeApi.get(`/recipes/user/${userId}/${name}`);
     },
     getRecipesBySaved(userId){
         return recipeApi.get(`/recipes/user/${userId}`);

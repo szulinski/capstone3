@@ -27,7 +27,7 @@ export default {
   methods: {
     filteredRecipes() {
       if (this.searchValue) {
-        recipeService.getRecipesByName(this.searchValue).then(response => {
+        recipeService.getRecipesByName(this.$store.state.user.id,this.searchValue).then(response => {
             this.recipes = response.data;
         });
       }
@@ -35,7 +35,7 @@ export default {
   },
   created() {
     if (this.searchValue) {
-        recipeService.getRecipesByName(this.searchValue).then(response => {
+        recipeService.getRecipesByName(this.$store.state.user.id,this.searchValue).then(response => {
             this.recipes = response.data;
         });
     }else{

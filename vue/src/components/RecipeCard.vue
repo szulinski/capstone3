@@ -7,8 +7,8 @@
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="button-container">
-      <button class="mark-saved" v-on:click.prevent="setSaved()" v-if="!isSaved">Save Recipe</button>
-      <button class="mark-unsaved" v-on:click.prevent="unSave()" v-if="isSaved">Forget Recipe</button>
+      <button class="mark-saved" v-on:click.prevent="setSaved()" v-if="!recipe.saved">Save Recipe</button>
+      <button class="mark-unsaved" v-on:click.prevent="unSave()" v-if="recipe.saved">Forget Recipe</button>
   </div>
   </div>
   </div>

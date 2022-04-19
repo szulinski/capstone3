@@ -45,11 +45,15 @@ public class JdbcRecipeDao implements RecipeDao {
     }
 
     @Override
-    public List<Recipe> findRecipeByName(String name) {
+    public List<Recipe> findRecipeByName(Long userId, String name) {
         List<Recipe> listOfRecipes = new ArrayList<>();
         String namee ="%" + name+ "%";
-        String sql = "SELECT * FROM recipes WHERE recipe_name ILIKE ?";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,namee);
+
+        String sql = "SELECT * FROM recipes r\n" +
+                "LEFT JOIN user_recipe ur ON ur.recipe_id = r.recipe_id AND ur.user_id = ? " +
+                "WHERE recipe_name ILIKE ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql,userId, namee);
         while(results.next()){
             Recipe recipe = mapRowToRecipe(results);
             listOfRecipes.add(recipe);
@@ -93,8 +97,8 @@ public class JdbcRecipeDao implements RecipeDao {
     public List<Recipe> findRecipesBySaved(Long userId){
         List<Recipe> listOfRecipes = new ArrayList<>();
         String sql = "SELECT * FROM recipes r\n" +
-                "JOIN user_recipe ur ON ur.recipe_id = r.recipe_id\n" +
-                "WHERE ur.user_id = ?";
+                "LEFT JOIN user_recipe ur ON ur.recipe_id = r.recipe_id AND ur.user_id = ?";
+
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql,userId);
         while(results.next()){
             Recipe recipe = mapRowToRecipe(results);
@@ -179,6 +183,11 @@ public class JdbcRecipeDao implements RecipeDao {
         recipe.setLunch(rowSet.getBoolean("is_lunch"));
         recipe.setDinner(rowSet.getBoolean("is_dinner"));
         recipe.setImage(rowSet.getString("img"));
+        try {
+            rowSet.getLong("user_id");
+            recipe.setSaved(!rowSet.wasNull());
+        } catch (Exception e) {
+        }
         return recipe;
     }
 }

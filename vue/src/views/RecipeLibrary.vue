@@ -52,7 +52,7 @@ export default {
            });
           
         });
-        this.$store.state.checkedRecipes = []; 
+        this.$store.commit('CLEAR_CHECKED')
         const planId = this.$route.params.planId;
        this.$router.push({ name: 'plan', params: { id: planId } });
       }

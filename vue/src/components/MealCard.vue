@@ -6,8 +6,8 @@
       <div class= "add-recipe">
       <h2 class="meal-type">{{meal.mealType}}</h2>
       <form v-on:submit.prevent="addRecipe">
-       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {id : meal.mealId}}">
-           <button id="add" v-on:click='toggle = !toggle'><font-awesome-icon icon="fa-solid fa-plus" />Add</button></router-link>
+      <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {planId: planId,  id : meal.mealId}}">
+           <button id="add" ><font-awesome-icon icon="fa-solid fa-plus" />Add</button></router-link>
       </form>
       </div>
       <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
@@ -15,10 +15,6 @@
         <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
         </h3>
         </div>
-        <form v-on:submit.prevent="addRecipe">
-       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {planId: planId,  id : meal.mealId}}">
-           <button >Add A Recipe</button></router-link>
-      </form>
   </div>
 </template>
 

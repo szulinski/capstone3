@@ -52,8 +52,9 @@ export default new Vuex.Store({
     planName: ''
   },
 
-  
+
   mutations: {
+
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
       localStorage.setItem('token', token);
@@ -93,6 +94,10 @@ export default new Vuex.Store({
       state.checkedRecipes = state.checkedRecipes.filter(i =>{
         return i.id !== id
       })
+    },
+    CLEAR_CHECKED(state){
+      state.checkedRecipes = [];
+
     },
     SET_CURRENTPLAN(state, planName){
       state.currentPlanName = planName;

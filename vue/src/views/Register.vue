@@ -1,7 +1,7 @@
 <template>
   
   <div id="register" class="text-center">
-    <!-- <img :src="require(images/emptycarrot.png)"> -->
+    <img :src="require(`@/images/emptycarrot.png`)" />
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">

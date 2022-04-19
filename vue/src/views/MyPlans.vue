@@ -42,8 +42,22 @@ export default {
 
 <style>
 .my-plans {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  grid-template: 1fr 2fr;
+    grid-template-areas: "title button" 
+    "plans plans";
+    
+    background-color:#7daf9c;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    /* flex-wrap: wrap; */
+}
+h1 {
+  grid-area: title; 
+}
+plan-list {
+  grid-area: plans ;
+}
+.button-container{
+  grid-area: button;
 }
 </style>

@@ -74,6 +74,7 @@ export default {
  box-shadow: 2px 2px 1px  
 }
 #add-recipes-button {
+  margin-top: 2%;
    background-color:ivory;
      transition-duration: 0.4s; 
 }

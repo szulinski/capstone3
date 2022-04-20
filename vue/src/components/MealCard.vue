@@ -12,7 +12,7 @@
            <button id="add" ><font-awesome-icon icon="fa-solid fa-plus" />Add</button></router-link>
       </form>
       </div>
-      <div v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
+      <div class = "recipe" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
         <h3>{{recipe.name}}
         <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
         </h3>
@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .meal-card {
      background-color: #F7BFB4;
     border: 2px solid #5b4b49;
@@ -66,7 +66,6 @@ export default {
     flex-direction: column;
     flex-basis: content;
     flex-grow: auto;
-    /* justify-content: space-between; */
     font-family: 'Arial';
     border-radius: 10px;
     width: 275px;
@@ -81,6 +80,9 @@ export default {
 .meal-card:hover {
      box-shadow: 7px 7px 5px #23967f;
 }
+.meal-day{
+     margin-bottom: -5px;
+}
 .add-recipe{
     display:flex;
     flex-direction: row;
@@ -91,6 +93,7 @@ export default {
 .meal-type{
     display: inline;
     align-self: top;
+    margin-bottom: -10px;
 }
 #add {
     background-color: #db93b0;
@@ -112,5 +115,14 @@ export default {
 }
 #remove:hover{
 box-shadow: 2px 2px 1px #a23e48;
+}
+.recipe{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: -20px;
+    margin-top:-20px;
+    align-items: center;
+    justify-items: center;
 }
 </style>

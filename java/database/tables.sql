@@ -291,7 +291,6 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img) 
 	VALUES ('Miso Salmon', 'Salmon, Miso, Soy sauce, Sake, Mirin, Roasted sesame oil', 'Make the miso marinade and marinate the salmon for 1-2 hours. Remove the marinade from the salmon and bake it.Change to a broiler and cook until the salmon are nicely charred. Serve and enjoy!', 500, false, true, true, false, false, true, true, 'https://www.justonecookbook.com/wp-content/uploads/2014/09/Miso-Salmon-III-600x900.jpg');
-
 --select * from recipes
 
 

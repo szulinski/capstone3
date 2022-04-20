@@ -3,7 +3,7 @@
   <div class="card" v-bind:key="recipe.recipeId">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
   <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
-        <img v-if="recipe.image" v-bind:src="recipe.image"/>
+        <img id="card-image" v-if="recipe.image" v-bind:src="recipe.image"/>
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="button-container">
@@ -58,18 +58,17 @@ export default {
 .card .recipe-name {
     font-size: 1.5rem;
 }
-.card .book-author {
-    font-size: 1rem;
-}
+
+
 .button-container{
      align-content: center;
      align-items: center;
      justify-content: center;
 
 }
-img {
+#card-image {
    
-    max-width: 100%;
+    max-width: 90%;
     max-height: 50%;
 
 }

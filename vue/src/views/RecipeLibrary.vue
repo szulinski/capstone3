@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="library">
 <h2>Search for recipes</h2>
     <form id = "form">
       <label for="recipeName">Search </label>
@@ -62,5 +62,14 @@ export default {
 </script>
 
 <style>
-
+#library {
+   font-family: 'Arial';
+}
+#form button {
+  background-color: white;
+  transition-duration: 0.4s;
+}
+#form button:hover {
+ box-shadow: 2px 2px 1px  
+}
 </style>

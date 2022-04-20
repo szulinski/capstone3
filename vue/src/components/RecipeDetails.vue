@@ -1,15 +1,11 @@
 <template>
   <div class="recipe-details">
     <h2 class="recipe-name"> {{ recipe.name }}</h2>
-    <img v-if="recipe.image" v-bind:src="recipe.image"/>
+    <img id="detail-img" v-if="recipe.image" v-bind:src="recipe.image"/>
     <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
     <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
     <hr>
     <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
-    <!-- <p></p>
-    <p></p>
-    <p></p>
-    <p></p> -->
     <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}">Edit</router-link>
   </div>
 </template>
@@ -52,5 +48,12 @@ export default {
 </script>
 
 <style>
-
+.recipe-details{
+  max-width: 80%;
+  margin-left: 5%;
+  font-family: 'Arial';
+}
+#detail-img{
+  max-width: 100%;
+}
 </style>

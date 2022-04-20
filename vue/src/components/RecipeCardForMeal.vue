@@ -3,7 +3,7 @@
   <div class="card" v-bind:key="recipe.recipeId">
   <h2 class="recipe-name"> {{ recipe.name }}</h2>
   <router-link v-bind:to="{name: 'recipe', params: {id : recipe.recipeId}}">
-        <img v-if="recipe.image" v-bind:src="recipe.image"/>
+        <img id="RCFMI" v-if="recipe.image" v-bind:src="recipe.image"/>
   </router-link>
   <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
   <div class="checkbox-container">
@@ -56,6 +56,8 @@ export default {
     margin: 20px;
     padding-left:6%;
     padding-right:1%;
+    transition-duration: 0.4s;
+     font-family: 'Arial';
     
 }
 .card:hover {
@@ -64,25 +66,27 @@ export default {
 .card .recipe-name {
     font-size: 1.5rem;
 }
-.card .book-author {
-    font-size: 1rem;
-}
+
 .checkbox-container{
      /* align-content: center;
      align-items: center;
      justify-content: center; */
 }
-img {
+#RCFMI {
     min-width: 80%;
     min-height: auto;
     max-width: 90%;
     max-height: auto;
+    transition-duration: 0.4s;
 }
-img:hover{
+
+#RCFMI:hover{
    box-shadow: 4px 4px 3px #a23e48;
 }
+#addRecipe {
+  transition-duration: 0.4s;
+}
 #addRecipe:hover {
-  width: 8%;
   box-shadow: 1px 2px 3px #a23e48;
 }
 </style>

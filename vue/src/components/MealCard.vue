@@ -75,7 +75,8 @@ export default {
     margin-block: 15px;
     font-size: 14px;
     padding: 5px;
-    /* background-color: #23967f; */
+     transition-duration: 0.4s; 
+    
 }
 .meal-card:hover {
      box-shadow: 7px 7px 5px #23967f;
@@ -96,6 +97,7 @@ export default {
     color: white;
     border-color: #db93b0;
     font-size: 18px; 
+     transition-duration: 0.4s; 
 }
 #add:hover {
      box-shadow: 2px 2px 1px #a23e48;
@@ -106,6 +108,7 @@ export default {
   border-color: black;
   border-width: 1px;
   font-size: 12px; 
+   transition-duration: 0.4s; 
 }
 #remove:hover{
 box-shadow: 2px 2px 1px #a23e48;

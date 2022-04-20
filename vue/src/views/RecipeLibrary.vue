@@ -14,8 +14,8 @@
     </form  >
   
   <form v-on:submit.prevent="addRecipeToThisMeal">
+    <button id="add-recipes-button" type="submit">Add Recipes To Meal</button>
     <recipe-list-for-meal v-bind:searchValue="savedSearchValue" v-bind:key="savedSearchValue"/>
-    <button type="submit">Add Recipes To Meal</button>
   </form>
   </div>
 
@@ -64,6 +64,7 @@ export default {
 <style>
 #library {
    font-family: 'Arial';
+   
 }
 #form button {
   background-color: white;
@@ -71,5 +72,12 @@ export default {
 }
 #form button:hover {
  box-shadow: 2px 2px 1px  
+}
+#add-recipes-button {
+   background-color:ivory;
+     transition-duration: 0.4s; 
+}
+#add-recipes-button:hover {
+  box-shadow: 2px 2px 1px;
 }
 </style>

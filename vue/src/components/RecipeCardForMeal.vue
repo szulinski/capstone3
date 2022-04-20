@@ -76,7 +76,7 @@ export default {
     min-width: 80%;
     min-height: auto;
     max-width: 90%;
-    max-height: auto;
+    max-height: 50%;
     transition-duration: 0.4s;
 }
 

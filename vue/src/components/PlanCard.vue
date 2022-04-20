@@ -23,8 +23,6 @@ export default {
 
 <style>
 .plan-card {
-    
-    
     background-color: #F7BFB4;
     border: 2px solid #5b4b49;
     border-radius: 10px;
@@ -33,9 +31,10 @@ export default {
     margin: 20px;
     padding-bottom: 10px;
     text-align: center;
-   
-
-    
+     transition-duration: 0.4s; 
+}
+.plan-card:hover {
+  box-shadow: 7px 7px 5px #23967f;
 }
 .plan-card .plan-name {
    font-family: 'Arial';

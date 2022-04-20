@@ -47,7 +47,7 @@ export default {
 <style>
 .my-plans {
   background-color:#7daf9c;
-  
+  font-family: 'Arial';
     /* display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,4 +71,5 @@ export default {
  display: flex;
  justify-content: center;
 }
+
 </style>

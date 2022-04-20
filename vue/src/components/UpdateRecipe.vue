@@ -17,7 +17,7 @@
               <textarea id="ingredients-box" type="text" v-model="recipe.ingredients"/>
           </div>
           <div class="submit-field">
-              <router-link :to="{name: 'my-recipes'}"><button type="submit" v-on:click="sendUpdatedRecipe()">Submit</button></router-link>
+              <router-link :to="{name: 'all-recipes'}"><button type="submit" v-on:click="sendUpdatedRecipe()">Submit</button></router-link>
           </div>
       </div>
   </form>

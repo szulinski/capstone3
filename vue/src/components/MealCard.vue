@@ -65,7 +65,7 @@ export default {
     flex-direction: column;
     flex-basis: content;
     flex-grow: auto;
-    justify-content: flex-start;
+    /* justify-content: space-between; */
     font-family: 'Arial';
     border-radius: 10px;
     width: 275px;
@@ -83,7 +83,7 @@ export default {
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: top;
+    align-items: center;
     /* padding-block: 4px; */
 }
 .meal-type{

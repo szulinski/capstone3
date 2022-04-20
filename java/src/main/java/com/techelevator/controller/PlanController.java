@@ -41,10 +41,4 @@ public class PlanController {
         }
 
     }
-
-//    @ResponseStatus(HttpStatus.CREATED)
-//    @RequestMapping(path = "/createPlan", method = RequestMethod.POST)
-//    public void createPlan(@RequestBody) {
-//
-//    }
 }

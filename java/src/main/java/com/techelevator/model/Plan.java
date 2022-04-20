@@ -1,7 +1,5 @@
 package com.techelevator.model;
 
-import java.lang.reflect.Array;
-
 public class Plan {
 
     private Long planId;

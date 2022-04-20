@@ -6,8 +6,8 @@
 </h1>
     </div>
     <div class="router-links">
-      <router-link class="my-recipes" v-bind:to="{ name: 'my-recipes' }" v-if="$store.state.token != ''">My Recipes<br><br><img class="recipes" :src="require(`@/images/recipes.png`)" /></router-link>
-      <router-link class="my-plans" v-bind:to="{ name: 'my-plans'}" v-if="$store.state.token != ''">My Plans<br><br><img class="calendar" :src="require(`@/images/calendar.png`)" /></router-link>
+      <router-link class="my-recipes" v-bind:to="{ name: 'my-recipes' }" v-if="$store.state.token != ''">My Recipes<br><br><img class="recipes" :src="require(`@/images/recipesbrown.png`)" /></router-link>
+      <router-link class="my-plans-home" v-bind:to="{ name: 'my-plans'}" v-if="$store.state.token != ''">My Plans<br><br><img class="calendar" :src="require(`@/images/calendar.png`)" /></router-link>
       <router-link class="groceries" v-bind:to="{name: 'groceries-list'}" v-if="$store.state.token != ''">Grocery Lists<br><br><img class="grocery-list" :src="require(`@/images/grocerylist.png`)" /></router-link>
     </div>
   </div>
@@ -26,29 +26,32 @@ export default {
     grid-area: routerlinks;
     
   }
+      /* background-color:#7daf9c; */
 
   .my-recipes{
     text-decoration: none;
-    font-size: 34px;
-    -webkit-text-stroke: 1px #5b4b49;
-    -webkit-text-fill-color: #f7bfb4;
+    font-weight: 600;
+    font-size: 80px;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
-    background-color:#23967f;
+    /* background-color:#23967f; */
     border-radius: 100px;
     height: auto;
     width: 100%;
-    border: 2px solid #5b4b49;
+    border: 10px solid #5b4b49;
+    transition-duration: 0.4s; 
   }
   .my-recipes:hover{
-    box-shadow: 7px 7px 5px #23967f;
+    box-shadow: 20px 20px 7px #82C590;
 }
-  .home .my-plans:hover{
-    box-shadow: 7px 7px 5px #23967f;
-}
+  .my-plans-home:hover{
+box-shadow: 20px 20px 7px #82C590;}
+
   .groceries:hover{
-    box-shadow: 7px 7px 5px #23967f;
-}
+box-shadow: 20px 20px 7px #82C590;}
+
   .my-recipes .recipes{
     display: block;
     margin-left: auto;
@@ -56,7 +59,7 @@ export default {
     height: 220px;
     width: 220px;
   }
-  .home .my-plans .calendar{
+  .my-plans-home .calendar{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -70,31 +73,35 @@ export default {
     height: 200px;
     width: 200px;
   }
-  .home .my-plans{
+  .my-plans-home{
    text-decoration: none;
-    font-size: 34px;
-    -webkit-text-stroke: 1px #5b4b49;
-    -webkit-text-fill-color: #f7bfb4;
+    font-weight: 600;
+    font-size: 80px;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
-    background-color:#23967f;
+    /* background-color:#23967f; */
     border-radius: 100px;
     height: auto;
     width: 100%;
-    border: 2px solid #5b4b49;
+    border: 10px solid #5b4b49;
+    transition-duration: 0.4s; 
   }
   .groceries {
-    text-decoration: none;
-     font-size: 34px;
-    -webkit-text-stroke: 1px #5b4b49;
-    -webkit-text-fill-color: #f7bfb4;
+   text-decoration: none;
+    font-weight: 600;
+    font-size: 80px;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
-    background-color:#23967f;
+    /* background-color:#23967f; */
     border-radius: 100px;
     height: auto;
     width: 100%;
-    border: 2px solid #5b4b49;
+    border: 10px solid #5b4b49;
+    transition-duration: 0.4s; 
   }
   .homeTitle{
     margin: auto;
@@ -103,7 +110,7 @@ export default {
     text-align: center;
     font-size: 7rem;
     -webkit-text-stroke: 2px #5b4b49;
-    -webkit-text-fill-color: #c30450;
+    -webkit-text-fill-color: #db93b0;
   }
 
   .carrot {

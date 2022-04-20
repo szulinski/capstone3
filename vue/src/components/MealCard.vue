@@ -99,7 +99,7 @@ export default {
     color: white;
     border-color: #db93b0;
     font-size: 18px; 
-     transition-duration: 0.4s; 
+    transition-duration: 0.4s; 
 }
 #add:hover {
      box-shadow: 2px 2px 1px #a23e48;

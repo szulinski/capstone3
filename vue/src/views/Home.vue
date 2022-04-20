@@ -2,7 +2,7 @@
   <div class="home">
     <div class="container">
     <!-- <img class="carrot" :src="require(`@/images/emptycarrot.png`)" />     -->
-    <h1 class="homeTitle">MealThyme<img class="carrot" :src="require(`@/images/emptycarrot.png`)" />    
+    <h1 class="homeTitle">MealThyme<img class="carrot" :src="require(`@/images/justcarrot.png`)" />    
 </h1>
     </div>
     <div class="router-links">
@@ -108,9 +108,9 @@ box-shadow: 20px 20px 7px #82C590;}
     width: 50%;
     text-justify: center;
     text-align: center;
-    font-size: 7rem;
-    -webkit-text-stroke: 2px #5b4b49;
-    -webkit-text-fill-color: #db93b0;
+    font-size: 9rem;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
   }
 
   .carrot {

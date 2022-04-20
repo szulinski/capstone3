@@ -39,5 +39,7 @@ export default {
 </script>
 
 <style>
-
+.search-bar{
+    font-family: 'Arial';
+}
 </style>

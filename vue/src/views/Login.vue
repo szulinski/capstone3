@@ -2,7 +2,7 @@
 <div id="container">
   
   <div id="login" class="text-center">
-    <img :src="require(`@/images/emptycarrot.png`)" />
+    <img id="carrot" :src="require(`@/images/emptycarrot.png`)" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -121,7 +121,7 @@ export default {
   border-radius: 5px;
   border-color: black;
 }
-img {
+#carrot {
   width: 25%;
 }
 </style>

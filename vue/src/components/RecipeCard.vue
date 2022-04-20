@@ -64,12 +64,23 @@ export default {
      align-content: center;
      align-items: center;
      justify-content: center;
-
+     
+}
+.button-container button{
+    background-color:ivory;
+     transition-duration: 0.4s; 
+}
+.button-container button:hover {
+    box-shadow: 2px 2px 1px #a23e48;
 }
 #card-image {
-   
+  min-width: 80%;
+    min-height: auto;
     max-width: 90%;
     max-height: 50%;
-
+    transition-duration: 0.4s; 
+}
+#card-image:hover {
+     box-shadow: 4px 4px 3px #a23e48;
 }
 </style>

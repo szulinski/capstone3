@@ -1,7 +1,7 @@
 <template>
   <div class="plans-list">
       <div class="plans">
-        <plan-card v-for="plan in plans" v-bind:plan="plan" v-bind:key="plan.planId" />
+        <plan-card id="plan-cards" v-for="plan in plans" v-bind:plan="plan" v-bind:key="plan.planId" />
       </div>
   </div>
 </template>
@@ -35,4 +35,5 @@ export default {
 </script>
 
 <style>
+
 </style>

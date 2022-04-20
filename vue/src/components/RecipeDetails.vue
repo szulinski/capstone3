@@ -54,6 +54,8 @@ export default {
   font-family: 'Arial';
 }
 #detail-img{
-  max-width: 100%;
+  min-width: 50%;
+  max-width: 75%;
+  
 }
 </style>

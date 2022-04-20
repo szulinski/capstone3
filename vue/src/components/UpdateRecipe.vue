@@ -1,23 +1,24 @@
 <template>
   <form>
-      <div class="nameField">
-          <div>
+      <h1>Update Recipe</h1>
+      <div class="update-field">
+          <div class="name-field">
             <label for="name">Name: </label>
             <input type="text" v-model="recipe.name"/>
           </div>
-          <div>
+          <div class="calories-field">
             <label for="calories">Calories: </label>
             <input type="number" v-model="recipe.calories"/>
           </div>
-          <div>
-            <label for="description">Description: </label>
-            <input type="text" v-model="recipe.description"/>
+          <div class="directions-field">
+            <label for="directions">Directions: </label>
+            <input type="text" v-model="recipe.directions"/>
           </div>
-          <div>
+          <div class="ingredients-field">
               <label for="ingredients">Ingredients: </label>
               <input type="text" v-model="recipe.ingredients"/>
           </div>
-          <div>
+          <div class="submit-field">
               <router-link :to="{name: 'my-recipes'}"><button type="submit" v-on:click="sendUpdatedRecipe()">Submit</button></router-link>
           </div>
       </div>
@@ -74,5 +75,40 @@ export default {
 </script>
 
 <style>
+
+.update-field {
+    border-radius: 100px;
+    background-color: #F7BFB4;
+    border: 2px solid #5b4b49;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+    margin-top: 25px;
+    padding: 10%;
+    font-family: 'Arial';
+    text-align: center;
+}
+
+.name-field {
+    padding:10px;
+}
+
+.calories-field {
+    padding: 10px;
+}
+
+.directions-field {
+    padding: 10px;
+}
+
+.ingredients-field {
+    padding: 10px;
+}
+
+.submit-field {
+    padding: 10px;
+}
+
+
 
 </style>

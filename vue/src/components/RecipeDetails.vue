@@ -1,8 +1,10 @@
 <template>
   <div class="recipe-details">
     <div class="name-details">
-      <h2 class="recipe-name"> {{ recipe.name }}</h2>
-      <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}"><button class="edit-button">Edit</button></router-link>
+      <h2 class="recipe-name">
+        {{ recipe.name }}
+        <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}"><button class="edit-button">Edit</button></router-link>
+      </h2>
     </div>
     <div>
       <img id="detail-img" v-if="recipe.image" v-bind:src="recipe.image"/>
@@ -81,7 +83,4 @@ export default {
     transition-duration: 0.4s;
 }
 
-.name-details {
-  display: inline-block;
-}
 </style>

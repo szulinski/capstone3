@@ -1,14 +1,20 @@
 <template>
   <div class="recipe-details">
-    <h2 class="recipe-name"> {{ recipe.name }}</h2>
-    <img id="detail-img" v-if="recipe.image" v-bind:src="recipe.image"/>
-    <div class="recipe-info">
-    <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
-    <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
-    <hr>
-    <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
+    <div class="name-details">
+      <h2 class="recipe-name">
+        {{ recipe.name }}
+        <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}"><button class="edit-button">Edit</button></router-link>
+      </h2>
     </div>
-    <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}"><button class="edit-button">Edit</button></router-link>
+    <div>
+      <img id="detail-img" v-if="recipe.image" v-bind:src="recipe.image"/>
+    </div>
+    <div class="recipe-info">
+      <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
+      <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
+      <hr>
+      <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
+    </div>
   </div>
 </template>
 
@@ -76,4 +82,5 @@ export default {
     font-size: 18px; 
     transition-duration: 0.4s;
 }
+
 </style>

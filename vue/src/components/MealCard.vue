@@ -13,9 +13,8 @@
       </form>
       </div>
       <div class = "recipe" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
-        <h3>{{recipe.name}}
+        <router-link v-bind:to="{name: 'recipe', params: {id: recipe.recipeId}}"><h3>{{recipe.name}}</h3></router-link>
         <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
-        </h3>
         </div>
   </div>
 </template>
@@ -100,7 +99,7 @@ export default {
     color: white;
     border-color: #db93b0;
     font-size: 18px; 
-     transition-duration: 0.4s; 
+    transition-duration: 0.4s; 
 }
 #add:hover {
      box-shadow: 2px 2px 1px #a23e48;

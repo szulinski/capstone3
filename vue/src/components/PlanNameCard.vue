@@ -25,7 +25,7 @@ export default {
 
 <style>
 .plan-card {
-    border: 2px solid black;
+    border: 2px solid #5b4b49;
     border-radius: 10px;
     width: 500px;
     height: 100px;

@@ -32,6 +32,7 @@ export default {
     padding-bottom: 10px;
     text-align: center;
      transition-duration: 0.4s; 
+     
 }
 .plan-card:hover {
   box-shadow: 7px 7px 5px #23967f;
@@ -43,6 +44,7 @@ export default {
 }    
 #link {
     text-decoration: none;
+    color:#5b4b49;
 }
 
 

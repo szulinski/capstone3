@@ -3,7 +3,7 @@
     <div class ="title-button">
     <h1 class="title">My Plans</h1>
     <div class="button-container">
-      <button v-show='toggle' v-on:click='toggle = !toggle'>Add a Plan</button>
+      <button id="add" v-show='toggle' v-on:click='toggle = !toggle'>Add a Plan</button>
       <form v-on:submit.prevent="createPlan">
       <input v-show="!toggle" v-model="planName" type="text" placeholder="Add plan name" />
       <button v-show="!toggle" type="submit"  >Submit</button>
@@ -46,7 +46,7 @@ export default {
 
 <style>
 .my-plans {
-  background-color:#7daf9c;
+  /* background-color:#7daf9c; */
   font-family: 'Arial';
     /* display: flex;
     flex-direction: column;
@@ -64,6 +64,7 @@ export default {
   justify-content: center;
 }
 .button-container{
+  
   display: flex;
   justify-content: center;
 }

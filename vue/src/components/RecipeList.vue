@@ -44,6 +44,7 @@ export default {
 
 <style >
 .my-recipe-list {
+  
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;

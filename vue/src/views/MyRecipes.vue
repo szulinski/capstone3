@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="background">
   <saved-recipes-list :key="this.version"/>
 </div>
 </template>

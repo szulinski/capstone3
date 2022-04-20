@@ -114,8 +114,9 @@ export default {
   }
 
    .home{
+    /* background-image: url('../images/more-leaves-on-green.png'); */
+    /* background-color:#7daf9c; */
     
-    background-color:#7daf9c;
     font-family: 'Arial';
     /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;

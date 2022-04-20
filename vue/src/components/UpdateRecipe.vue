@@ -5,18 +5,16 @@
           <div class="name-field">
             <label for="name">Name: </label>
             <input type="text" v-model="recipe.name"/>
-          </div>
-          <div class="calories-field">
             <label for="calories">Calories: </label>
             <input type="number" v-model="recipe.calories"/>
           </div>
           <div class="directions-field">
             <label for="directions">Directions: </label>
-            <input type="text" v-model="recipe.directions"/>
+            <input id="directions-box" type="text" v-model="recipe.directions"/>
           </div>
           <div class="ingredients-field">
               <label for="ingredients">Ingredients: </label>
-              <input type="text" v-model="recipe.ingredients"/>
+              <input id="ingredients-box" type="text" v-model="recipe.ingredients"/>
           </div>
           <div class="submit-field">
               <router-link :to="{name: 'my-recipes'}"><button type="submit" v-on:click="sendUpdatedRecipe()">Submit</button></router-link>
@@ -109,6 +107,12 @@ export default {
     padding: 10px;
 }
 
+#directions-box {
+    width: 500px;
+}
 
+#ingredients-box {
+    width: 500px;
+}
 
 </style>

@@ -2,11 +2,13 @@
   <div class="recipe-details">
     <h2 class="recipe-name"> {{ recipe.name }}</h2>
     <img id="detail-img" v-if="recipe.image" v-bind:src="recipe.image"/>
+    <div class="recipe-info">
     <h3 class="recipe-calories"> Calories: {{ recipe.calories }}</h3>
     <p class="recipe-ingredients">Ingredients: {{ recipe.ingredients }}</p>
     <hr>
     <p class="recipe-directions">Directions: {{ recipe.directions }}</p>
-    <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}">Edit</router-link>
+    </div>
+    <router-link :to="{name: 'recipe-update',params: {recipe : recipe}}"><button class="edit-button">Edit</button></router-link>
   </div>
 </template>
 
@@ -56,6 +58,22 @@ export default {
 #detail-img{
   min-width: 50%;
   max-width: 75%;
+  min-height: 50%;
+  max-height: 75%;
   
+}
+
+.recipe-info {
+  background-color: #f7bfb4;
+  border: 2px solid #5b4b49;
+  border-radius: 10px;
+}
+
+.edit-button {
+    background-color: #db93b0;
+    color: white;
+    border-color: #db93b0;
+    font-size: 18px; 
+    transition-duration: 0.4s;
 }
 </style>

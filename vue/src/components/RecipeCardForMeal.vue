@@ -47,6 +47,8 @@ export default {
 
 <style>
 .card {
+   background-color: #F7BFB4;
+    border: 2px solid #5b4b49;
     border: 2px solid black;
     border-radius: 10px;
     width: 250px;

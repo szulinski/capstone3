@@ -4,7 +4,9 @@
        <h1 class="meal-day">{{meal.mealDay}}</h1>
       <!-- </router-link> -->
       <div class= "add-recipe">
-      <h2 class="meal-type">{{meal.mealType}}</h2>
+          <div class="meal-type">
+      <h2 >{{meal.mealType}}</h2>
+          </div>
       <form v-on:submit.prevent="addRecipe">
       <router-link v-bind:to="{name: 'recipe-list-for-meals', params: {planId: planId,  id : meal.mealId}}">
            <button id="add" ><font-awesome-icon icon="fa-solid fa-plus" />Add</button></router-link>
@@ -57,37 +59,54 @@ export default {
 
 <style scoped>
 .meal-card {
+     background-color: #F7BFB4;
+    border: 2px solid #5b4b49;
     display: flex;
     flex-direction: column;
     flex-basis: content;
     flex-grow: auto;
     justify-content: flex-start;
-    border: 2px solid black;
+    font-family: 'Arial';
     border-radius: 10px;
     width: 275px;
     height: 250px;
     margin: 10px;
     margin-block: 15px;
     font-size: 14px;
-    background-color: #23967f;
+    padding: 5px;
+    /* background-color: #23967f; */
+}
+.meal-card:hover {
+     box-shadow: 7px 7px 5px #23967f;
 }
 .add-recipe{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: bottom;
+    align-items: top;
+    /* padding-block: 4px; */
+}
+.meal-type{
+    display: inline;
+    align-self: top;
 }
 #add {
-    background-color: #7daf9c;
-  color: #23967f;
-  border-color: #7daf9c;
-  font-size: 18px; 
-  ;
+    background-color: #db93b0;
+    color: white;
+    border-color: #db93b0;
+    font-size: 18px; 
+}
+#add:hover {
+     box-shadow: 2px 2px 1px #a23e48;
 }
 #remove {
-  background-color: #7daf9c;
-  color: #23967f;
-  border-color: #7daf9c;
+  background-color: #a23e48;
+  color: black;
+  border-color: black;
+  border-width: 1px;
   font-size: 18px; 
+}
+#remove:hover{
+box-shadow: 2px 2px 1px #a23e48;
 }
 </style>

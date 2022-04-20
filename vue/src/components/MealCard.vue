@@ -60,7 +60,7 @@ export default {
 
 <style>
 .meal-card {
-     background-color: #F7BFB4;
+    background-color: #F7BFB4;
     border: 2px solid #5b4b49;
     display: flex;
     flex-direction: column;
@@ -93,7 +93,7 @@ export default {
 .meal-type{
     display: inline;
     align-self: top;
-    margin-bottom: -10px;
+    margin-bottom: -5px;
 }
 #add {
     background-color: #db93b0;
@@ -120,8 +120,8 @@ box-shadow: 2px 2px 1px #a23e48;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
-    margin-bottom: -20px;
-    margin-top:-20px;
+    margin-bottom: -25px;
+    margin-top:-25px;
     align-items: center;
     justify-items: center;
 }

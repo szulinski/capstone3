@@ -13,9 +13,8 @@
       </form>
       </div>
       <div class = "recipe" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.recipeId">
-        <h3>{{recipe.name}}
+        <router-link v-bind:to="{name: 'recipe', params: {id: recipe.recipeId}}"><h3>{{recipe.name}}</h3></router-link>
         <button id="remove" v-on:click.prevent="remove(meal.mealId, recipe.recipeId)"><font-awesome-icon icon="fa-solid fa-xmark" /></button>
-        </h3>
         </div>
   </div>
 </template>

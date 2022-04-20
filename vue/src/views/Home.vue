@@ -1,14 +1,13 @@
 <template>
   <div class="home">
     <div class="container">
-    <!-- <img class="carrot" :src="require(`@/images/emptycarrot.png`)" />     -->
-    <h1 class="homeTitle">MealThyme<img class="carrot" :src="require(`@/images/justcarrot.png`)" />    
-</h1>
+      <h1 class="homeTitle">MealThyme<img class="carrot" :src="require(`@/images/justcarrot.png`)" />    
+      </h1>
     </div>
     <div class="router-links">
-      <router-link class="my-recipes" v-bind:to="{ name: 'my-recipes' }" v-if="$store.state.token != ''">My Recipes<br><br><img class="recipes" :src="require(`@/images/recipesbrown.png`)" /></router-link>
-      <router-link class="my-plans-home" v-bind:to="{ name: 'my-plans'}" v-if="$store.state.token != ''">My Plans<br><br><img class="calendar" :src="require(`@/images/calendar.png`)" /></router-link>
-      <router-link class="groceries" v-bind:to="{name: 'groceries-list'}" v-if="$store.state.token != ''">Grocery Lists<br><br><img class="grocery-list" :src="require(`@/images/grocerylist.png`)" /></router-link>
+      <router-link class="my-recipes" v-bind:to="{ name: 'my-recipes' }" v-if="$store.state.token != ''">My<br>Recipes<br><br><img class="recipes" :src="require(`@/images/recipesbrown.png`)" /></router-link>
+      <router-link class="my-plans-home" v-bind:to="{ name: 'my-plans'}" v-if="$store.state.token != ''">My<br>Plans<br><br><img class="calendar" :src="require(`@/images/calendar.png`)" /></router-link>
+      <router-link class="groceries" v-bind:to="{name: 'groceries-list'}" v-if="$store.state.token != ''">Grocery<br>Lists<br><br><img class="grocery-list" :src="require(`@/images/grocerylist.png`)" /></router-link>
     </div>
   </div>
 </template>
@@ -23,7 +22,6 @@ export default {
   .router-links {
     display: flex;
     text-align: center;
-    grid-area: routerlinks;
     
   }
       /* background-color:#7daf9c; */
@@ -31,7 +29,37 @@ export default {
   .my-recipes{
     text-decoration: none;
     font-weight: 600;
-    font-size: 300%;
+    font-size: 400%;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
+    padding: 5%;
+    margin: 5%;
+    /* background-color:#23967f; */
+    border-radius: 100px;
+    height: 10%;
+    width: 10%;
+    border: 10px solid #5b4b49;
+    transition-duration: 0.4s; 
+  }
+  .my-plans-home{
+   text-decoration: none;
+    font-weight: 600;
+    font-size: 400%;
+    -webkit-text-stroke: 2px #82C590;
+    -webkit-text-fill-color: #5b4b49;
+    padding: 5%;
+    margin: 5%;
+    /* background-color:#23967f; */
+    border-radius: 100px;
+    height: 10%;
+    width: 10%;
+    border: 10px solid #5b4b49;
+    transition-duration: 0.4s; 
+  }
+  .groceries {
+   text-decoration: none;
+    font-weight: 600;
+    font-size: 400%;
     -webkit-text-stroke: 2px #82C590;
     -webkit-text-fill-color: #5b4b49;
     padding: 5%;
@@ -73,36 +101,8 @@ box-shadow: 20px 20px 7px #82C590;}
     height: 25%;
     width: 50%;
   }
-  .my-plans-home{
-   text-decoration: none;
-    font-weight: 600;
-    font-size: 300%;
-    -webkit-text-stroke: 2px #82C590;
-    -webkit-text-fill-color: #5b4b49;
-    padding: 5%;
-    margin: 5%;
-    /* background-color:#23967f; */
-    border-radius: 100px;
-    height: 10%;
-    width: 10%;
-    border: 10px solid #5b4b49;
-    transition-duration: 0.4s; 
-  }
-  .groceries {
-   text-decoration: none;
-    font-weight: 600;
-    font-size: 300%;
-    -webkit-text-stroke: 2px #82C590;
-    -webkit-text-fill-color: #5b4b49;
-    padding: 5%;
-    margin: 5%;
-    /* background-color:#23967f; */
-    border-radius: 100px;
-    height: 10%;
-    width: 10%;
-    border: 10px solid #5b4b49;
-    transition-duration: 0.4s; 
-  }
+  
+  
   .homeTitle{
     margin: auto;
     width: 50%;
@@ -121,9 +121,6 @@ box-shadow: 20px 20px 7px #82C590;}
   }
 
    .home{
-    /* background-image: url('../images/more-leaves-on-green.png'); */
-    /* background-color:#7daf9c; */
-    
     font-family: 'Arial';
     /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -131,14 +128,13 @@ box-shadow: 20px 20px 7px #82C590;}
     20%
     40%
     40%; */
-    grid-template-areas:
+    /* grid-template-areas:
       "container container ." 
       "routerlinks routerlinks routerlinks"
-      "routerlinks routerlinks routerlinks"
+      "routerlinks routerlinks routerlinks" */
   }
 
-  .container {
-    grid-area: container;
+  .router-links {
     display: flex;
     align-content: space-evenly;
     justify-content: space-between;

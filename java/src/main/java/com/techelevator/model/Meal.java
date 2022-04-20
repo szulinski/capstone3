@@ -6,6 +6,7 @@ public class Meal {
     private Long mealId;
     private String mealType;
     private String mealDay;
+    private Integer version = 0;
 
 
     public String getMealType() {
@@ -30,4 +31,8 @@ public class Meal {
     public void setMealId(Long mealId) {
         this.mealId = mealId;
     }
+
+    public Integer getVersion(){return version;}
+
+    public void setVersion(Integer version) {this.version = version;}
 }

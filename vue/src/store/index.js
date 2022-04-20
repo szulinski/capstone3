@@ -44,7 +44,7 @@ export default new Vuex.Store({
   meal:{
     mealId: 0,
     mealType: '',
-    mealDay: '',
+    mealDay: ''
   },
   plans: [],
   plan: {
@@ -101,6 +101,9 @@ export default new Vuex.Store({
     },
     SET_CURRENTPLAN(state, planName){
       state.currentPlanName = planName;
+    },
+    TOUCH_MEAL(state, meal) {
+      meal.version = meal.version + 1
     }
   },
   strict: true

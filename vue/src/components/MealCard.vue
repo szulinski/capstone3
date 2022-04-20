@@ -49,6 +49,7 @@ export default {
             MealService.removeRecipeFromMeal(mealId, recipeId).then(resp =>{
                 if (resp.status === 200 || resp.status === 204){
                     this.$emit("deleteMeal",this.isDeleted);
+                    this.$store.commit('TOUCH_MEAL', this.meal);
                 }
             })
         }

@@ -10,11 +10,11 @@
           </div>
           <div class="directions-field">
             <label for="directions">Directions: </label>
-            <input id="directions-box" type="text" v-model="recipe.directions"/>
+            <textarea id="directions-box" type="text" v-model="recipe.directions"/>
           </div>
           <div class="ingredients-field">
               <label for="ingredients">Ingredients: </label>
-              <input id="ingredients-box" type="text" v-model="recipe.ingredients"/>
+              <textarea id="ingredients-box" type="text" v-model="recipe.ingredients"/>
           </div>
           <div class="submit-field">
               <router-link :to="{name: 'my-recipes'}"><button type="submit" v-on:click="sendUpdatedRecipe()">Submit</button></router-link>
@@ -109,10 +109,12 @@ export default {
 
 #directions-box {
     width: 500px;
+    height: 150px;
 }
 
 #ingredients-box {
     width: 500px;
+    height: 150px;
 }
 
 </style>

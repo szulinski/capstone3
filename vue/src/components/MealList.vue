@@ -2,7 +2,7 @@
   <div class="my-meal-list">
       <h2>My Meals</h2>
       <div>
-        <meal-card v-on:deleteMeal="refreshList" v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.mealId" />
+        <meal-card v-for="meal in meals" v-bind:meal="meal" v-bind:key="meal.mealId" />
       </div>
    </div>   
 </template>
@@ -25,13 +25,6 @@ export default {
         mealsFilter(){
             return this.$store.state.meals;
         },
-    },
-    methods:{
-        refreshList(){
-            MealService.getMeals(this.$store.state.user.id).then(response => {
-                this.meals = response.data;
-            });
-        }
     },
     created() {
         MealService.getMeals(this.$store.state.user.id).then(response => {

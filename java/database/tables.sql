@@ -236,13 +236,13 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 			500, false , true, false, false, false, true, true, 'https://gypsyplate.com/wp-content/uploads/2021/03/pad-krapow-gai_square02-480x480.jpg');
 
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
-	VALUES('HONEY GARLIC SHRIMP',
+	VALUES('Honey Garlic Shrimp',
 		   '2 large oranges, 1 tablespoon honey, 2 tablespoons reduced or gluten-free sodium soy sauce, 1 tablespoon unseasoned rice vinegar, 1 tablespoon cornstarch, 32 jumbo shrimp, peeled and deveined (18 ounces total), 1/4 teaspoon Kosher salt, freshly ground black pepper, 1 tablespoon canola oil, divided, 6 cloves garlic, minced, 1 tablespoon finely minced fresh ginger, 2 scallions, whites thinly sliced, greens cut into 2-inch lengths, 1/4 to 1/2 teaspoon red pepper flakes, Cooked rice, for serving'
 			,'Finely grate the zest from 1 orange, about 2 teaspoons. Juice both oranges into a bowl (you should have about 3/4 cup). Whisk in the honey, soy sauce, and vinegar with 1 tablespoon of water. In a small bowl, combine the cornstarch with 1 tablespoon of the orange-soy mixture to form a paste, then stir that back into the bowl with the rest of the orange-soy mixture. Pat the shrimp dry with paper towels and season both sides with salt and pepper. In the largest skillet (or wok) you have, heat 1 teaspoon of the oil over medium high heat until shimmering-hot, almost smoking. Add half of the shrimp, spread it out in one layer, and cook until the underside is bright pink, 1 to 1½ minutes. Flip and cook 1 minute more, then transfer the shrimp to a plate. Repeat with another 1 teaspoon oil and shrimp. Set aside. Add the remaining teaspoon of oil to the skillet. Add the garlic, ginger, scallion whites, and red pepper flakes and cook until fragrant, 30 seconds to 1 minute. Add the orange-soy liquid and the orange zest and cook, stirring, until thickened, 1 to 2 minutes. Return the shrimp to the skillet, add the scallion greens, and toss to coat with the sauce. Divide the shrimp among 4 bowls and serve with rice.',
 			180, true, true, true, false, false, true, true, 'https://www.skinnytaste.com/wp-content/uploads/2019/02/HONEY-GARLIC-SHRIMP-6.jpg');
 
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img)
-	VALUES('GREEK CHICKEN KABOBS WITH TZATZIKI SAUCE',
+	VALUES('Greek Chicken Kabobs with Tzatziki Sauce',
 		   '1/4 cup olive oil, 1/4 cup lemon juice, Zest of 1 lemon, 1 Tbsp red wine vinegar, 4 cloves garlic, minced, 1 tsp honey, 1/2 tsp salt, 1/4 tsp freshly ground black pepper, 2 Tbsp fresh oregano (or 2 tsp dried), 1 Tbsp fresh parsley, 1 1/4 lb boneless skinless chicken breasts, 1 medium zucchini, 1 pint cherry or grape tomatoes, 1 white onion, cut into large chunks, 1/2 cup plain Greek yogurt, 1/2 cup grated cucumber, 1 Tbsp lemon juice, 1 Tbsp olive oil, 2 cloves garlic, minced, 1 Tbsp fresh dill, chopped, 2 tsp fresh parsley, chopped, 1/4 tsp salt + pinch of pepper',
 			'Place chicken in a large bowl or ziplock bag. To make the marinade, whisk together all the ingredients until combined. Reserve a couple tablespoons  of the marinade and pour the rest over top of chicken until completely coated. Seal the bag or cover and marinate chicken in the fridge for at least 30 minutes or up to 4 hours. Pre-heat grill on medium-high heat, making sure to lightly spray with oil to avoid sticking.  If using wooden skewers, make sure to soak them in cold water for 15 to 20 minutes to prevent them from burning on the grill. To assemble the kabobs, first layer on an onion slice, followed by some chicken, a zucchini slice, then a cherry tomato.  Then just repeat these layers until you get to the end of the skewer and discard the marinade used for the chicken.  Place the skewers on the grill and cook them about 5 to 6 minutes on each side, brushing with the reserved marinade until the chicken is cooked through.  The internal temp should read 165 degrees F. To make the tzatziki sauce, mix together the yogurt, grated cucumber (make sure to squeeze out all the water so the dip doesn’t get watery), lemon juice, olive oil, garlic and fresh herbs.  I also like to season with salt/pepper and top with fresh dill. Serve the kabobs with tzatziki sauce and enjoy!',
 			337, true, true,true,false, false, true,true, 'https://www.eatyourselfskinny.com/wp-content/uploads/2020/07/greek-chicken-5-320x320.jpg');
@@ -292,6 +292,11 @@ INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat,
 INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img) 
 	VALUES ('Miso Salmon', 'Salmon, Miso, Soy sauce, Sake, Mirin, Roasted sesame oil', 'Make the miso marinade and marinate the salmon for 1-2 hours. Remove the marinade from the salmon and bake it.Change to a broiler and cook until the salmon are nicely charred. Serve and enjoy!', 500, false, true, true, false, false, true, true, 'https://www.justonecookbook.com/wp-content/uploads/2014/09/Miso-Salmon-III-600x900.jpg');
 
+INSERT INTO recipes (recipe_name, ingredients, directions, calories, is_low_fat, is_high_protein, is_low_carb, is_low_sodium, is_breakfast, is_lunch, is_dinner, img) 
+	VALUES ('Buckwheat Banana Pancakes', '1 1/2 bananas, 1/2 cup buckwheat flour, 1 tsp coconut oil, 3 tbsp almond milk, 1/2 cup water, 1/2 cup blueberries, 1/2 cup strawberries, 1 tbsp coconut meat', 
+	'Mash the banana with a fork. In a bowl mix the flour, mashed banana, melted coconut oil, milk, and water to a homogenous mixture. Add more water, if the batter is too thick. In a pan heat a bit of coconut oil and fry the pancakes on medium heat until they are gold brown on both sides. Cook in batches, as needed. Serve topped with berries, coconut, and honey.', 
+	640, true, false, false, true, true, false, false, 'https://images.eatthismuch.com/img/233395_margaritaencv_ba53b749-96c8-4e3d-bad4-143b486837ea.png');
+
 
 --select * from recipes
 
@@ -301,15 +306,15 @@ INSERT INTO plans (plan_name) VALUES ( 'high protein');
 --SELECT * FROM plans
 --SELECT * FROM users
 
---INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 3 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
+INSERT INTO user_plan VALUES ((SELECT user_id FROM users WHERE user_id = 1 ),(SELECT plan_id FROM plans WHERE plan_id = 1));
 --SELECT * FROM user_plan	
 	
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Monday');	
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Monday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Monday');
-INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuseday');		
-INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuseday');	
-INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Tuseday');
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Tuesday');		
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Tuesday');	
+INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Dinner', 'Tuesday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Lunch', 'Wednesday');
 INSERT INTO meals (type_of_meal, day_of_week) VALUES ( 'Breakfast', 'Wednesday');

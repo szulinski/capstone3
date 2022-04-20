@@ -104,7 +104,7 @@ export default {
   color: black;
   border-color: black;
   border-width: 1px;
-  font-size: 18px; 
+  font-size: 12px; 
 }
 #remove:hover{
 box-shadow: 2px 2px 1px #a23e48;

@@ -9,7 +9,7 @@
   <div class="checkbox-container">
     <!-- v-bind:value="isChecked" -->
       <input type="checkbox" id="addRecipe"  v-on:change="saveChecked($event)" >
-      <label for="addRecipe">Add Recipe To Meal</label>
+      <label v-on:click.prevent for="addRecipe">Add Recipe To Meal</label>
   </div>
   </div>
   </div>
@@ -52,9 +52,14 @@ export default {
     border: 2px solid black;
     border-radius: 10px;
     width: 250px;
-    height: 550px;
+    height: 450px;
     margin: 20px;
+    padding-left:6%;
+    padding-right:1%;
     
+}
+.card:hover {
+  box-shadow: 7px 7px 5px #23967f;
 }
 .card .recipe-name {
     font-size: 1.5rem;
@@ -63,15 +68,21 @@ export default {
     font-size: 1rem;
 }
 .checkbox-container{
-     align-content: center;
+     /* align-content: center;
      align-items: center;
-     justify-content: center;
-
+     justify-content: center; */
 }
 img {
-   
-    max-width: 100%;
-    max-height: 50%;
-
+    min-width: 80%;
+    min-height: auto;
+    max-width: 90%;
+    max-height: auto;
+}
+img:hover{
+   box-shadow: 4px 4px 3px #a23e48;
+}
+#addRecipe:hover {
+  width: 8%;
+  box-shadow: 1px 2px 3px #a23e48;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="my-saved-recipe-list">
-    <h2>My Saved Recipes</h2>
+    <h2 class="header-text">My Saved Recipes</h2>
     <div class="saved-recipes">
       <recipe-card v-on:savedChange="filteredRecipes" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe"/>
     </div>
@@ -48,5 +48,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.header-text {
+  font-family: Arial, Helvetica, sans-serif;
 }
 </style>

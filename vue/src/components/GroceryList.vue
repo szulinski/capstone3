@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>Groceries List</h1>
-    <ul class="goceries">
+    <ul>
         <li v-for="grocery in groceries" v-bind:key="grocery">{{grocery}}</li>
     </ul>
 </div>
@@ -27,9 +27,5 @@ export default {
 </script>
 
 <style>
-
-.groceries {
-
-}
 
 </style>

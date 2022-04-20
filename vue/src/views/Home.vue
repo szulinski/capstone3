@@ -103,7 +103,7 @@ export default {
     text-align: center;
     font-size: 7rem;
     -webkit-text-stroke: 2px #5b4b49;
-    -webkit-text-fill-color: #db93b0;
+    -webkit-text-fill-color: #c30450;
   }
 
   .carrot {

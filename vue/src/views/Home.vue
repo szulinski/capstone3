@@ -31,15 +31,15 @@ export default {
   .my-recipes{
     text-decoration: none;
     font-weight: 600;
-    font-size: 80px;
+    font-size: 300%;
     -webkit-text-stroke: 2px #82C590;
     -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
     /* background-color:#23967f; */
     border-radius: 100px;
-    height: auto;
-    width: 100%;
+    height: 10%;
+    width: 10%;
     border: 10px solid #5b4b49;
     transition-duration: 0.4s; 
   }
@@ -56,50 +56,50 @@ box-shadow: 20px 20px 7px #82C590;}
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 220px;
-    width: 220px;
+    height: 25%;
+    width: 50%;
   }
   .my-plans-home .calendar{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 200px;
-    width: 200px;
+    height: 25%;
+    width: 50%;
   }
   .groceries .grocery-list{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 200px;
-    width: 200px;
+    height: 25%;
+    width: 50%;
   }
   .my-plans-home{
    text-decoration: none;
     font-weight: 600;
-    font-size: 80px;
+    font-size: 300%;
     -webkit-text-stroke: 2px #82C590;
     -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
     /* background-color:#23967f; */
     border-radius: 100px;
-    height: auto;
-    width: 100%;
+    height: 10%;
+    width: 10%;
     border: 10px solid #5b4b49;
     transition-duration: 0.4s; 
   }
   .groceries {
    text-decoration: none;
     font-weight: 600;
-    font-size: 80px;
+    font-size: 300%;
     -webkit-text-stroke: 2px #82C590;
     -webkit-text-fill-color: #5b4b49;
     padding: 5%;
     margin: 5%;
     /* background-color:#23967f; */
     border-radius: 100px;
-    height: auto;
-    width: 100%;
+    height: 10%;
+    width: 10%;
     border: 10px solid #5b4b49;
     transition-duration: 0.4s; 
   }

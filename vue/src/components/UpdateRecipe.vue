@@ -11,8 +11,8 @@
             <input type="number" v-model="recipe.calories"/>
           </div>
           <div class="directions-field">
-            <label for="directions">Directions: </label>
-            <input type="text" v-model="recipe.directions"/>
+              <label for="directions">Directions: </label>
+              <input type="text" v-model="recipe.directions"/>
           </div>
           <div class="ingredients-field">
               <label for="ingredients">Ingredients: </label>

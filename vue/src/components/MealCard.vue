@@ -65,7 +65,7 @@ export default {
     border: 2px solid black;
     border-radius: 10px;
     width: 275px;
-    height: 250px;
+    height: 275px;
     margin: 10px;
     margin-block: 15px;
     font-size: 14px;

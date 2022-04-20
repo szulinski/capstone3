@@ -1,6 +1,5 @@
 <template>
   <div class="my-recipe-list">
-    <h2>My Recipes</h2>
     <div class="recipes">
       <recipe-card v-on:savedChange="filteredRecipes" v-for="recipe in recipes" v-bind:recipe="recipe" v-bind:key="recipe.id"/>
     </div>
